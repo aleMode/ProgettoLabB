@@ -43,7 +43,7 @@ public class boh extends JFrame {
 		txtText.setBounds(283, 48, 114, 21);
 		contentPane.add(txtText);
 		txtText.setColumns(10);
-		//commento
+		//commento molto bello
 	}
 
 }
