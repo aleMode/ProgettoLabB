@@ -55,7 +55,6 @@ public class PageRingraz extends JFrame {
 		JButton btnEsci = new JButton("Esci");
 		btnEsci.setBounds(389, 190, 105, 27);
 		contentPane.add(btnEsci);
-		
 	}
 
 }
