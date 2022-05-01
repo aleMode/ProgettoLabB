@@ -77,7 +77,6 @@ public class boh extends JFrame {
 		JLabel lblMessage = new JLabel("");
 		lblMessage.setBounds(10, 273, 564, 65);
 		contentPane.add(lblMessage);
-		
 		JButton btnLogin = new JButton("Login");
 		btnLogin.setBounds(10, 219, 89, 23);
 		contentPane.add(btnLogin);
