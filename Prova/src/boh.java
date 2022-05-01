@@ -5,11 +5,18 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JTextField;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.JTextPane;
+import javax.swing.JLabel;
+import java.awt.Font;
 
 public class boh extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField txtText;
+	private JTextField tfUser;
+	private JTextField tfPass;
 
 	/**
 	 * Launch the application.
@@ -32,18 +39,52 @@ public class boh extends JFrame {
 	 */
 	public boh() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 600, 450);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		txtText = new JTextField();
-		txtText.setText("text");
-		txtText.setBounds(283, 48, 114, 21);
-		contentPane.add(txtText);
-		txtText.setColumns(10);
-		//commento molto bello
+		JButton back = new JButton("Back");
+		back.setBounds(10, 11, 70, 23);
+		contentPane.add(back);
+		
+		JLabel labelInserisciDati = new JLabel("Inserisci i dati richiesti");
+		labelInserisciDati.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		labelInserisciDati.setBounds(10, 62, 130, 14);
+		contentPane.add(labelInserisciDati);
+		
+		JLabel LabelUser = new JLabel("Username");
+		LabelUser.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		LabelUser.setBounds(10, 114, 65, 14);
+		contentPane.add(LabelUser);
+		
+		JLabel LabelPass = new JLabel("Password");
+		LabelPass.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		LabelPass.setBounds(10, 152, 65, 14);
+		contentPane.add(LabelPass);
+		
+		tfUser = new JTextField();
+		tfUser.setBounds(150, 113, 148, 20);
+		contentPane.add(tfUser);
+		tfUser.setColumns(10);
+		
+		tfPass = new JTextField();
+		tfPass.setColumns(10);
+		tfPass.setBounds(150, 151, 148, 20);
+		contentPane.add(tfPass);
+		
+		JLabel lblMessage = new JLabel("");
+		lblMessage.setBounds(10, 273, 564, 65);
+		contentPane.add(lblMessage);
+		
+		JButton btnLogin = new JButton("Login");
+		btnLogin.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				lblMessage.setText("errore sei scemo");
+			}
+		});
+		btnLogin.setBounds(10, 219, 89, 23);
+		contentPane.add(btnLogin);
 	}
-
 }
