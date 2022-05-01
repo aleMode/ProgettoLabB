@@ -12,7 +12,7 @@ import javax.swing.JTextPane;
 import javax.swing.JLabel;
 import java.awt.Font;
 
-public class boh extends JFrame {
+public class Page3Citt extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField tfUser;
@@ -25,7 +25,7 @@ public class boh extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					boh frame = new boh();
+					Page3Citt frame = new Page3Citt();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -37,9 +37,9 @@ public class boh extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public boh() {
+	public Page3Citt() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 600, 450);
+		setBounds(100, 100, 650, 400);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -51,12 +51,12 @@ public class boh extends JFrame {
 		
 		JLabel labelInserisciDati = new JLabel("Inserisci i dati richiesti");
 		labelInserisciDati.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		labelInserisciDati.setBounds(10, 62, 130, 14);
+		labelInserisciDati.setBounds(10, 62, 169, 14);
 		contentPane.add(labelInserisciDati);
 		
 		JLabel LabelUser = new JLabel("Username");
 		LabelUser.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		LabelUser.setBounds(10, 114, 65, 14);
+		LabelUser.setBounds(10, 114, 70, 14);
 		contentPane.add(LabelUser);
 		
 		JLabel LabelPass = new JLabel("Password");
@@ -75,7 +75,7 @@ public class boh extends JFrame {
 		contentPane.add(tfPass);
 		
 		JLabel lblMessage = new JLabel("");
-		lblMessage.setBounds(10, 273, 564, 65);
+		lblMessage.setBounds(12, 269, 622, 65);
 		contentPane.add(lblMessage);
 		JButton btnLogin = new JButton("Login");
 		btnLogin.setBounds(10, 219, 89, 23);
