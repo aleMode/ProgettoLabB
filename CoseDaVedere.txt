@@ -1,0 +1,3 @@
+Dimensioni standard per finestre
+Posizioni standard per bottoni, titoli etc
+Font standard tra le finestre
