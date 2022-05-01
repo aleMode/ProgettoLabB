@@ -62,7 +62,7 @@ public class boh extends JFrame {
 		JLabel LabelPass = new JLabel("Password");
 		LabelPass.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		LabelPass.setBounds(10, 152, 65, 14);
-		contentPane.add(LabelPass);//commento
+		contentPane.add(LabelPass);
 		
 		tfUser = new JTextField();
 		tfUser.setBounds(150, 113, 148, 20);
