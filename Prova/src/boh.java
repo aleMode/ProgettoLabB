@@ -79,11 +79,6 @@ public class boh extends JFrame {
 		contentPane.add(lblMessage);
 		
 		JButton btnLogin = new JButton("Login");
-		btnLogin.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				lblMessage.setText("errore sei scemo");
-			}
-		});
 		btnLogin.setBounds(10, 219, 89, 23);
 		contentPane.add(btnLogin);
 	}
