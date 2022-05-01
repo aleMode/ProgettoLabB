@@ -1,3 +1,4 @@
 Dimensioni standard per finestre
 Posizioni standard per bottoni, titoli etc
 Font standard tra le finestre
+Nomi standard per le variabili di grafica (es tutti i bottoni si chiameranno btnElemento)
