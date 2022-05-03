@@ -7,6 +7,12 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 import javax.swing.JButton;
+import java.awt.GridBagLayout;
+import java.awt.GridBagConstraints;
+import java.awt.Insets;
+import java.awt.Component;
+import javax.swing.Box;
+import java.awt.Dimension;
 
 public class PageRingraz extends JFrame {
 
@@ -37,24 +43,40 @@ public class PageRingraz extends JFrame {
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
-		contentPane.setLayout(null);
+		GridBagLayout gbl_contentPane = new GridBagLayout();
+		gbl_contentPane.columnWidths = new int[]{100, 100, 100, 0};
+		gbl_contentPane.rowHeights = new int[]{79, 17, 17, 65, 27, 0};
+		gbl_contentPane.columnWeights = new double[]{1.0, 1.0, 1.0, Double.MIN_VALUE};
+		gbl_contentPane.rowWeights = new double[]{1.0, 1.0, 1.0, 1.0, 1.0, Double.MIN_VALUE};
+		contentPane.setLayout(gbl_contentPane);
 		
 		JLabel lblGrazie = new JLabel("Grazie");
 		lblGrazie.setHorizontalAlignment(SwingConstants.CENTER);
-		lblGrazie.setBounds(295, 79, 60, 17);
-		contentPane.add(lblGrazie);
+		GridBagConstraints gbc_lblGrazie = new GridBagConstraints();
+		gbc_lblGrazie.insets = new Insets(0, 0, 5, 5);
+		gbc_lblGrazie.gridx = 1;
+		gbc_lblGrazie.gridy = 1;
+		contentPane.add(lblGrazie, gbc_lblGrazie);
 		
 		JLabel lblDesideraFareAltro = new JLabel("Desidera fare altro?");
-		lblDesideraFareAltro.setBounds(275, 108, 124, 17);
-		contentPane.add(lblDesideraFareAltro);
+		GridBagConstraints gbc_lblDesideraFareAltro = new GridBagConstraints();
+		gbc_lblDesideraFareAltro.insets = new Insets(0, 0, 5, 5);
+		gbc_lblDesideraFareAltro.gridx = 1;
+		gbc_lblDesideraFareAltro.gridy = 2;
+		contentPane.add(lblDesideraFareAltro, gbc_lblDesideraFareAltro);
 		
 		JButton btnHome = new JButton("Home");
-		btnHome.setBounds(169, 190, 105, 27);
-		contentPane.add(btnHome);
+		GridBagConstraints gbc_btnHome = new GridBagConstraints();
+		gbc_btnHome.insets = new Insets(0, 0, 0, 5);
+		gbc_btnHome.gridx = 0;
+		gbc_btnHome.gridy = 4;
+		contentPane.add(btnHome, gbc_btnHome);
 		
 		JButton btnEsci = new JButton("Esci");
-		btnEsci.setBounds(389, 190, 105, 27);
-		contentPane.add(btnEsci);
+		GridBagConstraints gbc_btnEsci = new GridBagConstraints();
+		gbc_btnEsci.gridx = 2;
+		gbc_btnEsci.gridy = 4;
+		contentPane.add(btnEsci, gbc_btnEsci);
 	}
 
 }

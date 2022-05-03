@@ -15,6 +15,9 @@ import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.JInternalFrame;
 import javax.swing.LayoutStyle.ComponentPlacement;
+import java.awt.GridBagLayout;
+import java.awt.GridBagConstraints;
+import java.awt.Insets;
 
 public class Page3Citt extends JFrame {
 
@@ -47,79 +50,69 @@ public class Page3Citt extends JFrame {
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
+		GridBagLayout gbl_contentPane = new GridBagLayout();
+		gbl_contentPane.columnWidths = new int[]{100, 200, 0};
+		gbl_contentPane.rowHeights = new int[]{23, 14, 37, 20, 20, 48, 23, 0};
+		gbl_contentPane.columnWeights = new double[]{0.0, 1.0, Double.MIN_VALUE};
+		gbl_contentPane.rowWeights = new double[]{1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, Double.MIN_VALUE};
+		contentPane.setLayout(gbl_contentPane);
 		
 		JButton back = new JButton("Back");
+		GridBagConstraints gbc_back = new GridBagConstraints();
+		gbc_back.anchor = GridBagConstraints.WEST;
+		gbc_back.insets = new Insets(0, 0, 5, 5);
+		gbc_back.gridx = 0;
+		gbc_back.gridy = 0;
+		contentPane.add(back, gbc_back);
 		
 		JLabel labelInserisciDati = new JLabel("Inserisci i dati richiesti");
 		labelInserisciDati.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		GridBagConstraints gbc_labelInserisciDati = new GridBagConstraints();
+		gbc_labelInserisciDati.anchor = GridBagConstraints.WEST;
+		gbc_labelInserisciDati.insets = new Insets(0, 0, 5, 5);
+		gbc_labelInserisciDati.gridx = 0;
+		gbc_labelInserisciDati.gridy = 1;
+		contentPane.add(labelInserisciDati, gbc_labelInserisciDati);
 		
 		JLabel LabelUser = new JLabel("Username");
 		LabelUser.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		
-		JLabel LabelPass = new JLabel("Password");
-		LabelPass.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		GridBagConstraints gbc_LabelUser = new GridBagConstraints();
+		gbc_LabelUser.anchor = GridBagConstraints.WEST;
+		gbc_LabelUser.insets = new Insets(0, 0, 5, 5);
+		gbc_LabelUser.gridx = 0;
+		gbc_LabelUser.gridy = 3;
+		contentPane.add(LabelUser, gbc_LabelUser);
 		
 		tfUser = new JTextField();
 		tfUser.setColumns(10);
+		GridBagConstraints gbc_tfUser = new GridBagConstraints();
+		gbc_tfUser.insets = new Insets(0, 0, 5, 0);
+		gbc_tfUser.gridx = 1;
+		gbc_tfUser.gridy = 3;
+		contentPane.add(tfUser, gbc_tfUser);
+		
+		JLabel LabelPass = new JLabel("Password");
+		LabelPass.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		GridBagConstraints gbc_LabelPass = new GridBagConstraints();
+		gbc_LabelPass.anchor = GridBagConstraints.WEST;
+		gbc_LabelPass.insets = new Insets(0, 0, 5, 5);
+		gbc_LabelPass.gridx = 0;
+		gbc_LabelPass.gridy = 4;
+		contentPane.add(LabelPass, gbc_LabelPass);
 		
 		tfPass = new JTextField();
 		tfPass.setColumns(10);
-		
-		JLabel lblMessage = new JLabel("");
+		GridBagConstraints gbc_tfPass = new GridBagConstraints();
+		gbc_tfPass.insets = new Insets(0, 0, 5, 0);
+		gbc_tfPass.gridx = 1;
+		gbc_tfPass.gridy = 4;
+		contentPane.add(tfPass, gbc_tfPass);
 		JButton btnLogin = new JButton("Login");
-		GroupLayout gl_contentPane = new GroupLayout(contentPane);
-		gl_contentPane.setHorizontalGroup(
-			gl_contentPane.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_contentPane.createSequentialGroup()
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGap(5)
-							.addComponent(back, GroupLayout.PREFERRED_SIZE, 70, GroupLayout.PREFERRED_SIZE))
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGap(5)
-							.addComponent(labelInserisciDati, GroupLayout.PREFERRED_SIZE, 169, GroupLayout.PREFERRED_SIZE))
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGap(5)
-							.addComponent(LabelUser, GroupLayout.PREFERRED_SIZE, 70, GroupLayout.PREFERRED_SIZE)
-							.addGap(70)
-							.addComponent(tfUser, GroupLayout.PREFERRED_SIZE, 148, GroupLayout.PREFERRED_SIZE))
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGap(5)
-							.addComponent(LabelPass, GroupLayout.PREFERRED_SIZE, 65, GroupLayout.PREFERRED_SIZE)
-							.addGap(75)
-							.addComponent(tfPass, GroupLayout.PREFERRED_SIZE, 148, GroupLayout.PREFERRED_SIZE))
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGap(5)
-							.addComponent(btnLogin, GroupLayout.PREFERRED_SIZE, 89, GroupLayout.PREFERRED_SIZE))
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGap(7)
-							.addComponent(lblMessage, GroupLayout.PREFERRED_SIZE, 522, GroupLayout.PREFERRED_SIZE)))
-					.addContainerGap(7, Short.MAX_VALUE))
-		);
-		gl_contentPane.setVerticalGroup(
-			gl_contentPane.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_contentPane.createSequentialGroup()
-					.addGap(6)
-					.addComponent(back, GroupLayout.PREFERRED_SIZE, 23, GroupLayout.PREFERRED_SIZE)
-					.addGap(28)
-					.addComponent(labelInserisciDati, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
-					.addGap(37)
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGap(1)
-							.addComponent(LabelUser, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE))
-						.addComponent(tfUser, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE))
-					.addGap(18)
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGap(1)
-							.addComponent(LabelPass, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE))
-						.addComponent(tfPass, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE))
-					.addGap(48)
-					.addComponent(btnLogin, GroupLayout.PREFERRED_SIZE, 23, GroupLayout.PREFERRED_SIZE)
-					.addGap(27)
-					.addComponent(lblMessage, GroupLayout.PREFERRED_SIZE, 65, GroupLayout.PREFERRED_SIZE))
-		);
-		contentPane.setLayout(gl_contentPane);
+		GridBagConstraints gbc_btnLogin = new GridBagConstraints();
+		gbc_btnLogin.anchor = GridBagConstraints.WEST;
+		gbc_btnLogin.insets = new Insets(0, 0, 0, 5);
+		gbc_btnLogin.gridx = 0;
+		gbc_btnLogin.gridy = 6;
+		contentPane.add(btnLogin, gbc_btnLogin);
 	}
 }
