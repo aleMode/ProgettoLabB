@@ -10,11 +10,12 @@ import java.awt.Font;
 import javax.swing.JTextField;
 import javax.swing.JList;
 import javax.swing.JComboBox;
+import javax.swing.JTextPane;
+import javax.swing.JEditorPane;
 
 public class Page4Citt extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField textField;
 
 	/**
 	 * Launch the application.
@@ -88,11 +89,6 @@ public class Page4Citt extends JFrame {
 		btnDown.setBounds(293, 136, 46, 27);
 		contentPane.add(btnDown);
 		
-		textField = new JTextField();
-		textField.setBounds(12, 211, 314, 147);
-		contentPane.add(textField);
-		textField.setColumns(10);
-		
 		JButton btnInviaCont = new JButton("Invia e inserisci nuovo sintomo");
 		btnInviaCont.setBounds(358, 267, 254, 34);
 		contentPane.add(btnInviaCont);
@@ -108,5 +104,9 @@ public class Page4Citt extends JFrame {
 		JComboBox comboBox = new JComboBox();
 		comboBox.setBounds(223, 97, 204, 26);
 		contentPane.add(comboBox);
+		
+		JEditorPane editorPane = new JEditorPane();
+		editorPane.setBounds(12, 211, 314, 133);
+		contentPane.add(editorPane);
 	}
 }

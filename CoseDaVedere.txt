@@ -1,5 +1,3 @@
-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
-
 Dimensioni standard per finestre
 Posizioni standard per bottoni, titoli etc
 Font standard tra le finestre
