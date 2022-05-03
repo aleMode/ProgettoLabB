@@ -38,7 +38,7 @@ public class Page4Citt extends JFrame {
 	 */
 	public Page4Citt() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 650, 400);
+		setBounds(100, 100, 550, 500);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -90,15 +90,15 @@ public class Page4Citt extends JFrame {
 		contentPane.add(btnDown);
 		
 		JButton btnInviaCont = new JButton("Invia e inserisci nuovo sintomo");
-		btnInviaCont.setBounds(358, 267, 254, 34);
+		btnInviaCont.setBounds(293, 266, 241, 34);
 		contentPane.add(btnInviaCont);
 		
 		JButton btnInviaFin = new JButton("Invia sintomo finale");
-		btnInviaFin.setBounds(358, 312, 254, 34);
+		btnInviaFin.setBounds(293, 310, 241, 34);
 		contentPane.add(btnInviaFin);
 		
 		JButton btnRipristina = new JButton("Ripristina");
-		btnRipristina.setBounds(358, 221, 254, 34);
+		btnRipristina.setBounds(293, 220, 241, 34);
 		contentPane.add(btnRipristina);
 		
 		JComboBox comboBox = new JComboBox();
@@ -106,7 +106,7 @@ public class Page4Citt extends JFrame {
 		contentPane.add(comboBox);
 		
 		JEditorPane editorPane = new JEditorPane();
-		editorPane.setBounds(12, 211, 314, 133);
+		editorPane.setBounds(12, 211, 269, 133);
 		contentPane.add(editorPane);
 	}
 }

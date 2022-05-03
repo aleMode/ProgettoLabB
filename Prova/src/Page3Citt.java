@@ -11,6 +11,10 @@ import java.awt.event.ActionEvent;
 import javax.swing.JTextPane;
 import javax.swing.JLabel;
 import java.awt.Font;
+import javax.swing.GroupLayout;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.JInternalFrame;
+import javax.swing.LayoutStyle.ComponentPlacement;
 
 public class Page3Citt extends JFrame {
 
@@ -39,46 +43,83 @@ public class Page3Citt extends JFrame {
 	 */
 	public Page3Citt() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 650, 400);
+		setBounds(100, 100, 550, 500);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
-		contentPane.setLayout(null);
 		
 		JButton back = new JButton("Back");
-		back.setBounds(10, 11, 70, 23);
-		contentPane.add(back);
 		
 		JLabel labelInserisciDati = new JLabel("Inserisci i dati richiesti");
 		labelInserisciDati.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		labelInserisciDati.setBounds(10, 62, 169, 14);
-		contentPane.add(labelInserisciDati);
 		
 		JLabel LabelUser = new JLabel("Username");
 		LabelUser.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		LabelUser.setBounds(10, 114, 70, 14);
-		contentPane.add(LabelUser);
 		
 		JLabel LabelPass = new JLabel("Password");
 		LabelPass.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		LabelPass.setBounds(10, 152, 65, 14);
-		contentPane.add(LabelPass);
 		
 		tfUser = new JTextField();
-		tfUser.setBounds(150, 113, 148, 20);
-		contentPane.add(tfUser);
 		tfUser.setColumns(10);
 		
 		tfPass = new JTextField();
 		tfPass.setColumns(10);
-		tfPass.setBounds(150, 151, 148, 20);
-		contentPane.add(tfPass);
 		
 		JLabel lblMessage = new JLabel("");
-		lblMessage.setBounds(12, 269, 622, 65);
-		contentPane.add(lblMessage);
 		JButton btnLogin = new JButton("Login");
-		btnLogin.setBounds(10, 219, 89, 23);
-		contentPane.add(btnLogin);
+		GroupLayout gl_contentPane = new GroupLayout(contentPane);
+		gl_contentPane.setHorizontalGroup(
+			gl_contentPane.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_contentPane.createSequentialGroup()
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addGap(5)
+							.addComponent(back, GroupLayout.PREFERRED_SIZE, 70, GroupLayout.PREFERRED_SIZE))
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addGap(5)
+							.addComponent(labelInserisciDati, GroupLayout.PREFERRED_SIZE, 169, GroupLayout.PREFERRED_SIZE))
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addGap(5)
+							.addComponent(LabelUser, GroupLayout.PREFERRED_SIZE, 70, GroupLayout.PREFERRED_SIZE)
+							.addGap(70)
+							.addComponent(tfUser, GroupLayout.PREFERRED_SIZE, 148, GroupLayout.PREFERRED_SIZE))
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addGap(5)
+							.addComponent(LabelPass, GroupLayout.PREFERRED_SIZE, 65, GroupLayout.PREFERRED_SIZE)
+							.addGap(75)
+							.addComponent(tfPass, GroupLayout.PREFERRED_SIZE, 148, GroupLayout.PREFERRED_SIZE))
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addGap(5)
+							.addComponent(btnLogin, GroupLayout.PREFERRED_SIZE, 89, GroupLayout.PREFERRED_SIZE))
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addGap(7)
+							.addComponent(lblMessage, GroupLayout.PREFERRED_SIZE, 522, GroupLayout.PREFERRED_SIZE)))
+					.addContainerGap(7, Short.MAX_VALUE))
+		);
+		gl_contentPane.setVerticalGroup(
+			gl_contentPane.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_contentPane.createSequentialGroup()
+					.addGap(6)
+					.addComponent(back, GroupLayout.PREFERRED_SIZE, 23, GroupLayout.PREFERRED_SIZE)
+					.addGap(28)
+					.addComponent(labelInserisciDati, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
+					.addGap(37)
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addGap(1)
+							.addComponent(LabelUser, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE))
+						.addComponent(tfUser, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE))
+					.addGap(18)
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addGap(1)
+							.addComponent(LabelPass, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE))
+						.addComponent(tfPass, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE))
+					.addGap(48)
+					.addComponent(btnLogin, GroupLayout.PREFERRED_SIZE, 23, GroupLayout.PREFERRED_SIZE)
+					.addGap(27)
+					.addComponent(lblMessage, GroupLayout.PREFERRED_SIZE, 65, GroupLayout.PREFERRED_SIZE))
+		);
+		contentPane.setLayout(gl_contentPane);
 	}
 }
