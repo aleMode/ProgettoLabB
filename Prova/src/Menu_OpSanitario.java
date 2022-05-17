@@ -23,7 +23,7 @@ public class Menu_OpSanitario extends JFrame {
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
-			public void run() {
+			public void run() { 
 				try {
 					Menu_OpSanitario frame = new Menu_OpSanitario();
 					frame.setVisible(true);
