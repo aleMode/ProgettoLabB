@@ -1,5 +1,3 @@
-package db;
-
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -12,7 +10,7 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class Menù_Cittadini extends JFrame { 
+public class Menu_Cittadini extends JFrame { 
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
@@ -23,7 +21,7 @@ public class Menù_Cittadini extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Menù_Cittadini frame = new Menù_Cittadini();
+					Menu_Cittadini frame = new Menu_Cittadini();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -35,7 +33,7 @@ public class Menù_Cittadini extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Menù_Cittadini() {
+	public Menu_Cittadini() {
 		setTitle("Men\u00F9_Cittadino");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 550, 500);

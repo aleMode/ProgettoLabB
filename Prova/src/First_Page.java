@@ -1,5 +1,3 @@
-package db;
-
 import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -49,7 +47,7 @@ public class First_Page extends JFrame {
 				JButton CittButton = (JButton)e.getSource();
 				if (e.getSource() == CittButton) { 
 					frame.setVisible(false);
-					Menù_Cittadini framem = new Menù_Cittadini();
+					Menu_Cittadini framem = new Menu_Cittadini();
 					framem.setVisible(true);
 					
 				}}
@@ -63,7 +61,7 @@ public class First_Page extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				if (e.getSource() == OpSButton) { 
 				    frame.setVisible(false);
-					Menù_OpSanitario frames = new Menù_OpSanitario();
+					Menu_OpSanitario frames = new Menu_OpSanitario();
 					frames.setVisible(true);
 			}}
 		});
