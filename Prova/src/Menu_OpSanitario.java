@@ -1,5 +1,3 @@
-package db;
-
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -12,7 +10,7 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class Menù_OpSanitario extends JFrame {
+public class Menu_OpSanitario extends JFrame {
 
 	/**
 	 * 
@@ -27,7 +25,7 @@ public class Menù_OpSanitario extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Menù_OpSanitario frame = new Menù_OpSanitario();
+					Menu_OpSanitario frame = new Menu_OpSanitario();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -39,7 +37,7 @@ public class Menù_OpSanitario extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Menù_OpSanitario() {
+	public Menu_OpSanitario() {
 		setTitle("Men\u00F9_Operatore_Sanitario");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 550, 500);
