@@ -22,7 +22,7 @@ public class Page4Citt extends JFrame {
 	private JPanel contentPane;
 
 	/**
-	 * Launch the application ssssssss.
+	 * Launch the application dddddd.
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
