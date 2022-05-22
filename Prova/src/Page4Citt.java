@@ -132,7 +132,7 @@ public class Page4Citt extends JFrame {
 		contentPane.add(lblNote, gbc_lblNote);
 		
 		JEditorPane editorPane = new JEditorPane();
-		editorPane.setBackground(Color.BLACK);
+		editorPane.setBackground(Color.LIGHT_GRAY);
 		GridBagConstraints gbc_editorPane = new GridBagConstraints();
 		gbc_editorPane.fill = GridBagConstraints.BOTH;
 		gbc_editorPane.gridheight = 4;
