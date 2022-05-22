@@ -21,6 +21,7 @@ import java.awt.Insets;
 
 public class Page3Citt extends JFrame {
 
+	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JTextField tfUser;
 	private JTextField tfPass;
@@ -108,6 +109,10 @@ public class Page3Citt extends JFrame {
 		gbc_tfPass.gridy = 4;
 		contentPane.add(tfPass, gbc_tfPass);
 		JButton btnLogin = new JButton("Login");
+		btnLogin.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		GridBagConstraints gbc_btnLogin = new GridBagConstraints();
 		gbc_btnLogin.anchor = GridBagConstraints.WEST;
 		gbc_btnLogin.insets = new Insets(0, 0, 0, 5);
