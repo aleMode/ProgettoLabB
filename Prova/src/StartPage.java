@@ -11,48 +11,23 @@ import java.awt.event.ActionEvent;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 
-public class StartPage extends JFrame {
+public class StartPage extends JPanel {
 
-	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	static StartPage frame = new StartPage();
 	
-	 //Launch the application.
-	public static void main(String[] args) { 
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-	/**
-	 * Create the frame.
-	 */
-	public StartPage() {
-		setTitle("StartPage");
+	
+	public StartPage(JPanel cardStack) {
 		setBounds(100, 100, 550, 300);
-		contentPane = new JPanel();
+		contentPane = cardStack;
 		contentPane.setBackground(new Color(153, 255, 255));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		setContentPane(contentPane);
 		
 		JButton CittButton = new JButton("Cittadini");
 		CittButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				JButton CittButton = (JButton)e.getSource();
-				if (e.getSource() == CittButton) { 
-					frame.setVisible(false);
-					Menu_Cittadini framem = new Menu_Cittadini();
-					framem.setVisible(true);
-					
-				}}
-
-		});
+			public void actionPerformed(ActionEvent e) {}
+				
+			}
+		);
 		CittButton.setBackground(new Color(51, 153, 204));
 		CittButton.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		
@@ -60,9 +35,7 @@ public class StartPage extends JFrame {
 		OpSButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (e.getSource() == OpSButton) { 
-				    frame.setVisible(false);
-					Menu_OpSanitario frames = new Menu_OpSanitario();
-					frames.setVisible(true);
+				   
 			}}
 		});
 		
