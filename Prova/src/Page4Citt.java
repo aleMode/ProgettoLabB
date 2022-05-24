@@ -19,6 +19,7 @@ import java.awt.Color;
 
 public class Page4Citt extends JFrame {
 
+	private static final long serialVersionUID = 2188130442452392057L;
 	private JPanel contentPane;
 
 	/**

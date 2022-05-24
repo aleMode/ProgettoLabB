@@ -1,4 +1,3 @@
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -10,12 +9,10 @@ import javax.swing.JButton;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
-import java.awt.Component;
-import javax.swing.Box;
-import java.awt.Dimension;
 
 public class PageRingraz extends JFrame {
 
+	private static final long serialVersionUID = -1678883156726889946L;
 	private JPanel contentPane;
 
 	/**

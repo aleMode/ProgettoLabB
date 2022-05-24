@@ -53,11 +53,7 @@ public class OperaOperatore extends JFrame {
 		JButton btnNewButton_1 = new JButton("Exit");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Login log = new Login();
-				log.setVisible(true);
-				/*per eliminare la finestra dalla memoria
-				frame.dispose();
-				*/
+				
 			}
 		});
 		btnNewButton_1.setBounds(6, 6, 75, 29);
