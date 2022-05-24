@@ -11,11 +11,11 @@ import java.awt.event.ActionEvent;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 
-public class First_Page extends JFrame {
+public class StartPage extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	static First_Page frame = new First_Page();
+	static StartPage frame = new StartPage();
 	
 	 //Launch the application.
 	public static void main(String[] args) { 
@@ -33,8 +33,8 @@ public class First_Page extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public First_Page() {
-		setTitle("First_Page");
+	public StartPage() {
+		setTitle("StartPage");
 		setBounds(100, 100, 550, 300);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(153, 255, 255));

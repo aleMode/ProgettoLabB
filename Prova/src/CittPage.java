@@ -10,37 +10,18 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class Menu_Cittadini extends JFrame { 
+public class CittPage extends JPanel { 
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Menu_Cittadini frame = new Menu_Cittadini();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-	/**
-	 * Create the frame.
-	 */
-	public Menu_Cittadini() {
-		setTitle("Men\u00F9_Cittadino");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	
+	
+	public CittPage(JPanel pannello) {
+		
 		setBounds(100, 100, 550, 500);
-		contentPane = new JPanel();
+		contentPane = pannello;
 		contentPane.setBackground(new Color(153, 255, 255));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
 		JTextArea Scritta1 = new JTextArea();
@@ -113,11 +94,9 @@ public class Menu_Cittadini extends JFrame {
 		contentPane.add(back1);
 		back1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if (e.getSource() == back1) { 
-					First_Page frame = new First_Page();
-					frame.setVisible(true);
+				
 			}
-	}});
+		});
 }
 
 		
