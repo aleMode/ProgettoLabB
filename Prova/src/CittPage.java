@@ -16,10 +16,10 @@ public class CittPage extends JPanel {
 	private JPanel contentPane;
 	
 	
-	public CittPage(JPanel pannello) {
+	public CittPage(JPanel cardStack) {
 		
 		setBounds(100, 100, 550, 500);
-		contentPane = pannello;
+		contentPane = cardStack;
 		contentPane.setBackground(new Color(153, 255, 255));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(null);
