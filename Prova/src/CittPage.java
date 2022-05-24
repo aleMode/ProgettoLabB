@@ -3,7 +3,10 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import java.awt.CardLayout;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Font;
 import javax.swing.JTextArea;
 import javax.swing.JButton;
@@ -18,11 +21,7 @@ public class CittPage extends JPanel {
 	
 	public CittPage(JPanel cardStack) {
 		
-		setBounds(100, 100, 550, 500);
 		contentPane = cardStack;
-		contentPane.setBackground(new Color(153, 255, 255));
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		contentPane.setLayout(null);
 		
 		JTextArea Scritta1 = new JTextArea();
 		Scritta1.setLineWrap(true);
@@ -31,17 +30,19 @@ public class CittPage extends JPanel {
 		Scritta1.setBackground(new Color(153, 255, 255));
 		Scritta1.setText("Sei un cittadino, cosa vuoi fare?");
 		Scritta1.setBounds(10, 61, 340, 28);
-		contentPane.add(Scritta1);
+		add(Scritta1);
 		
 		JButton Consulta = new JButton("Consultare le informazioni di un centro vaccinale");
 		Consulta.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				CardLayout cardLayout = (CardLayout) contentPane.getLayout();
+				cardLayout.show(contentPane,"StartPage");
 			}
 		});
 		Consulta.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		Consulta.setBackground(new Color(51, 153, 204));
 		Consulta.setBounds(10, 135, 300, 60);
-		contentPane.add(Consulta);
+		add(Consulta);
 		
 		JButton Registrati = new JButton("Registrarmi");
 		Registrati.setFont(new Font("Tahoma", Font.PLAIN, 12));
@@ -51,7 +52,7 @@ public class CittPage extends JPanel {
 		});
 		Registrati.setBackground(new Color(51, 153, 204));
 		Registrati.setBounds(10, 243, 300, 60);
-		contentPane.add(Registrati);
+		add(Registrati);
 		
 		JButton Effetti_Collaterali = new JButton("Inserire effetti collaterali");
 		Effetti_Collaterali.setFont(new Font("Tahoma", Font.PLAIN, 12));
@@ -61,7 +62,7 @@ public class CittPage extends JPanel {
 		});
 		Effetti_Collaterali.setBackground(new Color(51, 153, 204));
 		Effetti_Collaterali.setBounds(10, 350, 300, 60);
-		contentPane.add(Effetti_Collaterali);
+		add(Effetti_Collaterali);
 		
 		JTextArea txtrCercaUnCentro = new JTextArea();
 		txtrCercaUnCentro.setBackground(new Color(153, 255, 255));
@@ -69,7 +70,7 @@ public class CittPage extends JPanel {
 		txtrCercaUnCentro.setFont(new Font("Calibri", Font.PLAIN, 14));
 		txtrCercaUnCentro.setText("Cerca un Centro Vaccinale per nome \r\no per comune e tipologia.");
 		txtrCercaUnCentro.setBounds(320, 135, 255, 60);
-		contentPane.add(txtrCercaUnCentro);
+		add(txtrCercaUnCentro);
 		
 		JTextArea txtrRegistrarsi = new JTextArea();
 		txtrRegistrarsi.setFont(new Font("Calibri", Font.PLAIN, 14));
@@ -77,7 +78,7 @@ public class CittPage extends JPanel {
 		txtrRegistrarsi.setText("Per registrarsi ad un Centro \r\nVaccinale bisogna avere in possesso\r\nun'ID vaccinazione.");
 		txtrRegistrarsi.setBackground(new Color(153, 255, 255));
 		txtrRegistrarsi.setBounds(320, 243, 255, 60);
-		contentPane.add(txtrRegistrarsi);
+		add(txtrRegistrarsi);
 		
 		JTextArea txtrInserireEffetti = new JTextArea();
 		txtrInserireEffetti.setBackground(new Color(153, 255, 255));
@@ -85,20 +86,23 @@ public class CittPage extends JPanel {
 		txtrInserireEffetti.setLineWrap(true);
 		txtrInserireEffetti.setText("Per inserire degli effetti collaterali \r\npost-vaccinazione bisogna avere in \r\npossesso Username e Passowrd.");
 		txtrInserireEffetti.setBounds(320, 350, 255, 60);
-		contentPane.add(txtrInserireEffetti);
+		add(txtrInserireEffetti);
 		
 		JButton back1 = new JButton("Indietro");
 		back1.setBackground(new Color(255, 255, 204));
 		back1.setFont(new Font("Calibri", Font.PLAIN, 11));
 		back1.setBounds(10, 11, 80, 31);
-		contentPane.add(back1);
+		add(back1);
 		back1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
 			}
 		});
-}
-
-		
 	}
+	@Override
+	public Dimension getPreferredSize(){
+	        return (new Dimension(500, 500));
+	    }
+
+}
 
