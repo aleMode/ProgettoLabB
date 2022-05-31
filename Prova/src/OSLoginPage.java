@@ -10,12 +10,12 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JLabel;
 
-public class OSPage extends JPanel {
+public class OSLoginPage extends JPanel {
 
 		private JPanel contentPane;
 	
 	
-	public OSPage(JPanel cardStack) {
+	public OSLoginPage(JPanel cardStack) {
 
 		contentPane = cardStack;
 		

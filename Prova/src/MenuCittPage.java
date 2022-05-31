@@ -13,13 +13,13 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class CittPage extends JPanel { 
+public class MenuCittPage extends JPanel { 
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	
 	
-	public CittPage(JPanel cardStack) {
+	public MenuCittPage(JPanel cardStack) {
 		
 		contentPane = cardStack;
 		

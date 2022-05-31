@@ -17,7 +17,7 @@ import java.awt.GridBagConstraints;
 import java.awt.Insets;
 import java.awt.Color;
 
-public class Page4Citt extends JFrame {
+public class EventiAvvPage extends JFrame {
 
 	private static final long serialVersionUID = 2188130442452392057L;
 	private JPanel contentPane;
@@ -41,7 +41,7 @@ public class Page4Citt extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Page4Citt() {
+	public EventiAvvPage() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 550, 500);
 		contentPane = new JPanel();

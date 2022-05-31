@@ -10,7 +10,7 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class Menu_OpSanitario extends JFrame {
+public class MenuOSPage extends JFrame {
 
 	/**
 	 * 
@@ -25,7 +25,7 @@ public class Menu_OpSanitario extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() { 
 				try {
-					Menu_OpSanitario frame = new Menu_OpSanitario();
+					MenuOSPage frame = new MenuOSPage();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -37,7 +37,7 @@ public class Menu_OpSanitario extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Menu_OpSanitario() {
+	public MenuOSPage() {
 		setTitle("Men\u00F9_Operatore_Sanitario");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 550, 500);
@@ -63,7 +63,7 @@ public class Menu_OpSanitario extends JFrame {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (e.getSource() == btnNewButton) { 
-					First_Page frame = new First_Page();
+					Page1 frame = new Page1();
 					frame.setVisible(true);
 				}}});
 		JButton RegCVButton = new JButton("Registrare un nuovo Centro Vaccinale");

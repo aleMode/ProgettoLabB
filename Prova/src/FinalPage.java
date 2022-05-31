@@ -10,7 +10,7 @@ import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
 
-public class PageRingraz extends JFrame {
+public class FinalPage extends JFrame {
 
 	private static final long serialVersionUID = -1678883156726889946L;
 	private JPanel contentPane;
@@ -31,10 +31,7 @@ public class PageRingraz extends JFrame {
 		});
 	}
 
-	/**
-	 * Create the frame.
-	 */
-	public PageRingraz() {
+	public FinalPage() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 550, 500);
 		contentPane = new JPanel();

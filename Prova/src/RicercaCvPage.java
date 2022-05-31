@@ -9,7 +9,7 @@ import java.awt.event.ActionEvent;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
 
-public class RicercaCv extends JFrame {
+public class RicercaCvPage extends JFrame {
 
 	/**
 	 * 
@@ -27,7 +27,7 @@ public class RicercaCv extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					RicercaCv frame = new RicercaCv();
+					RicercaCvPage frame = new RicercaCVPage();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -39,7 +39,7 @@ public class RicercaCv extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public RicercaCv() {
+	public RicercaCvPage() {
 		setTitle("RICERCA CENTRO VACCINALE");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 550, 276);

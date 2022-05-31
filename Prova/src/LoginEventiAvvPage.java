@@ -19,7 +19,7 @@ import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
 
-public class Page3Citt extends JFrame {
+public class LoginEventiAvvPage extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
@@ -45,7 +45,7 @@ public class Page3Citt extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Page3Citt() {
+	public LoginEventiAvvPage() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 550, 500);
 		contentPane = new JPanel();

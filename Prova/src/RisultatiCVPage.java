@@ -9,7 +9,7 @@ import javax.swing.JLabel;
 import javax.swing.JTextPane;
 import javax.swing.SwingConstants;
 
-public class VisuaProspetto extends JFrame {
+public class RisultatiCVPage extends JFrame {
 
 	/**
 	 * 
@@ -36,7 +36,7 @@ public class VisuaProspetto extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public VisuaProspetto() {
+	public RisultatiCVPage() {
 		setTitle("PROSPETTO SINTOMI");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 401);
