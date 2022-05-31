@@ -12,9 +12,18 @@ import Interfaccia.*;
 public class GUI {
 
 	private CardLayout cardLayout;
-	private CittPage cittPage;
 	private StartPage startPage;
-	private OSPage osPage;
+	private OSLoginPage osLoginPage;
+	private MenuOSPage menuOSPage;
+	private MenuCittPage menuCittPage;
+	private RicercaCVPage ricercaCVPage;
+	private RisultatiCVPage risultatiCVPage;
+	private IscrizioneCittCVPage iscrizioneCittCVPage;
+	private LoginEventiAvvPage loginEventiAvvPage;
+	private EventiAvvPage eventiAvvPage;
+	private RegistraCVPage registraCVPage;
+	private RegistraVaccinatoPage registraVaccinatoPage;
+	private FinalPage finalPage;
 	
 	private void displayGUI()
     {
@@ -25,13 +34,34 @@ public class GUI {
         contentPane.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
         cardLayout = new PageViewer();
         contentPane.setLayout(cardLayout);
-        cittPage = new CittPage(contentPane);
+        
         startPage = new StartPage(contentPane);
-        osPage = new OSPage(contentPane);
-   
+        osLoginPage = new OSLoginPage(contentPane);
+    	menuOSPage = new MenuOSPage(contentPane);
+    	menuCittPage = new MenuCittPage(contentPane);
+    	ricercaCVPage = new RicercaCVPage(contentPane);
+    	risultatiCVPage = new RisultatiCVPage(contentPane);
+    	iscrizioneCittCVPage = new IscrizioneCittCVPage(contentPane);
+    	loginEventiAvvPage = new LoginEventiAvvPage(contentPane);
+    	eventiAvvPage = new EventiAvvPage(contentPane);
+    	registraCVPage = new RegistraCVPage(contentPane);
+    	registraVaccinatoPage = new RegistraVaccinatoPage(contentPane);
+    	finalPage = new FinalPage(contentPane);
+        
         contentPane.add(startPage, "StartPage"); 
-        contentPane.add(cittPage, "CittPage"); 
-        contentPane.add(osPage, "OSPage");
+        contentPane.add(osLoginPage, "StartPage"); 
+        contentPane.add(menuOSPage, "StartPage"); 
+        contentPane.add(menuCittPage, "StartPage"); 
+        contentPane.add(ricercaCVPage, "StartPage"); 
+        contentPane.add(risultatiCVPage, "StartPage"); 
+        contentPane.add(iscrizioneCittCVPage, "StartPage"); 
+        contentPane.add(loginEventiAvvPage, "StartPage"); 
+        contentPane.add(eventiAvvPage, "StartPage"); 
+        contentPane.add(registraCVPage, "StartPage"); 
+        contentPane.add(registraVaccinatoPage, "StartPage"); 
+        contentPane.add(finalPage, "StartPage"); 
+
+        
         frame.setContentPane(contentPane);
         frame.pack();   
         frame.setLocationByPlatform(true);
