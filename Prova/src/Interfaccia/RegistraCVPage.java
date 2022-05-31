@@ -11,38 +11,17 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JList;
 
-public class RegistraCVPage extends JFrame {
+public class RegistraCVPage extends JPanel {
 
 	private JPanel contentPane;
 	private JTextField textField;
 	private JTextField textField_1;
 	private JTextField textField_2;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					RegistraCVPage frame = new RegistraCVPage();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-	/**
-	 * Create the frame.
-	 */
-	public RegistraCVPage() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 300, 400);
-		contentPane = new JPanel();
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		setContentPane(contentPane);
+	public RegistraCVPage(JPanel cardStack) {
+		
+		contentPane = cardStack;
+		
 		contentPane.setLayout(null);
 		
 		JButton btnNewButton = new JButton("Back");

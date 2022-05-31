@@ -11,41 +11,15 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class MenuOSPage extends JFrame {
+public class MenuOSPage extends JPanel {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() { 
-				try {
-					MenuOSPage frame = new MenuOSPage();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-	/**
-	 * Create the frame.
-	 */
-	public MenuOSPage() {
-		setTitle("Men\u00F9_Operatore_Sanitario");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 550, 500);
-		contentPane = new JPanel();
+	public MenuOSPage(JPanel cardStack) {
+		contentPane = cardStack;
+		
 		contentPane.setBackground(new Color(153, 255, 255));
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		setContentPane(contentPane);
+
 		contentPane.setLayout(null);
 		
 		JTextArea Scritta2 = new JTextArea();
@@ -64,8 +38,7 @@ public class MenuOSPage extends JFrame {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (e.getSource() == btnNewButton) { 
-					Page1 frame = new Page1();
-					frame.setVisible(true);
+					
 				}}});
 		JButton RegCVButton = new JButton("Registrare un nuovo Centro Vaccinale");
 		RegCVButton.addActionListener(new ActionListener() {

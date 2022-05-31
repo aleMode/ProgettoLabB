@@ -19,36 +19,13 @@ import java.awt.GridBagConstraints;
 import java.awt.Insets;
 import java.awt.Color;
 
-public class EventiAvvPage extends JFrame {
+public class EventiAvvPage extends JPanel {
 
-	private static final long serialVersionUID = 2188130442452392057L;
 	private JPanel contentPane;
 
-	/**
-	 * Launch the application dddddd.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Page4Citt frame = new Page4Citt();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-	/**
-	 * Create the frame.
-	 */
-	public EventiAvvPage() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 550, 500);
-		contentPane = new JPanel();
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		setContentPane(contentPane);
+	public EventiAvvPage(JPanel cardStack) {
+		contentPane = cardStack;
+		
 		GridBagLayout gbl_contentPane = new GridBagLayout();
 		gbl_contentPane.columnWidths = new int[]{233, 100, 100, 100};
 		gbl_contentPane.rowHeights = new int[]{27, 1, 14, 26, 27, 14, 43, 34, 34, 0};
