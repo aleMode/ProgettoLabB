@@ -10,14 +10,14 @@ import java.awt.event.ActionEvent;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
 
-public class RicercaCvPage extends JPanel {
+public class RicercaCVPage extends JPanel {
 
 	private JPanel contentPane;
 	private JTextField textField;
 	private JTextField textField_1;
 	private JTextField textField_2;
 
-	public RicercaCvPage(JPanel cardStack) {
+	public RicercaCVPage(JPanel cardStack) {
 		
 		contentPane = new JPanel();
 		
