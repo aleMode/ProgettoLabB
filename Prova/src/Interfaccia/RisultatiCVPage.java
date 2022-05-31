@@ -1,5 +1,8 @@
 package Interfaccia;
+import java.awt.CardLayout;
 import java.awt.EventQueue;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -22,6 +25,12 @@ public class RisultatiCVPage extends JPanel {
 		contentPane.setLayout(null);
 
 		JButton btnNewButton = new JButton("BACK");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				CardLayout cardLayout = (CardLayout) contentPane.getLayout();
+				cardLayout.show(contentPane,"ricercaCV");
+			}
+		});
 		btnNewButton.setBounds(6, 6, 81, 29);
 		contentPane.add(btnNewButton);
 
@@ -41,5 +50,15 @@ public class RisultatiCVPage extends JPanel {
 		JTextPane textPane = new JTextPane();
 		textPane.setBounds(60, 205, 332, 124);
 		contentPane.add(textPane);
+		
+		JButton fine = new JButton("FINE");
+		fine.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				CardLayout cardLayout = (CardLayout) contentPane.getLayout();
+				cardLayout.show(contentPane,"finalPage");
+			}
+		});
+		btnNewButton.setBounds(60, 340, 81, 29);
+		contentPane.add(btnNewButton);
 	}
 }

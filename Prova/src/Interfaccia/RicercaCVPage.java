@@ -1,4 +1,5 @@
 package Interfaccia;
+import java.awt.CardLayout;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -26,6 +27,8 @@ public class RicercaCVPage extends JPanel {
 		JButton btnNewButton = new JButton("BACK");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				CardLayout cardLayout = (CardLayout) contentPane.getLayout();
+				cardLayout.show(contentPane,"menuCitt");
 			}
 		});
 		btnNewButton.setBounds(6, 6, 84, 19);
@@ -68,12 +71,22 @@ public class RicercaCVPage extends JPanel {
 		contentPane.add(lblNewLabel_4);
 
 		JButton btnNewButton_1 = new JButton("Cerca");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				//funzione cerca
+				CardLayout cardLayout = (CardLayout) contentPane.getLayout();
+				cardLayout.show(contentPane,"risultatiCV");
+			}
+		});
 		btnNewButton_1.setBounds(73, 135, 117, 29);
 		contentPane.add(btnNewButton_1);
 
 		JButton btnNewButton_2 = new JButton("Cerca");
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				//funzione cerca
+				CardLayout cardLayout = (CardLayout) contentPane.getLayout();
+				cardLayout.show(contentPane,"risultatiCV");
 			}
 		});
 		btnNewButton_2.setBounds(361, 172, 117, 29);

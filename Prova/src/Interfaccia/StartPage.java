@@ -28,7 +28,7 @@ public class StartPage extends JPanel {
 		CittButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				CardLayout cardLayout = (CardLayout) contentPane.getLayout();
-				cardLayout.show(contentPane,"CittPage");
+				cardLayout.show(contentPane,"menuCitt");
 			}
 				
 		});
@@ -40,7 +40,7 @@ public class StartPage extends JPanel {
 		OpSButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				CardLayout cardLayout = (CardLayout) contentPane.getLayout();
-				cardLayout.show(contentPane,"OSPage");
+				cardLayout.show(contentPane,"osLogin");
 			}
 		});
 		

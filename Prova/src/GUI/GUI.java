@@ -54,7 +54,7 @@ public class GUI {
         contentPane.add(menuCittPage, "menuCitt"); 
         contentPane.add(ricercaCVPage, "ricercaCV"); 
         contentPane.add(risultatiCVPage, "risultatiCV"); 
-        contentPane.add(iscrizioneCittCVPage, "iscrizioneCV"); 
+        contentPane.add(iscrizioneCittCVPage, "iscrizioneCittCV"); 
         contentPane.add(loginEventiAvvPage, "loginEventiAvv"); 
         contentPane.add(eventiAvvPage, "eventiAvv"); 
         contentPane.add(registraCVPage, "registraCV"); 

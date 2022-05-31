@@ -1,4 +1,5 @@
 package Interfaccia;
+import java.awt.CardLayout;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -29,6 +30,12 @@ public class IscrizioneCittCVPage extends JPanel {
 		contentPane.setLayout(null);
 
 		JButton btnNewButton = new JButton("BACK");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				CardLayout cardLayout = (CardLayout) contentPane.getLayout();
+				cardLayout.show(contentPane,"menuCitt");
+			}
+		});
 		btnNewButton.setBounds(6, 6, 85, 29);
 		contentPane.add(btnNewButton);
 
@@ -71,6 +78,9 @@ public class IscrizioneCittCVPage extends JPanel {
 		JButton btnNewButton_1 = new JButton("REGISTRA");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				//inserisci funzione di registrazione
+				CardLayout cardLayout = (CardLayout) contentPane.getLayout();
+				cardLayout.show(contentPane,"finalPage");
 			}
 		});
 		btnNewButton_1.setBounds(346, 391, 117, 41);
@@ -117,6 +127,7 @@ public class IscrizioneCittCVPage extends JPanel {
 		JButton btnNewButton_2 = new JButton("RIPRISTINA");
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				//inserisci funzione di clear
 			}
 		});
 		btnNewButton_2.setBounds(60, 391, 117, 41);

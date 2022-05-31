@@ -4,6 +4,8 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import java.awt.CardLayout;
 import java.awt.Color;
 import javax.swing.JTextArea;
 import java.awt.Font;
@@ -37,12 +39,16 @@ public class MenuOSPage extends JPanel {
 		contentPane.add(btnNewButton);
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if (e.getSource() == btnNewButton) { 
-					
-				}}});
+					CardLayout cardLayout = (CardLayout) contentPane.getLayout();
+					cardLayout.show(contentPane,"osLogin");					
+				}
+			}
+		);
 		JButton RegCVButton = new JButton("Registrare un nuovo Centro Vaccinale");
 		RegCVButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				CardLayout cardLayout = (CardLayout) contentPane.getLayout();
+				cardLayout.show(contentPane,"registraCV");
 			}
 		});
 		
@@ -52,6 +58,12 @@ public class MenuOSPage extends JPanel {
 		contentPane.add(RegCVButton);
 		
 		JButton RegVaccButton = new JButton("Registrare un nuovo cittadino vaccinato");
+		RegVaccButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				CardLayout cardLayout = (CardLayout) contentPane.getLayout();
+				cardLayout.show(contentPane,"registraVaccinato");
+			}
+		});
 		RegVaccButton.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		RegVaccButton.setBackground(new Color(51, 153, 204));
 		RegVaccButton.setBounds(100, 309, 300, 60);

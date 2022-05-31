@@ -1,7 +1,10 @@
 package Interfaccia;
 
 import java.awt.BorderLayout;
+import java.awt.CardLayout;
 import java.awt.EventQueue;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -24,7 +27,14 @@ public class RegistraCVPage extends JPanel {
 		
 		contentPane.setLayout(null);
 		
-		JButton btnNewButton = new JButton("Back");
+		JButton btnNewButton = new JButton("Indietro");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+					CardLayout cardLayout = (CardLayout) contentPane.getLayout();
+					cardLayout.show(contentPane,"menuOS");					
+				}
+			}
+		);
 		btnNewButton.setBounds(10, 11, 89, 23);
 		contentPane.add(btnNewButton);
 		
@@ -72,6 +82,14 @@ public class RegistraCVPage extends JPanel {
 		contentPane.add(list);
 		
 		JButton btnNewButton_1 = new JButton("Registra");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+					//funzione registra
+					CardLayout cardLayout = (CardLayout) contentPane.getLayout();
+					cardLayout.show(contentPane,"finalPage");					
+				}
+			}
+		);
 		btnNewButton_1.setBounds(85, 258, 89, 23);
 		contentPane.add(btnNewButton_1);
 		

@@ -37,7 +37,7 @@ public class MenuCittPage extends JPanel {
 		Consulta.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				CardLayout cardLayout = (CardLayout) contentPane.getLayout();
-				cardLayout.show(contentPane,"StartPage");
+				cardLayout.show(contentPane,"ricercaCV");
 			}
 		});
 		Consulta.setFont(new Font("Tahoma", Font.PLAIN, 12));
@@ -49,6 +49,8 @@ public class MenuCittPage extends JPanel {
 		Registrati.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		Registrati.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				CardLayout cardLayout = (CardLayout) contentPane.getLayout();
+				cardLayout.show(contentPane,"iscrizioneCittCV");
 			}
 		});
 		Registrati.setBackground(new Color(51, 153, 204));
@@ -59,6 +61,8 @@ public class MenuCittPage extends JPanel {
 		Effetti_Collaterali.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		Effetti_Collaterali.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				CardLayout cardLayout = (CardLayout) contentPane.getLayout();
+				cardLayout.show(contentPane,"loginEventiAvv");
 			}
 		});
 		Effetti_Collaterali.setBackground(new Color(51, 153, 204));
@@ -96,7 +100,8 @@ public class MenuCittPage extends JPanel {
 		add(back1);
 		back1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+				CardLayout cardLayout = (CardLayout) contentPane.getLayout();
+				cardLayout.show(contentPane,"startPage");				
 			}
 		});
 	}
