@@ -59,9 +59,9 @@ public class GUI {
         contentPane.add(eventiAvvPage, "eventiAvv"); 
         contentPane.add(registraCVPage, "registraCV"); 
         contentPane.add(registraVaccinatoPage, "registraVacc"); 
-        contentPane.add(finalPage, "finaltPage"); 
+        contentPane.add(finalPage, "finalPage"); 
 
-        
+        cardLayout.show(contentPane, "startPage");
         frame.setContentPane(contentPane);
         frame.pack();   
         frame.setLocationByPlatform(true);

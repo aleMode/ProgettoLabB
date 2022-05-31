@@ -59,7 +59,7 @@ public class MenuOSPage extends JPanel {
 		RegVaccButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				CardLayout cardLayout = (CardLayout) contentPane.getLayout();
-				cardLayout.show(contentPane,"registraVaccinato");
+				cardLayout.show(contentPane,"registraVacc");
 			}
 		});
 		RegVaccButton.setFont(new Font("Tahoma", Font.PLAIN, 12));
