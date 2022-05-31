@@ -22,21 +22,18 @@ public class MenuOSPage extends JPanel {
 		
 		contentPane.setBackground(new Color(153, 255, 255));
 
-		contentPane.setLayout(null);
-		
 		JTextArea Scritta2 = new JTextArea();
 		Scritta2.setFont(new Font("Calibri", Font.BOLD, 25));
 		Scritta2.setText("Sei un'operatore sanitario, cosa vuoi fare?");
 		Scritta2.setLineWrap(true);
 		Scritta2.setBackground(new Color(153, 255, 255));
 		Scritta2.setBounds(47, 99, 441, 28);
-		contentPane.add(Scritta2);
+		add(Scritta2);
 		
 		JButton btnNewButton = new JButton("Indietro");
 		btnNewButton.setBackground(new Color(255, 255, 204));
 		btnNewButton.setFont(new Font("Calibri", Font.PLAIN, 11));
 		btnNewButton.setBounds(10, 11, 80, 31);
-		contentPane.add(btnNewButton);
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 					CardLayout cardLayout = (CardLayout) contentPane.getLayout();
@@ -44,6 +41,8 @@ public class MenuOSPage extends JPanel {
 				}
 			}
 		);
+		add(btnNewButton);
+		
 		JButton RegCVButton = new JButton("Registrare un nuovo Centro Vaccinale");
 		RegCVButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -51,11 +50,10 @@ public class MenuOSPage extends JPanel {
 				cardLayout.show(contentPane,"registraCV");
 			}
 		});
-		
 		RegCVButton.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		RegCVButton.setBackground(new Color(51, 153, 204));
 		RegCVButton.setBounds(100, 201, 300, 60);
-		contentPane.add(RegCVButton);
+		add(RegCVButton);
 		
 		JButton RegVaccButton = new JButton("Registrare un nuovo cittadino vaccinato");
 		RegVaccButton.addActionListener(new ActionListener() {
@@ -67,6 +65,6 @@ public class MenuOSPage extends JPanel {
 		RegVaccButton.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		RegVaccButton.setBackground(new Color(51, 153, 204));
 		RegVaccButton.setBounds(100, 309, 300, 60);
-		contentPane.add(RegVaccButton);
-		}
+		add(RegVaccButton);
+	}
 }

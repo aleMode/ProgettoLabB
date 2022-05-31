@@ -27,8 +27,6 @@ public class IscrizioneCittCVPage extends JPanel {
 	public IscrizioneCittCVPage(JPanel cardStack) {
 		contentPane = cardStack;
 		
-		contentPane.setLayout(null);
-
 		JButton btnNewButton = new JButton("BACK");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -37,43 +35,43 @@ public class IscrizioneCittCVPage extends JPanel {
 			}
 		});
 		btnNewButton.setBounds(6, 6, 85, 29);
-		contentPane.add(btnNewButton);
+		add(btnNewButton);
 
 		JLabel lblNewLabel = new JLabel("INSERIRE I DATI RICHIESTI:");
 		lblNewLabel.setBounds(16, 47, 167, 16);
-		contentPane.add(lblNewLabel);
+		add(lblNewLabel);
 
 		JLabel lblNewLabel_1 = new JLabel("NOME");
 		lblNewLabel_1.setBounds(30, 75, 61, 16);
-		contentPane.add(lblNewLabel_1);
+		add(lblNewLabel_1);
 
 		JLabel lblNewLabel_2 = new JLabel("COGNOME");
 		lblNewLabel_2.setBounds(296, 75, 74, 16);
-		contentPane.add(lblNewLabel_2);
+		add(lblNewLabel_2);
 
 		JLabel lblNewLabel_3 = new JLabel("CODICE \nFISCALE");
 		lblNewLabel_3.setBounds(30, 130, 117, 16);
-		contentPane.add(lblNewLabel_3);
+		add(lblNewLabel_3);
 
 		JLabel lblNewLabel_4 = new JLabel("EMAIL");
 		lblNewLabel_4.setBounds(296, 130, 61, 16);
-		contentPane.add(lblNewLabel_4);
+		add(lblNewLabel_4);
 
 		JLabel lblNewLabel_5 = new JLabel("IDVACCINO");
 		lblNewLabel_5.setBounds(30, 187, 79, 16);
-		contentPane.add(lblNewLabel_5);
+		add(lblNewLabel_5);
 
 		JLabel lblNewLabel_6 = new JLabel("USERNAME");
 		lblNewLabel_6.setBounds(296, 187, 74, 16);
-		contentPane.add(lblNewLabel_6);
+		add(lblNewLabel_6);
 
 		JLabel lblNewLabel_7 = new JLabel("PASSWORD");
 		lblNewLabel_7.setBounds(30, 243, 78, 16);
-		contentPane.add(lblNewLabel_7);
+		add(lblNewLabel_7);
 
 		JLabel lblNewLabel_8 = new JLabel("RIPETI PASSWORD");
 		lblNewLabel_8.setBounds(30, 294, 147, 16);
-		contentPane.add(lblNewLabel_8);
+		add(lblNewLabel_8);
 
 		JButton btnNewButton_1 = new JButton("REGISTRA");
 		btnNewButton_1.addActionListener(new ActionListener() {
@@ -84,16 +82,16 @@ public class IscrizioneCittCVPage extends JPanel {
 			}
 		});
 		btnNewButton_1.setBounds(346, 391, 117, 41);
-		contentPane.add(btnNewButton_1);
+		add(btnNewButton_1);
 
 		textField = new JTextField();
 		textField.setBounds(28, 92, 224, 26);
-		contentPane.add(textField);
+		add(textField);
 		textField.setColumns(10);
 
 		textField_1 = new JTextField();
 		textField_1.setBounds(296, 92, 224, 26);
-		contentPane.add(textField_1);
+		add(textField_1);
 		textField_1.setColumns(10);
 
 		textField_2 = new JTextField();

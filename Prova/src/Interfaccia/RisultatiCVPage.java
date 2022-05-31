@@ -22,8 +22,6 @@ public class RisultatiCVPage extends JPanel {
 		
 		contentPane = cardStack;
 		
-		contentPane.setLayout(null);
-
 		JButton btnNewButton = new JButton("BACK");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -32,24 +30,24 @@ public class RisultatiCVPage extends JPanel {
 			}
 		});
 		btnNewButton.setBounds(6, 6, 81, 29);
-		contentPane.add(btnNewButton);
+		add(btnNewButton);
 
 		JList list = new JList();
 		list.setBounds(63, 72, 329, 60);
-		contentPane.add(list);
+		add(list);
 
 		JLabel lblNewLabel = new JLabel("Centri vaccinali disponibili");
 		lblNewLabel.setBounds(131, 44, 190, 16);
-		contentPane.add(lblNewLabel);
+		add(lblNewLabel);
 
 		JLabel lblNewLabel_1 = new JLabel("Prospetto riassuntivo sintomi");
 		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_1.setBounds(134, 177, 197, 16);
-		contentPane.add(lblNewLabel_1);
+		add(lblNewLabel_1);
 
 		JTextPane textPane = new JTextPane();
 		textPane.setBounds(60, 205, 332, 124);
-		contentPane.add(textPane);
+		add(textPane);
 		
 		JButton fine = new JButton("FINE");
 		fine.addActionListener(new ActionListener() {
@@ -59,6 +57,6 @@ public class RisultatiCVPage extends JPanel {
 			}
 		});
 		btnNewButton.setBounds(60, 340, 81, 29);
-		contentPane.add(btnNewButton);
+		add(btnNewButton);
 	}
 }

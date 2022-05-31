@@ -34,24 +34,24 @@ public class OSLoginPage extends JPanel {
 			}
 		});
 		btnNewButton.setBounds(10, 11, 89, 23);
-		contentPane.add(btnNewButton);
+		add(btnNewButton);
 		
 		JLabel lblNewLabel = new JLabel("ID Operatore");
 		lblNewLabel.setBounds(10, 70, 89, 14);
-		contentPane.add(lblNewLabel);
+		add(lblNewLabel);
 		
 		JLabel lblPassword = new JLabel("Password");
 		lblPassword.setBounds(10, 109, 89, 14);
-		contentPane.add(lblPassword);
+		add(lblPassword);
 		
 		textField = new JTextField();
 		textField.setBounds(120, 67, 108, 20);
-		contentPane.add(textField);
+		add(textField);
 		textField.setColumns(10);
 		
 		passwordField = new JPasswordField();
 		passwordField.setBounds(130, 107, 97, 17);
-		contentPane.add(passwordField);
+		add(passwordField);
 		
 		JButton btnNewButton_1 = new JButton("Login");
 		btnNewButton_1.addActionListener(new ActionListener() {
@@ -62,6 +62,6 @@ public class OSLoginPage extends JPanel {
 			}
 		});
 		btnNewButton_1.setBounds(79, 155, 89, 23);
-		contentPane.add(btnNewButton_1);
+		add(btnNewButton_1);
 	}
 }
