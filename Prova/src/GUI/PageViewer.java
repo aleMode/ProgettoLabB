@@ -1,3 +1,5 @@
+package GUI;
+
 import java.awt.CardLayout;
 import java.awt.Component;
 import java.awt.Container;

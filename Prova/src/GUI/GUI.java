@@ -1,3 +1,5 @@
+package GUI;
+
 import java.awt.CardLayout;
 
 import javax.swing.BorderFactory;
