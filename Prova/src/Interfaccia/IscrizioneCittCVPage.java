@@ -11,7 +11,7 @@ import javax.swing.JPasswordField;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class RegistrazioneCVPage extends JFrame {
+public class IscrizioneCittCVPage extends JFrame {
 	/**
 	 * 
 	 */
@@ -45,7 +45,7 @@ public class RegistrazioneCVPage extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public RegistrazioneCVPage() {
+	public IscrizioneCittCVPage() {
 		setTitle("REGISTRAZIONE CENTRO VACCINALE");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 550, 500);
