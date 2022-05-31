@@ -48,18 +48,18 @@ public class GUI {
     	registraVaccinatoPage = new RegistraVaccinatoPage(contentPane);
     	finalPage = new FinalPage(contentPane);
         
-        contentPane.add(startPage, "StartPage"); 
-        contentPane.add(osLoginPage, "StartPage"); 
-        contentPane.add(menuOSPage, "StartPage"); 
-        contentPane.add(menuCittPage, "StartPage"); 
-        contentPane.add(ricercaCVPage, "StartPage"); 
-        contentPane.add(risultatiCVPage, "StartPage"); 
-        contentPane.add(iscrizioneCittCVPage, "StartPage"); 
-        contentPane.add(loginEventiAvvPage, "StartPage"); 
-        contentPane.add(eventiAvvPage, "StartPage"); 
-        contentPane.add(registraCVPage, "StartPage"); 
-        contentPane.add(registraVaccinatoPage, "StartPage"); 
-        contentPane.add(finalPage, "StartPage"); 
+        contentPane.add(startPage, "startPage"); 
+        contentPane.add(osLoginPage, "osLogin"); 
+        contentPane.add(menuOSPage, "menuOS"); 
+        contentPane.add(menuCittPage, "menuCitt"); 
+        contentPane.add(ricercaCVPage, "ricercaCV"); 
+        contentPane.add(risultatiCVPage, "risultatiCV"); 
+        contentPane.add(iscrizioneCittCVPage, "iscrizioneCV"); 
+        contentPane.add(loginEventiAvvPage, "loginEventiAvv"); 
+        contentPane.add(eventiAvvPage, "eventiAvv"); 
+        contentPane.add(registraCVPage, "registraCV"); 
+        contentPane.add(registraVaccinatoPage, "registraVacc"); 
+        contentPane.add(finalPage, "finaltPage"); 
 
         
         frame.setContentPane(contentPane);
