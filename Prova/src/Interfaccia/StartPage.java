@@ -67,6 +67,7 @@ public class StartPage extends JPanel {
 		txtrBenvenuto.setBackground(new Color(153, 255, 255));
 		txtrBenvenuto.setForeground(new Color(0, 0, 0));
 		txtrBenvenuto.setFont(new Font("Calibri", Font.BOLD, 60));
+		txtrBenvenuto.setEditable(false);
 		txtrBenvenuto.setText("Benvenuto!");
 		c.gridx=0;
 		c.gridy=0;
@@ -77,6 +78,7 @@ public class StartPage extends JPanel {
 		JTextArea txtrIndica = new JTextArea();
 		txtrIndica.setBackground(new Color(153, 255, 255));
 		txtrIndica.setFont(new Font("Calibri", Font.BOLD, 25));
+		txtrIndica.setEditable(false);
 		txtrIndica.setText("Indica come vuoi operare:");
 		c.gridx=0;
 		c.gridy=1;
