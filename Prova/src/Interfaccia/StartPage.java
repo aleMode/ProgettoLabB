@@ -6,6 +6,10 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JButton;
 import javax.swing.JTextArea;
 import java.awt.Font;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.GridLayout;
+import java.awt.Insets;
 import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -23,6 +27,8 @@ public class StartPage extends JPanel {
 		contentPane = cardStack;
 		
 		setBackground(new Color(153, 255, 255));
+		setLayout(new GridBagLayout());
+		GridBagConstraints c = new GridBagConstraints();
 		
 		JButton CittButton = new JButton("Cittadini");
 		CittButton.addActionListener(new ActionListener() {
@@ -32,9 +38,14 @@ public class StartPage extends JPanel {
 			}
 				
 		});
+		CittButton.setPreferredSize(new Dimension(150,50));
 		CittButton.setBackground(new Color(51, 153, 204));
-		CittButton.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		add(CittButton);
+		CittButton.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		c.gridx=1;
+		c.gridy=3;
+		c.weighty=0.2;
+		c.insets= new Insets(0,5,0,0);
+		add(CittButton,c);
 		
 		JButton OpSButton = new JButton("Operatore sanitario");
 		OpSButton.addActionListener(new ActionListener() {
@@ -43,23 +54,36 @@ public class StartPage extends JPanel {
 				cardLayout.show(contentPane,"osLogin");
 			}
 		});
-		
+		OpSButton.setPreferredSize(new Dimension(150,50));
 		OpSButton.setBackground(new Color(51, 153, 204));
-		OpSButton.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		add(OpSButton);
+		OpSButton.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		c.gridx=0;
+		c.gridy=3;
+		c.weighty=0.2;
+		c.insets= new Insets(0,0,0,5); //t,l,b,r
+		add(OpSButton,c);
 
 		JTextArea txtrIndica = new JTextArea();
 		txtrIndica.setBackground(new Color(153, 255, 255));
 		txtrIndica.setFont(new Font("Calibri", Font.BOLD, 25));
 		txtrIndica.setText("Indica come vuoi operare:");
-		add(txtrIndica);
+		c.gridx=0;
+		c.gridy=1;
+		c.gridwidth=2;
+		c.weighty=0.2;
+		c.insets= new Insets(0,0,0,0);
+		add(txtrIndica,c);
 		
 		JTextArea txtrBenvenuto = new JTextArea();
 		txtrBenvenuto.setBackground(new Color(153, 255, 255));
 		txtrBenvenuto.setForeground(new Color(0, 0, 0));
 		txtrBenvenuto.setFont(new Font("Calibri", Font.BOLD, 60));
 		txtrBenvenuto.setText("Benvenuto!");
-		add(txtrBenvenuto);
+		c.gridx=0;
+		c.gridy=0;
+		c.gridwidth=2;
+		c.weighty=0.6;
+		add(txtrBenvenuto,c);
 		
 	}
 	 @Override
