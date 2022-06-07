@@ -1,4 +1,12 @@
-Dimensioni standard per finestre
-Posizioni standard per bottoni, titoli etc
-Font standard tra le finestre
-Nomi standard per le variabili di grafica (es tutti i bottoni si chiameranno btnElemento)
+1 
+2
+3
+4
+5 IN CORSO
+6 IN CORSO
+7
+8
+9
+10
+11
+12 OK
