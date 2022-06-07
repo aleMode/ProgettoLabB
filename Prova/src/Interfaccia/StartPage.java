@@ -29,6 +29,39 @@ public class StartPage extends JPanel {
 		setBackground(new Color(153, 255, 255));
 		setLayout(new GridBagLayout());
 		GridBagConstraints c = new GridBagConstraints();
+		
+		JButton OpSButton = new JButton("Operatore sanitario");
+		OpSButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				CardLayout cardLayout = (CardLayout) contentPane.getLayout();
+				cardLayout.show(contentPane,"osLogin");
+			}
+		});
+		OpSButton.setPreferredSize(new Dimension(150,50));
+		OpSButton.setBackground(new Color(51, 153, 204));
+		OpSButton.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		c.gridx=1;
+		c.gridy=2;
+		c.weighty=0.2;
+		c.insets= new Insets(0,5,0,0); //t,l,b,r
+		add(OpSButton,c);
+		
+		JButton CittButton = new JButton("Cittadini");
+		CittButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				CardLayout cardLayout = (CardLayout) contentPane.getLayout();
+				cardLayout.show(contentPane,"menuCitt");
+			}
+				
+		});
+		CittButton.setPreferredSize(new Dimension(150,50));
+		CittButton.setBackground(new Color(51, 153, 204));
+		CittButton.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		c.gridx=0;
+		c.gridy=2;
+		c.weighty=0.2;
+		c.insets= new Insets(0,0,0,5);
+		add(CittButton,c);
 
 		JTextArea txtrBenvenuto = new JTextArea();
 		txtrBenvenuto.setBackground(new Color(153, 255, 255));
@@ -51,39 +84,6 @@ public class StartPage extends JPanel {
 		c.weighty=0.2;
 		c.insets= new Insets(0,0,0,0);
 		add(txtrIndica,c);
-		
-		JButton CittButton = new JButton("Cittadini");
-		CittButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				CardLayout cardLayout = (CardLayout) contentPane.getLayout();
-				cardLayout.show(contentPane,"menuCitt");
-			}
-				
-		});
-		CittButton.setPreferredSize(new Dimension(150,50));
-		CittButton.setBackground(new Color(51, 153, 204));
-		CittButton.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		c.gridx=1;
-		c.gridy=3;
-		c.weighty=0.2;
-		c.insets= new Insets(0,5,0,0);
-		add(CittButton,c);
-		
-		JButton OpSButton = new JButton("Operatore sanitario");
-		OpSButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				CardLayout cardLayout = (CardLayout) contentPane.getLayout();
-				cardLayout.show(contentPane,"osLogin");
-			}
-		});
-		OpSButton.setPreferredSize(new Dimension(150,50));
-		OpSButton.setBackground(new Color(51, 153, 204));
-		OpSButton.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		c.gridx=0;
-		c.gridy=3;
-		c.weighty=0.2;
-		c.insets= new Insets(0,0,0,5); //t,l,b,r
-		add(OpSButton,c);
 		
 	}
 	 @Override
