@@ -11,6 +11,7 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+import java.awt.Insets;
 
 import javax.swing.JTextArea;
 import javax.swing.JButton;
@@ -26,90 +27,122 @@ public class MenuCittPage extends JPanel {
 	public MenuCittPage(JPanel cardStack) {
 		
 		contentPane = cardStack;
+		
+		setBackground(new Color(153, 255, 255));
 		setLayout(new GridBagLayout());
 		GridBagConstraints c = new GridBagConstraints();
 		
-		JTextArea Scritta1 = new JTextArea();
-		Scritta1.setLineWrap(true);
-		Scritta1.setFont(new Font("Calibri", Font.BOLD, 25));
-		Scritta1.setWrapStyleWord(true);
-		Scritta1.setBackground(new Color(153, 255, 255));
-		Scritta1.setText("Sei un cittadino, cosa vuoi fare?");
-		Scritta1.setBounds(10, 61, 340, 28);
-		add(Scritta1,c);
+		JButton BtnBack = new JButton("Indietro");
+		BtnBack.setBackground(new Color(255, 255, 204));
+		BtnBack.setFont(new Font("Calibri", Font.PLAIN, 11));
+		BtnBack.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				CardLayout cardLayout = (CardLayout) contentPane.getLayout();
+				cardLayout.show(contentPane,"startPage");				
+			}
+		});
+		BtnBack.setPreferredSize(new Dimension(100,50));
+		c.gridx=0;
+		c.gridy=0;
+		c.weightx=1;
+		add(BtnBack,c);
 		
-		JButton Consulta = new JButton("Consultare le informazioni di un centro vaccinale");
-		Consulta.addActionListener(new ActionListener() {
+		JButton BtnConsulta = new JButton("Consulta un CV");
+		BtnConsulta.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				CardLayout cardLayout = (CardLayout) contentPane.getLayout();
 				cardLayout.show(contentPane,"ricercaCV");
 			}
 		});
-		Consulta.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		Consulta.setBackground(new Color(51, 153, 204));
-		Consulta.setBounds(10, 135, 300, 60);
-		add(Consulta,c);
+		BtnConsulta.setPreferredSize(new Dimension(150,50));
+		BtnConsulta.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		BtnConsulta.setBackground(new Color(51, 153, 204));
+		c.fill=GridBagConstraints.HORIZONTAL;
+		c.gridx=1;
+		c.gridy=2;
+		c.ipady=70;
+		c.weighty=0.2;
+		c.insets= new Insets(0,5,0,5); //t,l,b,r
+		add(BtnConsulta,c);
 		
-		JButton Registrati = new JButton("Registrarmi");
-		Registrati.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		Registrati.addActionListener(new ActionListener() {
+		JButton BtnRegistrati = new JButton("Registrarmi");
+		BtnRegistrati.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		BtnRegistrati.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				CardLayout cardLayout = (CardLayout) contentPane.getLayout();
 				cardLayout.show(contentPane,"iscrizioneCittCV");
 			}
 		});
-		Registrati.setBackground(new Color(51, 153, 204));
-		Registrati.setBounds(10, 243, 300, 60);
-		add(Registrati,c);
+		BtnRegistrati.setBackground(new Color(51, 153, 204));
+		BtnRegistrati.setPreferredSize(new Dimension(150,50));
+		c.gridx=2;
+		c.gridy=2;
+		c.insets= new Insets(0,5,0,5); //t,l,b,r
+		add(BtnRegistrati,c);
 		
-		JButton Effetti_Collaterali = new JButton("Inserire effetti collaterali");
-		Effetti_Collaterali.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		Effetti_Collaterali.addActionListener(new ActionListener() {
+		JButton BtnEffetti_Collaterali = new JButton("Effetti collaterali");
+		BtnEffetti_Collaterali.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		BtnEffetti_Collaterali.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				CardLayout cardLayout = (CardLayout) contentPane.getLayout();
 				cardLayout.show(contentPane,"loginEventiAvv");
 			}
 		});
-		Effetti_Collaterali.setBackground(new Color(51, 153, 204));
-		Effetti_Collaterali.setBounds(10, 350, 300, 60);
-		add(Effetti_Collaterali,c);
+		BtnEffetti_Collaterali.setBackground(new Color(51, 153, 204));
+		BtnEffetti_Collaterali.setPreferredSize(new Dimension(150,50));
+		c.gridx=3;
+		c.gridy=2;
+		c.insets= new Insets(0,5,0,5); //t,l,b,r
+		add(BtnEffetti_Collaterali,c);
 		
 		JTextArea txtrCercaUnCentro = new JTextArea();
 		txtrCercaUnCentro.setBackground(new Color(153, 255, 255));
 		txtrCercaUnCentro.setLineWrap(true);
+		txtrCercaUnCentro.setWrapStyleWord(true);
 		txtrCercaUnCentro.setFont(new Font("Calibri", Font.PLAIN, 14));
-		txtrCercaUnCentro.setText("Cerca un Centro Vaccinale per nome \r\no per comune e tipologia.");
-		txtrCercaUnCentro.setBounds(320, 135, 255, 60);
+		txtrCercaUnCentro.setEditable(false);
+		txtrCercaUnCentro.setText("Cerca un Centro Vaccinale per nome o per comune e tipologia.");
+		c.ipady=0;
+		c.gridx=1;
+		c.gridy=3;
+		c.weighty=0.4;
+		c.anchor=GridBagConstraints.NORTH;
 		add(txtrCercaUnCentro,c);
 		
 		JTextArea txtrRegistrarsi = new JTextArea();
 		txtrRegistrarsi.setFont(new Font("Calibri", Font.PLAIN, 14));
 		txtrRegistrarsi.setLineWrap(true);
-		txtrRegistrarsi.setText("Per registrarsi ad un Centro \r\nVaccinale bisogna avere in possesso\r\nun'ID vaccinazione.");
+		txtrRegistrarsi.setEditable(false);
+		txtrRegistrarsi.setText("Per registrarsi ad un Centro Vaccinale bisogna essere in possesso di un'ID vaccinazione.");
 		txtrRegistrarsi.setBackground(new Color(153, 255, 255));
-		txtrRegistrarsi.setBounds(320, 243, 255, 60);
+		c.gridx=2;
+		c.gridy=3;
 		add(txtrRegistrarsi,c);
 		
 		JTextArea txtrInserireEffetti = new JTextArea();
 		txtrInserireEffetti.setBackground(new Color(153, 255, 255));
 		txtrInserireEffetti.setFont(new Font("Calibri", Font.PLAIN, 14));
 		txtrInserireEffetti.setLineWrap(true);
+		txtrInserireEffetti.setEditable(false);
 		txtrInserireEffetti.setText("Per inserire degli effetti collaterali \r\npost-vaccinazione bisogna avere in \r\npossesso Username e Passowrd.");
-		txtrInserireEffetti.setBounds(320, 350, 255, 60);
+		c.gridx=3;
+		c.gridy=3;
 		add(txtrInserireEffetti,c);
 		
-		JButton back1 = new JButton("Indietro");
-		back1.setBackground(new Color(255, 255, 204));
-		back1.setFont(new Font("Calibri", Font.PLAIN, 11));
-		back1.setBounds(10, 11, 80, 31);
-		add(back1);
-		back1.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				CardLayout cardLayout = (CardLayout) contentPane.getLayout();
-				cardLayout.show(contentPane,"startPage");				
-			}
-		});
+		JTextArea ScrCitt = new JTextArea();
+		ScrCitt.setFont(new Font("Calibri", Font.BOLD, 25));
+		ScrCitt.setWrapStyleWord(true);
+		ScrCitt.setBackground(new Color(153, 255, 255));
+		ScrCitt.setEditable(false);
+		ScrCitt.setText("Sei un cittadino, cosa vuoi fare?");
+		c.gridx=1;
+		c.gridy=1;
+		c.anchor=GridBagConstraints.CENTER;
+		c.weighty=0.6;
+		c.gridwidth=3;
+		add(ScrCitt,c);
 	}
+	
 	@Override
 	public Dimension getPreferredSize(){
 	        return (new Dimension(500, 500));
