@@ -15,6 +15,7 @@ import java.awt.event.ActionEvent;
 
 public class MenuOSPage extends JPanel {
 
+	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 
 	public MenuOSPage(JPanel cardStack) {
