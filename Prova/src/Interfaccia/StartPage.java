@@ -1,27 +1,22 @@
 package Interfaccia;
-import java.awt.EventQueue;
-import javax.swing.JFrame;
+
 import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
 import javax.swing.JButton;
 import javax.swing.JTextArea;
 import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
-import java.awt.GridLayout;
 import java.awt.Insets;
 import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import javax.swing.GroupLayout;
-import javax.swing.GroupLayout.Alignment;
 
 public class StartPage extends JPanel {
 
+	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	
 	
 	public StartPage(JPanel cardStack) {
 		contentPane = cardStack;
@@ -65,7 +60,7 @@ public class StartPage extends JPanel {
 
 		JTextArea txtrBenvenuto = new JTextArea();
 		txtrBenvenuto.setBackground(new Color(153, 255, 255));
-		txtrBenvenuto.setForeground(new Color(0, 0, 0));
+		OpSButton.setPreferredSize(new Dimension(150,50));
 		txtrBenvenuto.setFont(new Font("Calibri", Font.BOLD, 60));
 		txtrBenvenuto.setEditable(false);
 		txtrBenvenuto.setText("Benvenuto!");

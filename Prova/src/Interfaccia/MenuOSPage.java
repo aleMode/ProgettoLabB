@@ -25,7 +25,6 @@ public class MenuOSPage extends JPanel {
 		setLayout(new GridBagLayout());
 		GridBagConstraints c = new GridBagConstraints();
 		
-
 		
 		JButton backButton = new JButton("Indietro");
 		backButton.addActionListener(new ActionListener() {
