@@ -65,6 +65,7 @@ public class MenuCittPage extends JPanel {
 		c.insets= new Insets(0,5,0,5); //t,l,b,r
 		add(BtnConsulta,c);
 		
+		
 		JButton BtnRegistrati = new JButton("Registrarmi");
 		BtnRegistrati.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		BtnRegistrati.addActionListener(new ActionListener() {
