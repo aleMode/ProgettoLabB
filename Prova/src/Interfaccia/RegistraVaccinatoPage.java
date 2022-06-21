@@ -50,78 +50,78 @@ public class RegistraVaccinatoPage extends JPanel {
 		
 		JLabel lblNewLabel = new JLabel("Inserisci i dati richiesti");
 		c.gridx=1;
-		c.gridy=0;
+		c.gridy=1;
 		c.weightx = 3;
 		add(lblNewLabel,c);
 		c.weightx = 1;
 
 		JLabel lblNewLabel_1 = new JLabel("Nome CV");
 		c.gridx=1;
-		c.gridy=1;
+		c.gridy=2;
 		add(lblNewLabel_1, c);
 		
 		JTextField textField1 = new JTextField();
 		textField1.setColumns(10);
 		c.gridx=2;
-		c.gridy=1;		
+		c.gridy=2;		
 		add(textField1,c);		
 		
 		JLabel lblNewLabel_2 = new JLabel("Nome Cittadino");
 		c.gridx=1;
-		c.gridy=2;		
+		c.gridy=3;		
 		add(lblNewLabel_2,c);
 		
 		JTextField textField_2 = new JTextField();
 		textField_2.setColumns(10);
 		c.gridx=2;
-		c.gridy=2;	
+		c.gridy=3;	
 		add(textField_2,c);
 		
 		JLabel lblNewLabel_3 = new JLabel("Codice Fiscale");
 		c.gridx=1;
-		c.gridy=3;	
+		c.gridy=4;	
 		add(lblNewLabel_3,c);
 		
 		JTextField textField_3 = new JTextField();
 		textField_3.setColumns(10);
 		c.gridx=2;
-		c.gridy=3;	
+		c.gridy=4;	
 		add(textField_3,c);
 		
 		JLabel lblNewLabel_4 = new JLabel("Nome Vaccino");
 		c.gridx=1;
-		c.gridy=4;		
+		c.gridy=5;		
 		add(lblNewLabel_4, c);
 		
 		JList list = new JList();
 		c.gridx=2;
-		c.gridy=4;		
+		c.gridy=5;		
 		add(list,c);
 		
 		JLabel lblNewLabel_5 = new JLabel("Data Vaccino");
 		c.gridx=1;
-		c.gridy=5;	
+		c.gridy=6;	
 		add(lblNewLabel_5,c);
 		
 		JTextField textField_5 = new JTextField();
 		textField_5.setColumns(10);
 		c.gridx=2;
-		c.gridy=5;	
+		c.gridy=6;	
 		add(textField_5,c);
 		
 		JLabel lblNewLabel_6 = new JLabel("ID");
 		c.gridx=1;
-		c.gridy=6;		
+		c.gridy=7;		
 		add(lblNewLabel_6,c);
 		
 		JLabel lblNewLabel_7 = new JLabel("165156423");
 		c.gridx=2;
-		c.gridy=6;		
+		c.gridy=7;		
 		add(lblNewLabel_7,c);
 		
 		JLabel lblNewLabel_8 = new JLabel("Errori");
 		c.gridx=1;
-		c.gridy=8;
+		c.gridy=9;
 		c.weightx=3;
 		add(lblNewLabel_8,c);
 		
@@ -136,7 +136,7 @@ public class RegistraVaccinatoPage extends JPanel {
 		btnReg.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		btnReg.setBackground(new Color(51, 153, 204));
 		c.gridx=2;
-		c.gridy=7;		
+		c.gridy=8;		
 		add(btnReg,c);
 	}
 
