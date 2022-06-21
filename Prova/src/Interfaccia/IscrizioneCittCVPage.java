@@ -30,7 +30,7 @@ public class IscrizioneCittCVPage extends JPanel {
 
 	public IscrizioneCittCVPage(JPanel cardStack) {
 		
-		contentPane = cardStack;
+		contentPane = cardStack ;
 		
 		setBackground(new Color(153, 255, 255)); 
 		setLayout(new GridBagLayout());

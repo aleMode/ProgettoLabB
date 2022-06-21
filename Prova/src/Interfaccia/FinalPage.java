@@ -34,7 +34,6 @@ public class FinalPage extends JPanel {
 		c.gridx=0;
 		c.gridy=0;
 		c.gridwidth = 2;
-		//c.ipadx = 150;
 		c.weighty = 0.05;
 		c.insets= new Insets(0,30,0,0);
 		add(lblGrazie, c);
@@ -47,8 +46,7 @@ public class FinalPage extends JPanel {
 		c.gridx=0;
 		c.gridy=1;
 		c.gridwidth = 2;
-		//c.ipadx = 180;
-		//c.weighty = 0.2;
+		c.weighty = 0.05;
 		c.insets= new Insets(0,30,0,0);
 		add(lblDesideraFareAltro, c);
 		
@@ -67,10 +65,8 @@ public class FinalPage extends JPanel {
 		c.fill=GridBagConstraints.BELOW_BASELINE_LEADING;
 		c.gridx=0;
 		c.gridy=2;
-		//c.weightx=0.5;
 		c.weighty = 0.1;
-		//c.ipadx = 60;
-		//c.ipady = 40;
+		c.weighty = 0.1;
 		c.insets= new Insets(0,0,0,5);
 		add(btnHome, c);
 		
@@ -88,9 +84,6 @@ public class FinalPage extends JPanel {
 		c.fill=GridBagConstraints.BELOW_BASELINE_LEADING;
 		c.gridx=2;
 		c.gridy=2;
-		//c.ipadx = 80;
-		//c.ipady=40;
-		//c.weightx=0.5;
 		c.weighty = 0.1;
 		c.insets= new Insets(0,5,0,0);
 		add(btnEsci, c);
