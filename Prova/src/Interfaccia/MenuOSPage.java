@@ -48,7 +48,7 @@ public class MenuOSPage extends JPanel {
 				CardLayout cardLayout = (CardLayout) contentPane.getLayout();
 				cardLayout.show(contentPane,"registraCV");
 			}
-		});		
+		});		 
 		RegCVButton.setPreferredSize(new Dimension(200,60));
 		RegCVButton.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		RegCVButton.setBackground(new Color(51, 153, 204));

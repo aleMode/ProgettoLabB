@@ -26,7 +26,7 @@ public class RegistraCVPage extends JPanel {
 	private JPanel contentPane;
 	
 	public RegistraCVPage(JPanel cardStack) {
-		
+		 
 		contentPane = cardStack;
 		
 		setBackground(new Color(153, 255, 255));
@@ -52,15 +52,15 @@ public class RegistraCVPage extends JPanel {
 		JLabel lblNewLabel = new JLabel("Inserisci i dati richiesti");
 		c.gridx=1;
 		c.gridy=0;
-		c.weightx = 3;
+		c.gridwidth=3;
 		c.insets= new Insets(5,5,5,5);
-
 		add(lblNewLabel,c);
+		c.gridwidth=1;
+
 		
 		JLabel lblNomeCentro = new JLabel("Nome Centro");
 		c.gridx=1;
 		c.gridy=1;
-		c.weightx = 1;
 		add(lblNomeCentro,c);
 		
 		JTextField textField = new JTextField();
@@ -140,7 +140,7 @@ public class RegistraCVPage extends JPanel {
 		JLabel lblNewLabel_2 = new JLabel("Errori");
 		c.gridx=1;
 		c.gridy=8;
-		c.weightx=4;
-		add(lblNewLabel_2,c);
+		c.gridwidth=4;
+		add(lblNewLabel_2, c);
 	}
 }

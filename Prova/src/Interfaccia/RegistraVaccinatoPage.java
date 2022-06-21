@@ -51,9 +51,9 @@ public class RegistraVaccinatoPage extends JPanel {
 		JLabel lblNewLabel = new JLabel("Inserisci i dati richiesti");
 		c.gridx=1;
 		c.gridy=1;
-		c.weightx = 3;
+		c.gridwidth=3;
 		add(lblNewLabel,c);
-		c.weightx = 1;
+		c.gridwidth=1;
 
 		JLabel lblNewLabel_1 = new JLabel("Nome CV");
 		c.gridx=1;
@@ -121,10 +121,11 @@ public class RegistraVaccinatoPage extends JPanel {
 		
 		JLabel lblNewLabel_8 = new JLabel("Errori");
 		c.gridx=1;
-		c.gridy=9;
-		c.weightx=3;
+		c.gridy=9; 
+		c.gridwidth=3;
 		add(lblNewLabel_8,c);
-		
+		c.gridwidth=1;
+
 		JButton btnReg = new JButton("Registra");
 		btnReg.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

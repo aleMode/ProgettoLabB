@@ -26,12 +26,12 @@ public class RicercaCVPage extends JPanel {
 
 	public RicercaCVPage(JPanel cardStack) {
 		
-		contentPane = new JPanel();
+		contentPane = cardStack;
 		
 		setBackground(new Color(153, 255, 255));
 		setLayout(new GridBagLayout());
 		GridBagConstraints c = new GridBagConstraints();
-		
+		 
 		JButton BtnBack = new JButton("BACK");
 		BtnBack.setBackground(new Color(255, 255, 204));
 		BtnBack.setFont(new Font("Calibri", Font.PLAIN, 11));
