@@ -25,7 +25,6 @@ public class MenuOSPage extends JPanel {
 		setLayout(new GridBagLayout());
 		GridBagConstraints c = new GridBagConstraints();
 		
-
 		
 		JButton backButton = new JButton("Indietro");
 		backButton.addActionListener(new ActionListener() {
@@ -35,7 +34,6 @@ public class MenuOSPage extends JPanel {
 				}
 			}
 		);
-		
 		backButton.setBackground(new Color(255, 255, 204));
 		backButton.setFont(new Font("Calibri", Font.PLAIN, 11));
 		c.gridx=0;
@@ -50,7 +48,7 @@ public class MenuOSPage extends JPanel {
 				CardLayout cardLayout = (CardLayout) contentPane.getLayout();
 				cardLayout.show(contentPane,"registraCV");
 			}
-		});		
+		});		 
 		RegCVButton.setPreferredSize(new Dimension(200,60));
 		RegCVButton.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		RegCVButton.setBackground(new Color(51, 153, 204));
