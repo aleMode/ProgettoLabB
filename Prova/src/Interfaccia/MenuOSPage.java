@@ -20,7 +20,7 @@ public class MenuOSPage extends JPanel {
 
 	public MenuOSPage(JPanel cardStack) {
 		contentPane = cardStack;
-		
+		 
 		setBackground(new Color(153, 255, 255));
 		setLayout(new GridBagLayout());
 		GridBagConstraints c = new GridBagConstraints();
@@ -39,7 +39,6 @@ public class MenuOSPage extends JPanel {
 		c.gridx=0;
 		c.gridy=0;
 		c.weightx=1;
-		c.insets= new Insets(0,0,0,0);
 		add(backButton, c);
 		
 		JButton RegCVButton = new JButton("Registrare un nuovo Centro");
