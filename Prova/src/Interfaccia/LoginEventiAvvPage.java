@@ -28,7 +28,7 @@ public class LoginEventiAvvPage extends JPanel {
 	private JTextField tfPass;
 
 	public LoginEventiAvvPage(JPanel cardStack) {
-		
+		 
 		contentPane = cardStack;
 		
 		
