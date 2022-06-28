@@ -19,14 +19,10 @@ import javax.swing.JLabel;
 public class RicercaCVPage extends JPanel {
 
 	private static final long serialVersionUID = 1L;
-	private JPanel contentPane;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
 
 	public RicercaCVPage(JPanel cardStack) {
 		
-		contentPane = new JPanel();
+		JPanel contentPane = new JPanel();
 		
 		setBackground(new Color(153, 255, 255));
 		setLayout(new GridBagLayout());
@@ -64,7 +60,7 @@ public class RicercaCVPage extends JPanel {
 		c.gridy=1;
 		add(lblNewLabel_2, c);
 		
-		textField = new JTextField();
+		JTextField textField = new JTextField();
 		c.weighty=0.1;
 		c.gridx=2;
 		c.gridy=2;
@@ -92,7 +88,7 @@ public class RicercaCVPage extends JPanel {
 		c.gridy=4;
 		add(lblNewLabel_3, c);
 		
-		textField_1 = new JTextField();
+		JTextField textField_1 = new JTextField();
 		c.weighty=0.1;
 		c.gridx=2;
 		c.gridy=5;
@@ -106,7 +102,7 @@ public class RicercaCVPage extends JPanel {
 		c.gridy=6;
 		add(lblNewLabel_4, c);
 		
-		textField_2 = new JTextField();
+		JTextField textField_2 = new JTextField();
 		c.weighty=0.05;
 		c.gridx=2;
 		c.gridy=7;

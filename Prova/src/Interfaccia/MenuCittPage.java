@@ -20,13 +20,11 @@ import java.awt.event.ActionEvent;
 
 public class MenuCittPage extends JPanel { 
 
-	private static final long serialVersionUID = 1L;
-	private JPanel contentPane;
-	
+	private static final long serialVersionUID = 1L;	
 	
 	public MenuCittPage(JPanel cardStack) {
 		
-		contentPane = cardStack;
+		JPanel contentPane = cardStack;
 		
 		setBackground(new Color(153, 255, 255));
 		setLayout(new GridBagLayout());
