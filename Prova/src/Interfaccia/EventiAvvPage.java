@@ -9,8 +9,6 @@ import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
-
-import javax.swing.JList;
 import javax.swing.JComboBox;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -53,6 +51,7 @@ public class EventiAvvPage extends JPanel {
 		c.weighty = 0.1;
 		add(labelInserisciDati, c);
 		c.gridwidth = 1;
+		add(btnBack);
 		
 		JLabel lblEvento = new JLabel();
 		lblEvento.setFont(new Font("Tahoma", Font.PLAIN, 12));

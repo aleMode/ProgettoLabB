@@ -27,115 +27,61 @@ public class LoginEventiAvvPage extends JPanel {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	private JTextField tfUser;
-	private JTextField tfPass;
 
 	public LoginEventiAvvPage(JPanel cardStack) {
-		
-		
-		//
+		contentPane = cardStack;
+
 		setBackground(new Color(153, 255, 255));
 		setLayout(new GridBagLayout());
 		GridBagConstraints c = new GridBagConstraints();
-
-		//
-		
-		contentPane = cardStack;
 		
 		
 		JButton back = new JButton("Indietro");
-		
-		//
 		back.setBackground(new Color(255, 255, 204));
 		back.setFont(new Font("Calibri", Font.PLAIN, 11));
-		//
-		
-		
-		
-		
-		
 		back.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				CardLayout cardLayout = (CardLayout) contentPane.getLayout();
 				cardLayout.show(contentPane,"menuCitt");
 			}
 		});
-		
-		//
 		back.setPreferredSize(new Dimension(90,25));
 		c.gridx= 0;
 		c.gridy= 0;	
-
-		
 		add(back, c);
-		//
 		
 		JLabel labelInserisciDati = new JLabel("Inserisci i dati richiesti");
 		labelInserisciDati.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		add(labelInserisciDati);
-		
-		
-		
-		//
-		c.gridx = 2;
+		c.gridx = 1;
 		c.gridy = 1;
-
-
+		c.gridwidth=2;
+		c.weighty=0.2;
 		add(labelInserisciDati,c);
-		//
+		c.gridwidth=1;
 		
-		
-		
-		
-		
-		
-		
-		JLabel LabelUser = new JLabel("Username");
+		JLabel LabelUser = new JLabel("Username:");
 		LabelUser.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		
-		//
 		c.gridx= 1;
-		c.gridy= 4;
-
-		//
-		
+		c.gridy= 2;
+		c.weightx = 0.2;
 		add(LabelUser,c);
 		
-		tfUser = new JTextField();
-		tfUser.setColumns(10);
-		
-		//
-		c.gridx= 2;
-		c.gridy= 4;
+		JLabel LabelPass = new JLabel("Password:");
+		LabelPass.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		c.gridx= 1;
+		c.gridy= 3;
+		add(LabelPass, c);
 
-		
-		
-		//
-		
+		JTextField tfUser = new JTextField();
+		tfUser.setColumns(10);
+		c.gridx= 2;
+		c.gridy= 2;
 		add(tfUser, c);
 		
-		JLabel LabelPass = new JLabel("Password");
-		LabelPass.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		
-		//
-		c.gridx= 1;
-		c.gridy= 5;
-
-		//
-		
-		add(LabelPass, c);
-		
-		tfPass = new JTextField();
+		JTextField tfPass = new JTextField();
 		tfPass.setColumns(10);
-		
-		
-		//
 		c.gridx=2;
-		c.gridy=5;
-
-		//
-		
-		
+		c.gridy=3;
 		add(tfPass,c);
 		
 		JButton btnLogin = new JButton("Login");
@@ -146,12 +92,8 @@ public class LoginEventiAvvPage extends JPanel {
 				cardLayout.show(contentPane,"eventiAvv");
 			}
 		});
-		
-		//
 		c.gridx= 2;
-		c.gridy= 6;			
-		//
-		
+		c.gridy= 4;			
 		add(btnLogin,c);
 	}
 }
