@@ -27,7 +27,7 @@ public class EventiAvvPage extends JPanel {
 			}
 		});
 		add(btnBack);
-		
+		 
 		JLabel labelInserisciDati = new JLabel("Inserisci i dati richiesti");
 		labelInserisciDati.setFont(new Font("Dialog", Font.PLAIN, 14));
 		add(labelInserisciDati);
