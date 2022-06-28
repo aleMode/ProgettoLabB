@@ -1,14 +1,15 @@
 package Interfaccia;
 
-import java.awt.BorderLayout;
 import java.awt.CardLayout;
-import java.awt.EventQueue;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.JFrame;
 import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
@@ -16,68 +17,108 @@ import javax.swing.JList;
 
 public class RegistraCVPage extends JPanel {
 
-	private JPanel contentPane;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
 
+	private static final long serialVersionUID = 1L;
+	private JPanel contentPane;
+	
 	public RegistraCVPage(JPanel cardStack) {
-		
+		 
 		contentPane = cardStack;
 		
-		JButton btnNewButton = new JButton("Indietro");
-		btnNewButton.addActionListener(new ActionListener() {
+		setBackground(new Color(153, 255, 255));
+		setLayout(new GridBagLayout());
+		GridBagConstraints c = new GridBagConstraints();
+		
+		
+		JButton btnBack = new JButton("Indietro");
+		btnBack.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 					CardLayout cardLayout = (CardLayout) contentPane.getLayout();
 					cardLayout.show(contentPane,"menuOS");					
 				}
 			}
 		);
-		btnNewButton.setBounds(10, 11, 89, 23);
-		add(btnNewButton);
+		btnBack.setBackground(new Color(255, 255, 204));
+		btnBack.setFont(new Font("Calibri", Font.PLAIN, 11));
+		c.gridx=0;
+		c.gridy=0;
+		c.weightx=1;
+		add(btnBack, c);
 		
 		JLabel lblNewLabel = new JLabel("Inserisci i dati richiesti");
-		lblNewLabel.setBounds(10, 55, 112, 14);
-		add(lblNewLabel);
+		c.gridx=1;
+		c.gridy=0;
+		c.gridwidth=3;
+		c.insets= new Insets(5,5,5,5);
+		add(lblNewLabel,c);
+		c.gridwidth=1;
+
 		
 		JLabel lblNomeCentro = new JLabel("Nome Centro");
-		lblNomeCentro.setBounds(10, 90, 112, 14);
-		add(lblNomeCentro);
+		c.gridx=1;
+		c.gridy=1;
+		add(lblNomeCentro,c);
 		
-		textField = new JTextField();
-		textField.setBounds(132, 87, 86, 20);
-		add(textField);
+		JTextField textField = new JTextField();
+		c.gridx=2;
+		c.gridy=1;
 		textField.setColumns(10);
+		add(textField,c);
+				
+		JLabel lblProv = new JLabel("Provincia");
+		c.gridx=1;
+		c.gridy=2;
+		add(lblProv, c);
 		
-		textField_1 = new JTextField();
+		JTextField textField_1 = new JTextField();
 		textField_1.setColumns(10);
-		textField_1.setBounds(132, 115, 86, 20);
-		add(textField_1);
+		c.gridx=2;
+		c.gridy=2;
+		add(textField_1,c);
 		
-		JLabel lblCitt = new JLabel("Città");
-		lblCitt.setBounds(10, 118, 112, 14);
-		add(lblCitt);
+		JLabel lblComune = new JLabel("Comune");
+		c.gridx=1;
+		c.gridy=3;
+		add(lblComune, c);
 		
-		textField_2 = new JTextField();
+		JTextField textField_2 = new JTextField();
 		textField_2.setColumns(10);
-		textField_2.setBounds(132, 148, 86, 20);
-		add(textField_2);
+		c.gridx=2;
+		c.gridy=3;
+		add(textField_2,c);
 		
-		JLabel lblIndirizzo = new JLabel("Indirizzo");
-		lblIndirizzo.setBounds(10, 151, 112, 14);
-		add(lblIndirizzo);
+		JLabel lblCAP = new JLabel("CAP");
+		c.gridx=1;
+		c.gridy=4;
+		add(lblCAP, c);
 		
-		JLabel lblNewLabel_1 = new JLabel("...");
-		lblNewLabel_1.setBounds(100, 179, 46, 14);
-		add(lblNewLabel_1);
+		JTextField textField_3 = new JTextField();
+		textField_3.setColumns(10);
+		c.gridx=2;
+		c.gridy=4;
+		add(textField_3,c);
+		
+		JLabel lblIndir = new JLabel("Indirizzo");
+		c.gridx=1;
+		c.gridy=5;
+		add(lblIndir, c);
+		
+		JTextField textField_4 = new JTextField();
+		textField_4.setColumns(10);
+		c.gridx=2;
+		c.gridy=5;
+		add(textField_4,c);
+		
 		
 		JLabel lblTipo = new JLabel("Tipo");
-		lblTipo.setBounds(10, 204, 112, 14);
-		add(lblTipo);
+		c.gridx=1;
+		c.gridy=6;
+		add(lblTipo, c);
 		
 		JList list = new JList();
-		list.setBounds(132, 203, 86, 15);
-		add(list);
+		c.gridx=2;
+		c.gridy=6;
+		add(list,c);
 		
 		JButton btnNewButton_1 = new JButton("Registra");
 		btnNewButton_1.addActionListener(new ActionListener() {
@@ -88,11 +129,14 @@ public class RegistraCVPage extends JPanel {
 				}
 			}
 		);
-		btnNewButton_1.setBounds(85, 258, 89, 23);
-		add(btnNewButton_1);
+		c.gridx=2;
+		c.gridy=7;		
+		add(btnNewButton_1,c);
 		
 		JLabel lblNewLabel_2 = new JLabel("Errori");
-		lblNewLabel_2.setBounds(10, 317, 46, 14);
-		add(lblNewLabel_2);
+		c.gridx=1;
+		c.gridy=8;
+		c.gridwidth=4;
+		add(lblNewLabel_2, c);
 	}
 }

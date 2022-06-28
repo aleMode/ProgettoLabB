@@ -34,11 +34,10 @@ public class MenuOSPage extends JPanel {
 				}
 			}
 		);
-		
 		backButton.setBackground(new Color(255, 255, 204));
 		backButton.setFont(new Font("Calibri", Font.PLAIN, 11));
 		c.gridx=0;
-		c.gridy=0; 
+		c.gridy=0;
 		c.weightx=1;
 		c.insets= new Insets(0,0,0,0);
 		add(backButton, c);
@@ -49,7 +48,7 @@ public class MenuOSPage extends JPanel {
 				CardLayout cardLayout = (CardLayout) contentPane.getLayout();
 				cardLayout.show(contentPane,"registraCV");
 			}
-		});		
+		});		 
 		RegCVButton.setPreferredSize(new Dimension(200,60));
 		RegCVButton.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		RegCVButton.setBackground(new Color(51, 153, 204));

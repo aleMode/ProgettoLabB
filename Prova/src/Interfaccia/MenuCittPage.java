@@ -1,6 +1,6 @@
 package Interfaccia;
-import javax.swing.JPanel;
 
+import javax.swing.JPanel;
 import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -8,7 +8,6 @@ import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
-
 import javax.swing.JTextArea;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
@@ -16,11 +15,13 @@ import java.awt.event.ActionEvent;
 
 public class MenuCittPage extends JPanel { 
 
-	private static final long serialVersionUID = 1L;	
+	private static final long serialVersionUID = 1L;
+	private JPanel contentPane;
+	
 	
 	public MenuCittPage(JPanel cardStack) {
 		
-		JPanel contentPane = cardStack;
+		contentPane = cardStack;
 		
 		setBackground(new Color(153, 255, 255));
 		setLayout(new GridBagLayout());
@@ -58,6 +59,7 @@ public class MenuCittPage extends JPanel {
 		c.weighty=0.2;
 		c.insets= new Insets(0,5,0,5); //t,l,b,r
 		add(BtnConsulta,c);
+		
 		
 		JButton BtnRegistrati = new JButton("Registrarmi");
 		BtnRegistrati.setFont(new Font("Tahoma", Font.PLAIN, 12));
