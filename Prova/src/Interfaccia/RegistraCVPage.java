@@ -49,7 +49,7 @@ public class RegistraCVPage extends JPanel {
 		c.gridx=1;
 		c.gridy=0;
 		c.gridwidth=3;
-		c.insets= new Insets(5,5,5,5);
+		c.insets= new Insets(5,5,5,5); 
 		add(lblNewLabel,c);
 		c.gridwidth=1;
 
