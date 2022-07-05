@@ -31,7 +31,6 @@ public class LoginEventiAvvPage extends JPanel {
 		
 		contentPane = cardStack;
 		
-		
 		JButton back = new JButton("Back");
 		back.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
