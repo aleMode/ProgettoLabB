@@ -16,7 +16,6 @@ public class ServerMain extends UnicastRemoteObject implements ServerMainInterfa
 	}
 
 	private Connection connetti(boolean connessioneAvvenuta) throws ClassNotFoundException {
-	       
 	       Connection connect = null;
 	       
 	       String url = "jdbc:postgresql://localhost/Eventi_Avversi";
