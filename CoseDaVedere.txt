@@ -1,2 +1,8 @@
 Inserire voce CV per query ricerca per nome in registrazione cittadino: 
 	se il nome corrisponde ad un nome di cv viene usato quello senno errore
+	
+Inserire:
+	Cittadini
+	CV
+	
+Comune provincia, regione come valori del cv e indirizzo locale

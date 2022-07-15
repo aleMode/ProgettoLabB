@@ -5,6 +5,7 @@ import java.rmi.RemoteException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 public interface ServerMainInterface extends Remote{
 	boolean usernameTaken(String user) throws RemoteException, SQLException;
@@ -13,7 +14,7 @@ public interface ServerMainInterface extends Remote{
 	boolean nomeCVTaken(String nomeCV) throws RemoteException, SQLException;
 	//boolean nomeCVReg(String nomeCV) throws RemoteException;
 	boolean userPassLogin(String user, String pwd) throws RemoteException, SQLException;
-	HashMap<String, ArrayList<String>> ricercaCVnome(String nome) throws RemoteException;
-	HashMap<String, ArrayList<String>> ricercaCVcomtip(String comune, String tipo) throws RemoteException;
+	List<CV> ricercaCVnome(String nome) throws RemoteException, SQLException;
+	List<CV> ricercaCVcomtip(String comune, String tipo) throws RemoteException, SQLException;
 	
 }

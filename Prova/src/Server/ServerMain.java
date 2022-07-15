@@ -11,6 +11,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 public class ServerMain extends UnicastRemoteObject implements ServerMainInterface{
 	private static final long serialVersionUID = 1L;
@@ -131,15 +132,31 @@ public class ServerMain extends UnicastRemoteObject implements ServerMainInterfa
 	}
 
 	@Override
-	public HashMap<String, ArrayList<String>> ricercaCVnome(String nome) throws RemoteException {
-		// TODO Auto-generated method stub
-		return null;
+	public List<CV> ricercaCVnome(String nome) throws RemoteException, SQLException {
+		List<CV> results = new ArrayList<CV>();		
+		Statement statement = ServerMain.getStatement();
+		
+		ResultSet rs = statement.executeQuery("SELECT * FROM Centri_Vaccinali WHERE Nome LIKE '%"+nome+"%'");
+		
+		while(rs.next()) {
+			results.add(new CV(rs.getString("Nome"), rs.getString("Indirizzo"), rs.getInt("CAP"), rs.getString("Comune"), rs.getString("Provincia"), rs.getString("Regione"), rs.getString("Tipo")));
+		}
+		
+		return results;
 	}
 
 	@Override
-	public HashMap<String, ArrayList<String>> ricercaCVcomtip(String comune, String tipo) throws RemoteException {
-		// TODO Auto-generated method stub
-		return null;
+	public List<CV> ricercaCVcomtip(String comune, String tipo) throws RemoteException, SQLException {
+		List<CV> results = new ArrayList<CV>();		
+		Statement statement = ServerMain.getStatement();
+		
+		ResultSet rs = statement.executeQuery("SELECT * FROM Centri_Vaccinali WHERE Comune LIKE '%"+comune+"%' AND Tipo = " + tipo);
+		
+		while(rs.next()) {
+			results.add(new CV(rs.getString("Nome"), rs.getString("Indirizzo"), rs.getInt("CAP"), rs.getString("Comune"), rs.getString("Provincia"), rs.getString("Regione"), rs.getString("Tipo")));
+		}
+		
+		return results;
 	}
 
 
