@@ -9,8 +9,26 @@ Comune provincia, regione come valori del cv e indirizzo locale
 
 levare generalità
 
-1-Setup client rmi
+1-Setup client rmi OK
 2-Mettere nel layout le funzioni per chiamare le query
 3-Funzioni per la correttezza degli inserimenti
 4-sistemare layout finale
 sistemare le classi in modo che abbiano senso
+
+Ale 1-3
+Matteo 4-6
+Alvaro 7-9
+Sonia 10-12
+
+1
+2 StartPage ok, da rivedere layout
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12 FinalPage ok, da rivedere layout
