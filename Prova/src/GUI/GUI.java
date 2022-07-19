@@ -1,6 +1,10 @@
 package GUI;
 
 import java.awt.CardLayout;
+import java.rmi.NotBoundException;
+import java.rmi.RemoteException;
+import java.rmi.registry.LocateRegistry;
+import java.rmi.registry.Registry;
 
 import javax.swing.BorderFactory;
 import javax.swing.JFrame;
@@ -69,13 +73,22 @@ public class GUI {
     }
 	
 	public static void main(String[] args) {
-		 SwingUtilities.invokeLater(new Runnable()
-	        {
-	            public void run()
-	            {
-	                new GUI().displayGUI();
-	            }
-	        });
+		
+		Registry registro;
+		GUI stub;
+		try{
+			registro = LocateRegistry.getRegistry(6969);
+			stub = (GUI) registro.lookup("ServerCV");
+		}catch(Exception e) {
+			System.err.println("Errore: " + e.toString());
+		}
+		 
+		
+		SwingUtilities.invokeLater(new Runnable(){
+			public void run() {
+				new GUI().displayGUI();
+	        }
+	    });
 	}
 
 }
