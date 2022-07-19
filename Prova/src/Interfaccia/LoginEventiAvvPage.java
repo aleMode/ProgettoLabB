@@ -35,14 +35,9 @@ public class LoginEventiAvvPage extends JPanel {
 		setLayout(new GridBagLayout());
 		GridBagConstraints c = new GridBagConstraints();
 		
-<<<<<<< HEAD
-		JButton back = new JButton("Back");
-=======
-		
 		JButton back = new JButton("Indietro");
 		back.setBackground(new Color(255, 255, 204));
 		back.setFont(new Font("Calibri", Font.PLAIN, 11));
->>>>>>> refs/remotes/origin/FixLayout
 		back.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				CardLayout cardLayout = (CardLayout) contentPane.getLayout();
