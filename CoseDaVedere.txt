@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 Inserire voce CV per query ricerca per nome in registrazione cittadino: 
 	se il nome corrisponde ad un nome di cv viene usato quello senno errore
 	
@@ -9,17 +8,8 @@ Inserire:
 Comune provincia, regione come valori del cv e indirizzo locale
 
 levare generalità
-=======
-1 Da Fare
-2 Fatto;
-3 Fatto;	
-4 Alvaro
-5 Fatto;
-6 Fatto;
-7 Fatto;
-8 Fatto;
-9 Fatto;
-10 Fatto;
-11 Fatto;
-12 Fatto;
->>>>>>> refs/remotes/origin/FixLayout
+
+1-Setup client rmi
+2-Mettere nel layout le funzioni per chiamare le query
+3-Funzioni per la correttezza degli inserimenti
+4-sistemare layout finale
