@@ -11,6 +11,10 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JTextField;
+
+import GUI.GUI;
+import Server.ServerMainInterface;
+
 import javax.swing.JLabel;
 
 public class RicercaCVPage extends JPanel {
@@ -21,7 +25,7 @@ public class RicercaCVPage extends JPanel {
 	private JTextField textField_1;
 	private JTextField textField_2;
 
-	public RicercaCVPage(JPanel cardStack) {
+	public RicercaCVPage(JPanel cardStack, ServerMainInterface stub) {
 		
 		contentPane = cardStack;
 		

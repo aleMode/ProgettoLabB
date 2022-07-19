@@ -6,6 +6,10 @@ import java.awt.Dimension;
 import java.awt.Font;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
+
+import GUI.GUI;
+import Server.ServerMainInterface;
+
 import javax.swing.JButton;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
@@ -18,7 +22,7 @@ public class FinalPage extends JPanel {
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 
-	public FinalPage(JPanel cardStack) {
+	public FinalPage(JPanel cardStack, ServerMainInterface stub) {
 		contentPane = cardStack;
 		
 		setBackground(new Color(153, 255, 255));

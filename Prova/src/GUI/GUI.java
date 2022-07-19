@@ -12,6 +12,7 @@ import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 
 import Interfaccia.*;
+import Server.ServerMainInterface;
 
 public class GUI {
 
@@ -29,7 +30,7 @@ public class GUI {
 	private RegistraVaccinatoPage registraVaccinatoPage;
 	private FinalPage finalPage;
 	
-	private void displayGUI()
+	private void displayGUI(ServerMainInterface stub)
     {
         JFrame frame = new JFrame("Card Layout Example");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -39,18 +40,18 @@ public class GUI {
         cardLayout = new PageViewer();
         contentPane.setLayout(cardLayout);
         
-        startPage = new StartPage(contentPane);
-        osLoginPage = new OSLoginPage(contentPane);
-    	menuOSPage = new MenuOSPage(contentPane);
-    	menuCittPage = new MenuCittPage(contentPane);
-    	ricercaCVPage = new RicercaCVPage(contentPane);
-    	risultatiCVPage = new RisultatiCVPage(contentPane);
-    	iscrizioneCittCVPage = new IscrizioneCittCVPage(contentPane);
-    	loginEventiAvvPage = new LoginEventiAvvPage(contentPane);
-    	eventiAvvPage = new EventiAvvPage(contentPane);
-    	registraCVPage = new RegistraCVPage(contentPane);
-    	registraVaccinatoPage = new RegistraVaccinatoPage(contentPane);
-    	finalPage = new FinalPage(contentPane);
+        startPage = new StartPage(contentPane, stub);
+        osLoginPage = new OSLoginPage(contentPane, stub);
+    	menuOSPage = new MenuOSPage(contentPane, stub);
+    	menuCittPage = new MenuCittPage(contentPane, stub);
+    	ricercaCVPage = new RicercaCVPage(contentPane, stub);
+    	risultatiCVPage = new RisultatiCVPage(contentPane, stub);
+    	iscrizioneCittCVPage = new IscrizioneCittCVPage(contentPane, stub);
+    	loginEventiAvvPage = new LoginEventiAvvPage(contentPane, stub);
+    	eventiAvvPage = new EventiAvvPage(contentPane, stub);
+    	registraCVPage = new RegistraCVPage(contentPane, stub);
+    	registraVaccinatoPage = new RegistraVaccinatoPage(contentPane, stub);
+    	finalPage = new FinalPage(contentPane, stub);
         
         contentPane.add(startPage, "startPage"); 
         contentPane.add(osLoginPage, "osLogin"); 
@@ -75,18 +76,18 @@ public class GUI {
 	public static void main(String[] args) {
 		
 		Registry registro;
-		GUI stub;
+		ServerMainInterface stubtmp = null;
 		try{
 			registro = LocateRegistry.getRegistry(6969);
-			stub = (GUI) registro.lookup("ServerCV");
+			stubtmp = (ServerMainInterface) registro.lookup("ServerCV");
 		}catch(Exception e) {
 			System.err.println("Errore: " + e.toString());
 		}
 		 
-		
+		final ServerMainInterface stub = stubtmp;
 		SwingUtilities.invokeLater(new Runnable(){
 			public void run() {
-				new GUI().displayGUI();
+				new GUI().displayGUI(stub);
 	        }
 	    });
 	}

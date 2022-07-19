@@ -3,6 +3,10 @@ package Interfaccia;
 import javax.swing.JPanel;
 import javax.swing.JButton;
 import javax.swing.JTextArea;
+
+import GUI.GUI;
+import Server.ServerMainInterface;
+
 import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -18,7 +22,7 @@ public class StartPage extends JPanel {
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	
-	public StartPage(JPanel cardStack) {
+	public StartPage(JPanel cardStack, ServerMainInterface stub) {
 		contentPane = cardStack;
 		
 		setBackground(new Color(153, 255, 255));

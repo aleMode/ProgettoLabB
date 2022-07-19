@@ -10,20 +10,20 @@ Comune provincia, regione come valori del cv e indirizzo locale
 levare generalità
 
 1-Setup client rmi OK
-2-Mettere nel layout le funzioni per chiamare le query
+2-Mettere nel layout le funzioni per chiamare le query (chiamare le variabili con tipo+Nome, es btnRegistra )
 3-Funzioni per la correttezza degli inserimenti
 4-sistemare layout finale
-sistemare le classi in modo che abbiano senso
+5-sistemare le classi in modo che abbiano senso
 
 Ale 1-3
 Matteo 4-6
 Alvaro 7-9
 Sonia 10-12
 
-1
+1 EventiAvvPage ok, rendere idsegnalazione finale con file locale
 2 StartPage ok, da rivedere layout
 3
-4
+4 Fare query che ritorni cv di chi fa il login
 5
 6
 7

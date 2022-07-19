@@ -14,11 +14,14 @@ import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JTextField;
 
+import GUI.GUI;
+import Server.ServerMainInterface;
+
 public class RegistraVaccinatoPage extends JPanel {
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 
-	public RegistraVaccinatoPage(JPanel cardStack) {
+	public RegistraVaccinatoPage(JPanel cardStack, ServerMainInterface stub) {
 		
 		contentPane = cardStack;
 		

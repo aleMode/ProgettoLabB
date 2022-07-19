@@ -23,6 +23,8 @@ public class ServerMain extends UnicastRemoteObject implements ServerMainInterfa
 	String password = "admin";
 	static Connection connect = null;
 	
+	private int IDsegnalazione = 0;
+	
 	protected ServerMain() throws RemoteException {
 		super();
 	}
@@ -208,6 +210,11 @@ public class ServerMain extends UnicastRemoteObject implements ServerMainInterfa
 		}
 		
 		return true;
+	}
+
+	@Override
+	public synchronized int getIDSegnalazione() throws RemoteException {
+		return ++IDsegnalazione;
 	}
 
 

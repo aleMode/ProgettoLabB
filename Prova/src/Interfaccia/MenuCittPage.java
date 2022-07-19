@@ -9,6 +9,10 @@ import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
 import javax.swing.JTextArea;
+
+import GUI.GUI;
+import Server.ServerMainInterface;
+
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -19,7 +23,7 @@ public class MenuCittPage extends JPanel {
 	private JPanel contentPane;
 	
 	
-	public MenuCittPage(JPanel cardStack) {
+	public MenuCittPage(JPanel cardStack, ServerMainInterface stub) {
 		
 		contentPane = cardStack;
 		

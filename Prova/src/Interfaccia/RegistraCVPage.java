@@ -13,6 +13,10 @@ import javax.swing.JPanel;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
+
+import GUI.GUI;
+import Server.ServerMainInterface;
+
 import javax.swing.JList;
 
 public class RegistraCVPage extends JPanel {
@@ -21,7 +25,7 @@ public class RegistraCVPage extends JPanel {
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	
-	public RegistraCVPage(JPanel cardStack) {
+	public RegistraCVPage(JPanel cardStack, ServerMainInterface stub) {
 		 
 		contentPane = cardStack;
 		

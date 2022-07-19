@@ -11,6 +11,10 @@ import javax.swing.JPanel;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
+
+import GUI.GUI;
+import Server.ServerMainInterface;
+
 import javax.swing.JPasswordField;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -28,7 +32,7 @@ public class IscrizioneCittCVPage extends JPanel {
 	private JPasswordField passwordField;
 	private JPasswordField passwordField_1;
 
-	public IscrizioneCittCVPage(JPanel cardStack) {
+	public IscrizioneCittCVPage(JPanel cardStack, ServerMainInterface stub) {
 		
 		contentPane = cardStack ;
 		

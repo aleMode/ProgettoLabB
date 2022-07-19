@@ -8,6 +8,10 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import GUI.GUI;
+import Server.ServerMainInterface;
+
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
@@ -28,7 +32,7 @@ public class LoginEventiAvvPage extends JPanel {
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 
-	public LoginEventiAvvPage(JPanel cardStack) {
+	public LoginEventiAvvPage(JPanel cardStack, ServerMainInterface stub) {
 		contentPane = cardStack;
 
 		setBackground(new Color(153, 255, 255));

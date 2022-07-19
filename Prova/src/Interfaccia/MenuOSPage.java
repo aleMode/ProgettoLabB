@@ -5,6 +5,10 @@ import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import javax.swing.JTextArea;
+
+import GUI.GUI;
+import Server.ServerMainInterface;
+
 import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -18,7 +22,7 @@ public class MenuOSPage extends JPanel {
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 
-	public MenuOSPage(JPanel cardStack) {
+	public MenuOSPage(JPanel cardStack, ServerMainInterface stub) {
 		contentPane = cardStack;
 		 
 		setBackground(new Color(153, 255, 255));

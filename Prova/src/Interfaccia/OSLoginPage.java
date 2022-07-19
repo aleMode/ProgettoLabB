@@ -4,6 +4,10 @@ import java.awt.*;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
+
+import GUI.GUI;
+import Server.ServerMainInterface;
+
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -17,7 +21,7 @@ public class OSLoginPage extends JPanel {
 	private JPasswordField passwordField;
 	
 	
-	public OSLoginPage(JPanel cardStack) {
+	public OSLoginPage(JPanel cardStack, ServerMainInterface stub) {
 
 		contentPane = cardStack;
 		 

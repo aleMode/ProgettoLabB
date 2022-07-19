@@ -13,12 +13,15 @@ import javax.swing.JList;
 import javax.swing.JLabel;
 import javax.swing.JTextPane;
 
+import GUI.GUI;
+import Server.ServerMainInterface;
+
 public class RisultatiCVPage extends JPanel {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	
-	public RisultatiCVPage(JPanel cardStack) {
+	public RisultatiCVPage(JPanel cardStack, ServerMainInterface stub) {
 		
 		contentPane = cardStack;
 		
