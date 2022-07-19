@@ -6,3 +6,5 @@ Inserire:
 	CV
 	
 Comune provincia, regione come valori del cv e indirizzo locale
+
+levare generalità

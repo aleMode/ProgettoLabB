@@ -10,7 +10,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.Date;
 import java.util.List;
 
 public class ServerMain extends UnicastRemoteObject implements ServerMainInterface{
@@ -53,12 +53,11 @@ public class ServerMain extends UnicastRemoteObject implements ServerMainInterfa
 			  System.out.println("Si è verificato un problema!");
 		   }
 	
-		Registry reg = LocateRegistry.createRegistry(8999);
+		Registry reg = LocateRegistry.createRegistry(6969);
 		reg.rebind("ServerCV", s);
 	}
 	
 	public static Statement getStatement() throws SQLException {
-		
 		if (statement == null) {
 			statement = connect.createStatement();
 		}
@@ -157,6 +156,58 @@ public class ServerMain extends UnicastRemoteObject implements ServerMainInterfa
 		}
 		
 		return results;
+	}
+
+	@Override
+	public boolean inserisciEA(String nomeCV, String nomeEvento, int valoreEvento, String note, int idSegnalazione) throws RemoteException, SQLException {
+		Statement statement = ServerMain.getStatement();
+		
+		try{
+			ResultSet rs = statement.executeQuery("INSERT INTO Eventi_Avversi (IDSegnalazione, NomeEvento, ValoreEvento, NomeCV, Note) VALUES (" + idSegnalazione + "," + nomeEvento + "," + valoreEvento + "," + nomeCV + "," + note + ");");
+		} catch(Exception e) {
+			return false;
+		}
+		
+		return true;
+	}
+
+	@Override
+	public boolean inserisciCV(String nome, String indirizzoLoc, int cap, String comune, String provincia, String regione, String tipo) throws RemoteException, SQLException {
+		Statement statement = ServerMain.getStatement();
+		
+		try{
+			ResultSet rs = statement.executeQuery("INSERT INTO Centri_Vaccinali (Nome, Indirizzo, Comune, CAP, Regione, Provincia, Tipo) VALUES (" + nome + "," + indirizzoLoc + "," + comune + "," + cap + "," + regione + "," + provincia + "," + tipo + ");" );
+		} catch(Exception e) {
+			return false;
+		}
+		
+		return true;
+	}
+
+	@Override
+	public boolean inserisciVacc(String codFisc, String nomeCV, Date dataVaccino, String nomeVaccino, int IDvaccino) throws RemoteException, SQLException {
+		Statement statement = ServerMain.getStatement();
+		
+		try{
+			ResultSet rs = statement.executeQuery("INSERT INTO Cittadini_Vaccinati (ID_vaccino, NomeVaccino, DataVaccino, NomeCV, CodiceFiscale) VALUES (" + IDvaccino + "," + nomeVaccino + "," + dataVaccino + "," + nomeCV + "," + codFisc + ");");
+		} catch(Exception e) {
+			return false;
+		}
+		
+		return true;
+	}
+
+	@Override
+	public boolean registraVacc(int IDvaccino, String email, String username, String password) throws RemoteException, SQLException{
+		Statement statement = ServerMain.getStatement();
+	
+		try{
+			ResultSet rs = statement.executeQuery("INSERT INTO Cittadini_Registrati (ID_vaccino, Email, Username, Password) VALUES (" + IDvaccino + "," + email + "," + user + "," + password + ");");
+		} catch(Exception e) {
+			return false;
+		}
+		
+		return true;
 	}
 
 
