@@ -13,3 +13,4 @@ levare generalità
 2-Mettere nel layout le funzioni per chiamare le query
 3-Funzioni per la correttezza degli inserimenti
 4-sistemare layout finale
+sistemare le classi in modo che abbiano senso
