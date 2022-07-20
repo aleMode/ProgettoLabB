@@ -17,24 +17,18 @@ import Server.ServerMainInterface;
 
 import javax.swing.JPasswordField;
 import java.awt.event.ActionListener;
+import java.rmi.RemoteException;
+import java.sql.SQLException;
 import java.awt.event.ActionEvent;
 
 public class IscrizioneCittCVPage extends JPanel {
 	
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
-	private JTextField textField_3;
-	private JTextField textField_4;
-	private JTextField textField_5;
-	private JPasswordField passwordField;
-	private JPasswordField passwordField_1;
 
 	public IscrizioneCittCVPage(JPanel cardStack, ServerMainInterface stub) {
 		
-		contentPane = cardStack ;
+		contentPane = cardStack;
 		
 		setBackground(new Color(153, 255, 255)); 
 		setLayout(new GridBagLayout());
@@ -54,222 +48,279 @@ public class IscrizioneCittCVPage extends JPanel {
 		c.weightx=1;
 		add(btnNewButton,c);
 
-		JLabel lblNewLabel = new JLabel();
-		lblNewLabel.setBackground(new Color(153, 255, 255));
-		lblNewLabel.setFont(new Font("Calibri", Font.PLAIN, 14));
-		lblNewLabel.setText("INSERIRE I DATI RICHIESTI:");
+		JLabel lblInserireDati = new JLabel();
+		lblInserireDati.setBackground(new Color(153, 255, 255));
+		lblInserireDati.setFont(new Font("Calibri", Font.PLAIN, 14));
+		lblInserireDati.setText("Inserire i dati richiesti:");
 		c.ipady=0;
 		c.gridx=1;
 		c.gridy=1;
 		c.weighty=0.6;
-		add(lblNewLabel,c);
+		add(lblInserireDati,c);
 
-		JLabel lblNewLabel_1 = new JLabel();
-		lblNewLabel_1.setBounds(30, 75, 61, 16);
-		lblNewLabel_1.setBackground(new Color(153, 255, 255));
-		lblNewLabel_1.setFont(new Font("Calibri", Font.PLAIN, 14));
-		lblNewLabel_1.setText("NOME");
+		JLabel lblNome = new JLabel();
+		lblNome.setBounds(30, 75, 61, 16);
+		lblNome.setBackground(new Color(153, 255, 255));
+		lblNome.setFont(new Font("Calibri", Font.PLAIN, 14));
+		lblNome.setText("Nome");
 		c.ipady=0;
 		c.gridx=1;
 		c.gridy=2;
 		c.weighty=0.4;
 		c.anchor=GridBagConstraints.NORTH;
-		add(lblNewLabel_1, c);
+		add(lblNome, c);
 
-		JLabel lblNewLabel_2 = new JLabel();
-		lblNewLabel_2.setBounds(296, 75, 74, 16);
-		lblNewLabel_2.setBackground(new Color(153, 255, 255));
-		lblNewLabel_2.setFont(new Font("Calibri", Font.PLAIN, 14));
-		lblNewLabel_2.setText("COGNOME");
+		JLabel lblCognome = new JLabel();
+		lblCognome.setBounds(296, 75, 74, 16);
+		lblCognome.setBackground(new Color(153, 255, 255));
+		lblCognome.setFont(new Font("Calibri", Font.PLAIN, 14));
+		lblCognome.setText("Cognome");
 		c.ipady=0;
 		c.gridx=1;
 		c.gridy=3;
 		c.weighty=0.4;
 		c.anchor=GridBagConstraints.NORTH;
-		add(lblNewLabel_2, c);
+		add(lblCognome, c);
 
-		JLabel lblNewLabel_3 = new JLabel();
-		lblNewLabel_3.setBounds(30, 130, 117, 16);
-		lblNewLabel_3.setBackground(new Color(153, 255, 255));
-		lblNewLabel_3.setFont(new Font("Calibri", Font.PLAIN, 14));
-		lblNewLabel_3.setText("CODICE FISCALE");
+		JLabel lblCodiceFiscale = new JLabel();
+		lblCodiceFiscale.setBounds(30, 130, 117, 16);
+		lblCodiceFiscale.setBackground(new Color(153, 255, 255));
+		lblCodiceFiscale.setFont(new Font("Calibri", Font.PLAIN, 14));
+		lblCodiceFiscale.setText("Codice Fiscale");
 		c.ipady=0;
 		c.gridx=1;
 		c.gridy=4;
 		c.weighty=0.4;
 		c.anchor=GridBagConstraints.NORTH;
-		add(lblNewLabel_3, c);
+		add(lblCodiceFiscale, c);
 
-		JLabel lblNewLabel_4 = new JLabel();
-		lblNewLabel_4.setBounds(296, 130, 61, 16);
-		lblNewLabel_4.setBackground(new Color(153, 255, 255));
-		lblNewLabel_4.setFont(new Font("Calibri", Font.PLAIN, 14));
-		lblNewLabel_4.setText("EMAIL");
+		JLabel lblEmail = new JLabel();
+		lblEmail.setBounds(296, 130, 61, 16);
+		lblEmail.setBackground(new Color(153, 255, 255));
+		lblEmail.setFont(new Font("Calibri", Font.PLAIN, 14));
+		lblEmail.setText("Email");
 		c.ipady=0;
 		c.gridx=1;
 		c.gridy=5;
 		c.weighty=0.4;
 		c.anchor=GridBagConstraints.NORTH;
-		add(lblNewLabel_4, c);
+		add(lblEmail, c);
 
-		JLabel lblNewLabel_5 = new JLabel();
-		lblNewLabel_5.setBounds(30, 187, 79, 16);
-		lblNewLabel_5.setBackground(new Color(153, 255, 255));
-		lblNewLabel_5.setFont(new Font("Calibri", Font.PLAIN, 14));
-		lblNewLabel_5.setText("IDVACCINO");
+		JLabel lblIDvaccino = new JLabel();
+		lblIDvaccino.setBounds(30, 187, 79, 16);
+		lblIDvaccino.setBackground(new Color(153, 255, 255));
+		lblIDvaccino.setFont(new Font("Calibri", Font.PLAIN, 14));
+		lblIDvaccino.setText("ID Vaccino");
 		c.ipady=0;
 		c.gridx=1;
 		c.gridy=6;
 		c.weighty=0.4;
 		c.anchor=GridBagConstraints.NORTH;
-		add(lblNewLabel_5, c);
+		add(lblIDvaccino, c);
 
-		JLabel lblNewLabel_6 = new JLabel();
-		lblNewLabel_6.setBounds(296, 187, 74, 16);
-		lblNewLabel_6.setBackground(new Color(153, 255, 255));
-		lblNewLabel_6.setFont(new Font("Calibri", Font.PLAIN, 14));
-		lblNewLabel_6.setText("USERNOME");
+		JLabel lblUsername = new JLabel();
+		lblUsername.setBounds(296, 187, 74, 16);
+		lblUsername.setBackground(new Color(153, 255, 255));
+		lblUsername.setFont(new Font("Calibri", Font.PLAIN, 14));
+		lblUsername.setText("Username");
 		c.ipady=0;
 		c.gridx=1;
 		c.gridy=7;
 		c.weighty=0.4;
 		c.anchor=GridBagConstraints.NORTH;
-		add(lblNewLabel_6, c);
+		add(lblUsername, c);
 
-		JLabel lblNewLabel_7 = new JLabel();
-		lblNewLabel_7.setBackground(new Color(153, 255, 255));
-		lblNewLabel_7.setFont(new Font("Calibri", Font.PLAIN, 14));
-		lblNewLabel_7.setText("PASSWORD");
+		JLabel lblPassword = new JLabel();
+		lblPassword.setBackground(new Color(153, 255, 255));
+		lblPassword.setFont(new Font("Calibri", Font.PLAIN, 14));
+		lblPassword.setText("Password");
 		c.ipady=0;
 		c.gridx=1;
 		c.gridy=8;
 		c.weighty=0.4;
 		c.anchor=GridBagConstraints.NORTH;
-		add(lblNewLabel_7, c);
+		add(lblPassword, c);
 
-		JLabel lblNewLabel_8 = new JLabel();
-		lblNewLabel_8.setBackground(new Color(153, 255, 255));
-		lblNewLabel_8.setFont(new Font("Calibri", Font.PLAIN, 14));
-		lblNewLabel_8.setText("RIPETI PASSWORD");
+		JLabel lblPassword2 = new JLabel();
+		lblPassword2.setBackground(new Color(153, 255, 255));
+		lblPassword2.setFont(new Font("Calibri", Font.PLAIN, 14));
+		lblPassword2.setText("Ripeti Password");
 		c.ipady=0;
 		c.gridx=1;
 		c.gridy=9;
 		c.weighty=0.4;
 		c.anchor=GridBagConstraints.NORTH;
-		add(lblNewLabel_8, c);
+		add(lblPassword2, c);
 
-		JButton btnNewButton_1 = new JButton("REGISTRA");
-		btnNewButton_1.addActionListener(new ActionListener() {
+		JTextField txfNome = new JTextField();
+		txfNome.setBounds(28, 92, 224, 26);
+		txfNome.setFont(new Font("Calibri", Font.PLAIN, 14));
+		c.ipady=0;
+		c.gridx=2;
+		c.gridy=2;
+		c.weighty=0.4;
+		c.anchor=GridBagConstraints.NORTH;
+		add(txfNome, c);
+		txfNome.setColumns(10);
+
+		JTextField txfCognome = new JTextField();
+		txfCognome.setBounds(28, 92, 224, 26);
+		txfCognome.setFont(new Font("Calibri", Font.PLAIN, 14));
+		c.ipady=0;
+		c.gridx=2;
+		c.gridy=3;
+		c.weighty=0.4;
+		c.anchor=GridBagConstraints.NORTH;
+		add(txfCognome, c);
+		txfCognome.setColumns(10);
+
+		JTextField txfCodiceFiscale = new JTextField();
+		txfCodiceFiscale.setBounds(28, 92, 224, 26);
+		txfCodiceFiscale.setFont(new Font("Calibri", Font.PLAIN, 14));
+		c.ipady=0;
+		c.gridx=2;
+		c.gridy=4;
+		c.weighty=0.4;
+		c.anchor=GridBagConstraints.NORTH;
+        add(txfCodiceFiscale, c);
+		txfCodiceFiscale.setColumns(10);
+
+		JTextField txfEmail = new JTextField();
+		txfEmail.setBounds(28, 92, 224, 26);
+		txfEmail.setFont(new Font("Calibri", Font.PLAIN, 14));
+		c.ipady=0;
+		c.gridx=2;
+		c.gridy=5;
+		c.weighty=0.4;
+		c.anchor=GridBagConstraints.NORTH;
+        add(txfEmail, c);
+		txfEmail.setColumns(10);
+
+		JTextField txfIDvaccino = new JTextField();
+		txfIDvaccino.setBounds(28, 92, 224, 26);
+		txfIDvaccino.setFont(new Font("Calibri", Font.PLAIN, 14));
+		c.ipady=0;
+		c.gridx=2;
+		c.gridy=6;
+		c.weighty=0.4;
+		c.anchor=GridBagConstraints.NORTH;
+		add(txfIDvaccino, c);
+		txfIDvaccino.setColumns(10);
+
+		JTextField txfUsername = new JTextField();
+		txfUsername.setBounds(28, 92, 224, 26);
+		txfUsername.setFont(new Font("Calibri", Font.PLAIN, 14));
+		c.ipady=0;
+		c.gridx=2;
+		c.gridy=7;
+		c.weighty=0.4;
+		c.anchor=GridBagConstraints.NORTH;
+		add(txfUsername, c);
+		txfUsername.setColumns(10);
+
+		JPasswordField pswField = new JPasswordField();
+		pswField.setFont(new Font("Calibri", Font.PLAIN, 14));
+		c.ipady=0;
+		c.gridx=2;
+		c.gridy=8;
+		c.weighty=0.4;
+		c.anchor=GridBagConstraints.NORTH;
+		add(pswField, c);
+		pswField.setColumns(10);
+
+		JPasswordField pswField2 = new JPasswordField();
+		txfNome.setFont(new Font("Calibri", Font.PLAIN, 14));
+		c.ipady=0;
+		c.gridx=2;
+		c.gridy=9;
+		c.weighty=0.4;
+		c.anchor=GridBagConstraints.NORTH;
+		add(pswField2, c);
+		pswField2.setColumns(10);
+		
+		JLabel lblError = new JLabel();
+		lblError.setBackground(new Color(153, 255, 255));
+		lblError.setFont(new Font("Calibri", Font.PLAIN, 14));
+		lblError.setText("Nessun Errore");
+		c.ipady=0;
+		c.gridx=1;
+		c.gridy=10;
+		c.gridwidth=2;
+		add(lblError, c);
+		c.gridwidth=1;
+		
+		JButton btnRegistra = new JButton("Registra");
+		btnRegistra.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				//inserisci funzione di registrazione
+				String email = txfEmail.getText();
+				try {
+					if(stub.emailTaken(email)) 	lblError.setText("Email in uso");
+					return;
+				} catch (Exception e1) {}
+				
+				String user = txfUsername.getText();
+				try {
+					if(stub.usernameTaken(user))  lblError.setText("Username in uso");
+					return;
+				} catch (Exception e1) {}
+				
+				String password = pswField.toString();
+				try {
+					if(!password.equals(pswField2.toString())) 	lblError.setText("Password diverse");
+					return;
+				} catch (Exception e1) {}
+				
+				String codFisc = txfCodiceFiscale.getText();
+				int id = (int) Integer.parseInt(txfIDvaccino.getText());
+				try {
+					if(stub.IDvaccinato(codFisc, id))  lblError.setText("ID o nome non validi");
+					return;
+				} catch (Exception e1) {}
+				
+				try {
+					stub.registraVacc(id, email, user, password);
+				} catch (RemoteException | SQLException e1) {}
+				txfNome.setText("");
+				txfCognome.setText("");
+				txfCodiceFiscale.setText("");
+				txfEmail.setText("");
+				txfIDvaccino.setText("");
+				txfUsername.setText("");
+				pswField.setText("");
+				pswField2.setText("");
+				lblError.setText("Nessun Errore");
+				
+				
 				CardLayout cardLayout = (CardLayout) contentPane.getLayout();
 				cardLayout.show(contentPane,"finalPage");
 			}
 		});
-		btnNewButton_1.setBackground(new Color(51, 153, 204));
-		btnNewButton_1.setPreferredSize(new Dimension(150,50));
+		btnRegistra.setBackground(new Color(51, 153, 204));
+		btnRegistra.setPreferredSize(new Dimension(150,50));
 		c.gridx=1;
-		c.gridy=10;
+		c.gridy=11;
 		c.insets= new Insets(0,5,0,5); //t,l,b,r
-		add(btnNewButton_1, c);
+		add(btnRegistra, c);
 
-		textField = new JTextField();
-		textField.setBounds(28, 92, 224, 26);
-		textField.setFont(new Font("Calibri", Font.PLAIN, 14));
-		c.ipady=0;
-		c.gridx=2;
-		c.gridy=2;
-		c.weighty=0.4;
-		c.anchor=GridBagConstraints.NORTH;
-		add(textField, c);
-		textField.setColumns(10);
-
-		textField_1 = new JTextField();
-		textField_1.setBounds(28, 92, 224, 26);
-		textField_1.setFont(new Font("Calibri", Font.PLAIN, 14));
-		c.ipady=0;
-		c.gridx=2;
-		c.gridy=3;
-		c.weighty=0.4;
-		c.anchor=GridBagConstraints.NORTH;
-		add(textField_1, c);
-		textField_1.setColumns(10);
-
-		textField_2 = new JTextField();
-		textField_2.setBounds(28, 92, 224, 26);
-		textField_2.setFont(new Font("Calibri", Font.PLAIN, 14));
-		c.ipady=0;
-		c.gridx=2;
-		c.gridy=4;
-		c.weighty=0.4;
-		c.anchor=GridBagConstraints.NORTH;
-        add(textField_2, c);
-		textField_2.setColumns(10);
-
-		textField_3 = new JTextField();
-		textField_3.setBounds(28, 92, 224, 26);
-		textField_3.setFont(new Font("Calibri", Font.PLAIN, 14));
-		c.ipady=0;
-		c.gridx=2;
-		c.gridy=5;
-		c.weighty=0.4;
-		c.anchor=GridBagConstraints.NORTH;
-        add(textField_3, c);
-		textField_3.setColumns(10);
-
-		textField_4 = new JTextField();
-		textField_4.setBounds(28, 92, 224, 26);
-		textField_4.setFont(new Font("Calibri", Font.PLAIN, 14));
-		c.ipady=0;
-		c.gridx=2;
-		c.gridy=6;
-		c.weighty=0.4;
-		c.anchor=GridBagConstraints.NORTH;
-		add(textField_4, c);
-		textField_4.setColumns(10);
-
-		textField_5 = new JTextField();
-		textField_5.setBounds(28, 92, 224, 26);
-		textField_5.setFont(new Font("Calibri", Font.PLAIN, 14));
-		c.ipady=0;
-		c.gridx=2;
-		c.gridy=7;
-		c.weighty=0.4;
-		c.anchor=GridBagConstraints.NORTH;
-		add(textField_5, c);
-		textField_5.setColumns(10);
-
-		passwordField = new JPasswordField();
-		passwordField.setFont(new Font("Calibri", Font.PLAIN, 14));
-		c.ipady=0;
-		c.gridx=2;
-		c.gridy=8;
-		c.weighty=0.4;
-		c.anchor=GridBagConstraints.NORTH;
-		add(passwordField, c);
-		passwordField.setColumns(10);
-
-		passwordField_1 = new JPasswordField();
-		textField.setFont(new Font("Calibri", Font.PLAIN, 14));
-		c.ipady=0;
-		c.gridx=2;
-		c.gridy=9;
-		c.weighty=0.4;
-		c.anchor=GridBagConstraints.NORTH;
-		add(passwordField_1, c);
-		passwordField_1.setColumns(10);
-
-		JButton btnNewButton_2 = new JButton("RIPRISTINA");
-		btnNewButton_2.addActionListener(new ActionListener() {
+		JButton btnRipristina = new JButton("Ripristina");
+		btnRipristina.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				//inserisci funzione di clear
+				txfNome.setText("");
+				txfCognome.setText("");
+				txfCodiceFiscale.setText("");
+				txfEmail.setText("");
+				txfIDvaccino.setText("");
+				txfUsername.setText("");
+				pswField.setText("");
+				pswField2.setText("");
+				lblError.setText("Nessun Errore");
 			}
 		});
-		btnNewButton_2.setBackground(new Color(51, 153, 204));
-		btnNewButton_2.setPreferredSize(new Dimension(150,50));
+		btnRipristina.setBackground(new Color(51, 153, 204));
+		btnRipristina.setPreferredSize(new Dimension(150,50));
 		c.gridx=2;
-		c.gridy=10;
-		add(btnNewButton_2, c);
+		c.gridy=11;
+		add(btnRipristina, c);
 
 	}
 }

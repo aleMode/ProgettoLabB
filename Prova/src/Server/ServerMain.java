@@ -131,6 +131,20 @@ public class ServerMain extends UnicastRemoteObject implements ServerMainInterfa
 				
 		return correct;
 	}
+	
+	@Override
+	public boolean IDvaccinato(String codFisc, int ID) throws RemoteException, SQLException {
+		boolean invalid = true;
+		
+		Statement statement = ServerMain.getStatement();
+		
+		ResultSet rs = statement.executeQuery("SELECT * FROM Cittadini_Vaccinati WHERE IDvaccino = " + ID +" AND Codice_Fiscale = " + codFisc);
+		
+		if(rs.next()) invalid = false;
+				
+		return invalid;
+
+	}
 
 	@Override
 	public List<CV> ricercaCVnome(String nome) throws RemoteException, SQLException {
@@ -216,6 +230,5 @@ public class ServerMain extends UnicastRemoteObject implements ServerMainInterfa
 	public synchronized int getIDSegnalazione() throws RemoteException {
 		return ++IDsegnalazione;
 	}
-
 
 }
