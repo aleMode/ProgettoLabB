@@ -23,7 +23,7 @@ Sonia 10-12
 1 EventiAvvPage ok, rendere idsegnalazione finale con file locale
 2 StartPage ok, da rivedere layout
 3 IscrizioneCittCVPage ok,controllare query IDinvalid
-4 Fare query che ritorni cv di chi fa il login
+4 Fatta query che ritorni cv di chi fa il login, controllare il nome delle colonne
 5
 6
 7
