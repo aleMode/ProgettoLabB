@@ -49,17 +49,16 @@ public class EventiAvvPage extends JPanel {
 		c.gridy=0;
 		add(btnBack, c);
 		
-		JLabel labelInserisciDati = new JLabel();
-		labelInserisciDati.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		labelInserisciDati.setBackground(new Color(51, 153, 204));
-		labelInserisciDati.setText("Inserisci i dati richiesti:");
+		JLabel lblInserisciDati = new JLabel();
+		lblInserisciDati.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		lblInserisciDati.setBackground(new Color(51, 153, 204));
+		lblInserisciDati.setText("Inserisci i dati richiesti:");
 		c.gridx=1;
 		c.gridy=1;
 		c.gridwidth = 2;
 		c.weighty = 0.1;
-		add(labelInserisciDati, c);
+		add(lblInserisciDati, c);
 		c.gridwidth = 1;
-		add(btnBack);
 		
 		JLabel lblEvento = new JLabel();
 		lblEvento.setFont(new Font("Tahoma", Font.PLAIN, 12));
@@ -68,7 +67,6 @@ public class EventiAvvPage extends JPanel {
 		c.gridx=1;
 		c.gridy=2;
 		add(lblEvento,c);
-		
 		
 		JComboBox<String> cbbSintomi = new JComboBox<String>(sintomi);
 		c.gridx=2;

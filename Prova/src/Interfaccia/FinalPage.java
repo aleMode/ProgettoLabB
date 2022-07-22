@@ -6,11 +6,14 @@ import java.awt.Dimension;
 import java.awt.Font;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
+import javax.swing.SwingUtilities;
 
 import GUI.GUI;
 import Server.ServerMainInterface;
 
 import javax.swing.JButton;
+import javax.swing.JFrame;
+
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
@@ -78,7 +81,8 @@ public class FinalPage extends JPanel {
 		btnEsci.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (e.getSource() == btnEsci) { 
-					//funzione di uscita					
+					JFrame topFrame = (JFrame) SwingUtilities.getWindowAncestor(contentPane);
+					topFrame.dispose();
 				}}
 			}
 		);

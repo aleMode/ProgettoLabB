@@ -34,7 +34,7 @@ public class IscrizioneCittCVPage extends JPanel {
 		setLayout(new GridBagLayout());
 		GridBagConstraints c = new GridBagConstraints();
 		
-		JButton btnNewButton = new JButton("BACK");
+		JButton btnNewButton = new JButton("Indietro");
 		btnNewButton.setBackground(new Color(255, 255, 204));
 		btnNewButton.setFont(new Font("Calibri", Font.PLAIN, 11));
 		btnNewButton.addActionListener(new ActionListener() {
