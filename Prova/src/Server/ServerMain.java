@@ -232,12 +232,12 @@ public class ServerMain extends UnicastRemoteObject implements ServerMainInterfa
 	}
 
 	@Override
-	public String getCVfromID(int ID) throws RemoteException, SQLException {
+	public String getCVfromUser(String user) throws RemoteException, SQLException {
 		String CV = "";
 		
 		Statement statement = ServerMain.getStatement();
 		
-		ResultSet rs = statement.executeQuery("SELECT NomeCV FROM Cittadini_Vaccinati WHERE IDvaccino = " + ID);
+		ResultSet rs = statement.executeQuery("SELECT NomeCV FROM Cittadini_Vaccinati JOIN Cittadini_Registrati WHERE Username = " + user);
 		
 		if(rs.next()) CV = rs.getString("NomeCV");
 				

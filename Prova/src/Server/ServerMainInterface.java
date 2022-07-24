@@ -26,5 +26,5 @@ public interface ServerMainInterface extends Remote{
 	boolean registraVacc(int IDvaccino, String email, String username, String password) throws RemoteException, SQLException;
 	
 	int getIDSegnalazione() throws RemoteException;
-	String getCVfromID(int ID) throws RemoteException, SQLException;
+	String getCVfromUser(String user) throws RemoteException, SQLException;
 }
