@@ -24,9 +24,9 @@ Sonia 10-12
 2 StartPage ok, da rivedere layout
 3 IscrizioneCittCVPage ok,controllare query IDinvalid
 4 LoginEventiAvvPage ok, controllare il nome delle colonne
-5
-6
-7
+5 MenuCittPage
+6 MenuOSPage
+7 OSLoginPage ok (Fare tabella con user e pwd degli op sanitari?)
 8
 9
 10
