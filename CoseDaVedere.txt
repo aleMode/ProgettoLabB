@@ -27,7 +27,7 @@ Sonia 10-12
 5 MenuCittPage
 6 MenuOSPage
 7 OSLoginPage ok (Fare tabella con user e pwd degli op sanitari?)
-8 
+8 RegistraCVPage ok
 9
 10
 11
