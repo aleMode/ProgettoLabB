@@ -3,10 +3,7 @@ package Interfaccia;
 import javax.swing.JPanel;
 import javax.swing.JButton;
 import javax.swing.JTextArea;
-
-import GUI.GUI;
 import Server.ServerMainInterface;
-
 import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -29,42 +26,42 @@ public class StartPage extends JPanel {
 		setLayout(new GridBagLayout());
 		GridBagConstraints c = new GridBagConstraints();
 		
-		JButton OpSButton = new JButton("Operatore sanitario");
-		OpSButton.addActionListener(new ActionListener() {
+		JButton btnOpS = new JButton("Operatore sanitario");
+		btnOpS.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				CardLayout cardLayout = (CardLayout) contentPane.getLayout();
 				cardLayout.show(contentPane,"osLogin");
 			}
 		});
-		OpSButton.setPreferredSize(new Dimension(150,50));
-		OpSButton.setBackground(new Color(51, 153, 204));
-		OpSButton.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		btnOpS.setPreferredSize(new Dimension(150,50));
+		btnOpS.setBackground(new Color(51, 153, 204));
+		btnOpS.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		c.gridx=1;
 		c.gridy=2;
 		c.weighty=0.2;
 		c.insets= new Insets(0,5,0,0); //t,l,b,r
-		add(OpSButton,c);
+		add(btnOpS,c);
 		
-		JButton CittButton = new JButton("Cittadini");
-		CittButton.addActionListener(new ActionListener() {
+		JButton btnCitt = new JButton("Cittadini");
+		btnCitt.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				CardLayout cardLayout = (CardLayout) contentPane.getLayout();
 				cardLayout.show(contentPane,"menuCitt");
 			}
 				
 		});
-		CittButton.setPreferredSize(new Dimension(150,50));
-		CittButton.setBackground(new Color(51, 153, 204));
-		CittButton.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		btnCitt.setPreferredSize(new Dimension(150,50));
+		btnCitt.setBackground(new Color(51, 153, 204));
+		btnCitt.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		c.gridx=0;
 		c.gridy=2;
 		c.weighty=0.2;
 		c.insets= new Insets(0,0,0,5);
-		add(CittButton,c);
+		add(btnCitt,c);
 
 		JTextArea txtrBenvenuto = new JTextArea();
 		txtrBenvenuto.setBackground(new Color(153, 255, 255));
-		OpSButton.setPreferredSize(new Dimension(150,50));
+		btnCitt.setPreferredSize(new Dimension(150,50));
 		txtrBenvenuto.setFont(new Font("Calibri", Font.BOLD, 60));
 		txtrBenvenuto.setEditable(false);
 		txtrBenvenuto.setText("Benvenuto!");

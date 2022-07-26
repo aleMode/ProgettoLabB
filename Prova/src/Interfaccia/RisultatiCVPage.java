@@ -9,11 +9,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JPanel;
 import javax.swing.JButton;
-import javax.swing.JList;
+import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JTextPane;
-
-import GUI.GUI;
 import Server.ServerMainInterface;
 
 public class RisultatiCVPage extends JPanel {
@@ -29,7 +27,7 @@ public class RisultatiCVPage extends JPanel {
 		setLayout(new GridBagLayout());
 		GridBagConstraints c = new GridBagConstraints();
 		
-		JButton btnBack = new JButton("BACK");
+		JButton btnBack = new JButton("Indietro");
 		btnBack.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				CardLayout cardLayout = (CardLayout) contentPane.getLayout();
@@ -40,7 +38,6 @@ public class RisultatiCVPage extends JPanel {
 		btnBack.setFont(new Font("Calibri", Font.PLAIN, 11));
 		c.gridx=0;
 		c.gridy=0;
-		c.weightx=1;
 		add(btnBack, c);
 
 		JLabel lblNewLabel = new JLabel("Centri vaccinali disponibili");
@@ -49,11 +46,10 @@ public class RisultatiCVPage extends JPanel {
 		c.gridwidth=3;
 		add(lblNewLabel);
 
-		JList list = new JList();
+		JComboBox<String> cbbCentriVaccinaliTrovati = new JComboBox<String>();
 		c.gridx=1;
-		c.gridy=2;			
-		c.gridwidth=3;
-		add(list, c);
+		c.gridy=2;
+		add(cbbCentriVaccinaliTrovati, c);
 
 		JLabel lblNewLabel_1 = new JLabel("Prospetto riassuntivo sintomi");
 		c.gridx=1;

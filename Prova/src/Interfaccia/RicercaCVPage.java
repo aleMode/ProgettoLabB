@@ -2,19 +2,17 @@ package Interfaccia;
 
 import java.awt.CardLayout;
 import java.awt.Color;
-import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import javax.swing.JPanel;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.rmi.RemoteException;
+import java.sql.SQLException;
 import java.awt.event.ActionEvent;
 import javax.swing.JTextField;
-
-import GUI.GUI;
 import Server.ServerMainInterface;
-
 import javax.swing.JLabel;
 
 public class RicercaCVPage extends JPanel {
@@ -33,7 +31,7 @@ public class RicercaCVPage extends JPanel {
 		setLayout(new GridBagLayout());
 		GridBagConstraints c = new GridBagConstraints();
 		 
-		JButton BtnBack = new JButton("BACK");
+		JButton BtnBack = new JButton("Indietro");
 		BtnBack.setBackground(new Color(255, 255, 204));
 		BtnBack.setFont(new Font("Calibri", Font.PLAIN, 11));
 		BtnBack.addActionListener(new ActionListener() {
@@ -42,7 +40,6 @@ public class RicercaCVPage extends JPanel {
 				cardLayout.show(contentPane,"menuCitt");
 			}
 		});
-		BtnBack.setPreferredSize(new Dimension(100,50));
 		c.gridx=0;
 		c.gridy=0;
 		c.weightx=1;
@@ -67,36 +64,40 @@ public class RicercaCVPage extends JPanel {
 		
 		textField = new JTextField();
 		c.weighty=0.1;
-		c.gridx=2;
-		c.gridy=2;
+		c.gridx=3;
+		c.gridy=1;
 		add(textField, c);
 		textField.setColumns(10);
 
 		JButton btnNewButton_1 = new JButton("Cerca");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				//funzione cerca
+				try {
+					stub.ricercaCVnome((String) textField.getText());
+				} catch (RemoteException | SQLException e1) {
+					e1.printStackTrace();
+				}
 				CardLayout cardLayout = (CardLayout) contentPane.getLayout();
 				cardLayout.show(contentPane,"risultatiCV");
 			}
 		});
 		c.weighty=0.1;
-		c.gridx=2;
-		c.gridy=3;
+		c.gridx=3;
+		c.gridy=2;
 		c.gridwidth=2;
 		add(btnNewButton_1,c);
 		
 		JLabel lblNewLabel_3 = new JLabel("Comune");
 		lblNewLabel_3.setFont(new Font("Calibri", Font.PLAIN, 14));
-		c.weighty=0.1;
+		//c.weighty=0.1;
 		c.gridx=2;
 		c.gridy=4;
 		add(lblNewLabel_3, c);
 		
 		textField_1 = new JTextField();
-		c.weighty=0.1;
-		c.gridx=2;
-		c.gridy=5;
+	    c.weighty=0.1;
+		c.gridx=3;
+		c.gridy=4;
 		add(textField_1, c);
 		textField_1.setColumns(10);
 		
@@ -109,18 +110,18 @@ public class RicercaCVPage extends JPanel {
 		
 		textField_2 = new JTextField();
 		c.weighty=0.05;
-		c.gridx=2;
-		c.gridy=7;
+		c.gridx=3;
+		c.gridy=6;
 		add(textField_2, c);
 		textField_2.setColumns(10);
 
-		JLabel lblNewLabel_1 = new JLabel("Ricerca per comune e tipo:");
+		JLabel lblNewLabel_1 = new JLabel("Ricerca per comune " + "e tipo:");
 		lblNewLabel_1.setFont(new Font("Calibri", Font.BOLD, 14));
 		c.anchor=GridBagConstraints.WEST;
 		c.weighty=0.1;
 		c.gridx=1;
 		c.gridy=4;
-		c.gridwidth=2;
+		//c.gridwidth=2;
 		add(lblNewLabel_1, c);
 		
 		c.anchor=GridBagConstraints.CENTER;
@@ -128,13 +129,19 @@ public class RicercaCVPage extends JPanel {
 		JButton btnNewButton_2 = new JButton("Cerca");
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				//funzione cerca
-				CardLayout cardLayout = (CardLayout) contentPane.getLayout();
-				cardLayout.show(contentPane,"risultatiCV");
+				try {
+					stub.ricercaCVcomtip((String) textField_1.getText(), (String) textField_2.getText());
+					CardLayout cardLayout = (CardLayout) contentPane.getLayout();
+					cardLayout.show(contentPane,"risultatiCV");
+				} catch (RemoteException e1) {
+					e1.printStackTrace();
+				} catch (SQLException e1) {
+					e1.printStackTrace();
+				}				
 			}
 		});
 		c.weighty=0.2;
-		c.gridx=2;
+		c.gridx=3;
 		c.gridy=8;
 		c.gridwidth=2;
 		add(btnNewButton_2,c);
