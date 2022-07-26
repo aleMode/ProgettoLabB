@@ -10,8 +10,11 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.rmi.RemoteException;
 import java.sql.SQLException;
+import java.util.List;
 import java.awt.event.ActionEvent;
 import javax.swing.JTextField;
+
+import Server.CV;
 import Server.ServerMainInterface;
 import javax.swing.JLabel;
 
@@ -22,6 +25,8 @@ public class RicercaCVPage extends JPanel {
 	private JTextField textField;
 	private JTextField textField_1;
 	private JTextField textField_2;
+	List<CV> risultatiCVnome;
+	List<CV> risultatiCVcomtip;
 
 	public RicercaCVPage(JPanel cardStack, ServerMainInterface stub) {
 		
@@ -73,12 +78,12 @@ public class RicercaCVPage extends JPanel {
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
-					stub.ricercaCVnome((String) textField.getText());
+					risultatiCVnome = stub.ricercaCVnome((String) textField.getText());
+				    CardLayout cardLayout = (CardLayout) contentPane.getLayout();
+				    cardLayout.show(contentPane,"risultatiCV");
 				} catch (RemoteException | SQLException e1) {
 					e1.printStackTrace();
-				}
-				CardLayout cardLayout = (CardLayout) contentPane.getLayout();
-				cardLayout.show(contentPane,"risultatiCV");
+				}	
 			}
 		});
 		c.weighty=0.1;
@@ -130,7 +135,7 @@ public class RicercaCVPage extends JPanel {
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
-					stub.ricercaCVcomtip((String) textField_1.getText(), (String) textField_2.getText());
+					risultatiCVcomtip = stub.ricercaCVcomtip((String) textField_1.getText(), (String) textField_2.getText());
 					CardLayout cardLayout = (CardLayout) contentPane.getLayout();
 					cardLayout.show(contentPane,"risultatiCV");
 				} catch (RemoteException e1) {
