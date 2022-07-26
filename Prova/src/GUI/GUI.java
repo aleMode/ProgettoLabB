@@ -15,43 +15,29 @@ import Interfaccia.*;
 import Server.ServerMainInterface;
 
 public class GUI {
-
-	private CardLayout cardLayout;
-	private StartPage startPage;
-	private OSLoginPage osLoginPage;
-	private MenuOSPage menuOSPage;
-	private MenuCittPage menuCittPage;
-	private RicercaCVPage ricercaCVPage;
-	private RisultatiCVPage risultatiCVPage;
-	private IscrizioneCittCVPage iscrizioneCittCVPage;
-	private LoginEventiAvvPage loginEventiAvvPage;
-	private EventiAvvPage eventiAvvPage;
-	private RegistraCVPage registraCVPage;
-	private RegistraVaccinatoPage registraVaccinatoPage;
-	private FinalPage finalPage;
 	
 	private void displayGUI(ServerMainInterface stub)
     {
-        JFrame frame = new JFrame("Card Layout Example");
+        JFrame frame = new JFrame("Centri Vaccinali");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         JPanel contentPane = new JPanel();
         contentPane.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
-        cardLayout = new PageViewer();
+        PageViewer cardLayout = new PageViewer();
         contentPane.setLayout(cardLayout);
         
-        startPage = new StartPage(contentPane, stub);
-        osLoginPage = new OSLoginPage(contentPane, stub);
-    	menuOSPage = new MenuOSPage(contentPane, stub);
-    	menuCittPage = new MenuCittPage(contentPane, stub);
-    	ricercaCVPage = new RicercaCVPage(contentPane, stub);
-    	risultatiCVPage = new RisultatiCVPage(contentPane, stub);
-    	iscrizioneCittCVPage = new IscrizioneCittCVPage(contentPane, stub);
-    	loginEventiAvvPage = new LoginEventiAvvPage(contentPane, stub);
-    	eventiAvvPage = new EventiAvvPage(contentPane, stub);
-    	registraCVPage = new RegistraCVPage(contentPane, stub);
-    	registraVaccinatoPage = new RegistraVaccinatoPage(contentPane, stub);
-    	finalPage = new FinalPage(contentPane, stub);
+        StartPage startPage = new StartPage(contentPane, stub);
+        OSLoginPage osLoginPage = new OSLoginPage(contentPane, stub);
+    	MenuOSPage menuOSPage = new MenuOSPage(contentPane, stub);
+    	MenuCittPage menuCittPage = new MenuCittPage(contentPane, stub);
+    	RicercaCVPage ricercaCVPage = new RicercaCVPage(contentPane, stub);
+    	RisultatiCVPage risultatiCVPage = new RisultatiCVPage(contentPane, stub);
+    	IscrizioneCittCVPage iscrizioneCittCVPage = new IscrizioneCittCVPage(contentPane, stub);
+    	LoginEventiAvvPage loginEventiAvvPage = new LoginEventiAvvPage(contentPane, stub);
+    	EventiAvvPage eventiAvvPage = new EventiAvvPage(contentPane, stub);
+    	RegistraCVPage registraCVPage = new RegistraCVPage(contentPane, stub);
+    	RegistraVaccinatoPage registraVaccinatoPage = new RegistraVaccinatoPage(contentPane, stub);
+    	FinalPage finalPage = new FinalPage(contentPane, stub);
         
         contentPane.add(startPage, "startPage"); 
         contentPane.add(osLoginPage, "osLogin"); 

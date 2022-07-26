@@ -13,6 +13,7 @@ public interface ServerMainInterface extends Remote{
 	boolean emailTaken(String email) throws RemoteException, SQLException;
 	boolean codFiscTaken(String codFisc) throws RemoteException, SQLException;
 	boolean nomeCVTaken(String nomeCV) throws RemoteException, SQLException;
+	boolean IDvaccinato(String codFisc, int ID) throws RemoteException, SQLException;
 	//boolean nomeCVReg(String nomeCV) throws RemoteException;
 	boolean userPassLogin(String user, String pwd) throws RemoteException, SQLException;
 	List<CV> ricercaCVnome(String nome) throws RemoteException, SQLException;
@@ -25,4 +26,5 @@ public interface ServerMainInterface extends Remote{
 	boolean registraVacc(int IDvaccino, String email, String username, String password) throws RemoteException, SQLException;
 	
 	int getIDSegnalazione() throws RemoteException;
+	String getCVfromUser(String user) throws RemoteException, SQLException;
 }
