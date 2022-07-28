@@ -22,9 +22,6 @@ public class RicercaCVPage extends JPanel {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
 	List<CV> risultatiCVnome;
 	List<CV> risultatiCVcomtip;
 
@@ -51,34 +48,34 @@ public class RicercaCVPage extends JPanel {
 		add(BtnBack, c);
 
 		
-		JLabel lblNewLabel = new JLabel("Ricerca per nome:");
-		lblNewLabel.setFont(new Font("Calibri", Font.BOLD, 14));
+		JLabel lblRicNome = new JLabel("Ricerca per nome:");
+		lblRicNome.setFont(new Font("Calibri", Font.BOLD, 14));
 		c.anchor=GridBagConstraints.WEST;
 		c.gridx=1;
 		c.gridy=1;
-		add(lblNewLabel, c);
+		add(lblRicNome, c);
 		
 		c.anchor=GridBagConstraints.CENTER;
 		
-		JLabel lblNewLabel_2 = new JLabel("Nome centro");
-		lblNewLabel_2.setFont(new Font("Calibri", Font.PLAIN, 14));
+		JLabel lblNome = new JLabel("Nome centro");
+		lblNome.setFont(new Font("Calibri", Font.PLAIN, 14));
 		c.weighty=0.1;
 		c.gridx=2;
 		c.gridy=1;
-		add(lblNewLabel_2, c);
+		add(lblNome, c);
 		
-		textField = new JTextField();
+		JTextField tfNome = new JTextField();
 		c.weighty=0.1;
 		c.gridx=3;
 		c.gridy=1;
-		add(textField, c);
-		textField.setColumns(10);
+		add(tfNome, c);
+		tfNome.setColumns(10);
 
-		JButton btnNewButton_1 = new JButton("Cerca");
-		btnNewButton_1.addActionListener(new ActionListener() {
+		JButton btnCercaNome = new JButton("Cerca");
+		btnCercaNome.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
-					risultatiCVnome = stub.ricercaCVnome((String) textField.getText());
+					risultatiCVnome = stub.ricercaCVnome((String) tfNome.getText());
 				    CardLayout cardLayout = (CardLayout) contentPane.getLayout();
 				    cardLayout.show(contentPane,"risultatiCV");
 				} catch (RemoteException | SQLException e1) {
@@ -90,52 +87,52 @@ public class RicercaCVPage extends JPanel {
 		c.gridx=3;
 		c.gridy=2;
 		c.gridwidth=2;
-		add(btnNewButton_1,c);
+		add(btnCercaNome,c);
 		
-		JLabel lblNewLabel_3 = new JLabel("Comune");
-		lblNewLabel_3.setFont(new Font("Calibri", Font.PLAIN, 14));
+		JLabel lblComune = new JLabel("Comune");
+		lblComune.setFont(new Font("Calibri", Font.PLAIN, 14));
 		//c.weighty=0.1;
 		c.gridx=2;
 		c.gridy=4;
-		add(lblNewLabel_3, c);
+		add(lblComune, c);
 		
-		textField_1 = new JTextField();
+		JTextField txfComune = new JTextField();
 	    c.weighty=0.1;
 		c.gridx=3;
 		c.gridy=4;
-		add(textField_1, c);
-		textField_1.setColumns(10);
+		add(txfComune, c);
+		txfComune.setColumns(10);
 		
-		JLabel lblNewLabel_4 = new JLabel("Tipologia");
-		lblNewLabel_4.setFont(new Font("Calibri", Font.PLAIN, 14));
+		JLabel lblTipo = new JLabel("Tipologia");
+		lblTipo.setFont(new Font("Calibri", Font.PLAIN, 14));
 		c.weighty=0.05;
 		c.gridx=2;
 		c.gridy=6;
-		add(lblNewLabel_4, c);
+		add(lblTipo, c);
 		
-		textField_2 = new JTextField();
+		JTextField tfTipo = new JTextField();
 		c.weighty=0.05;
 		c.gridx=3;
 		c.gridy=6;
-		add(textField_2, c);
-		textField_2.setColumns(10);
+		add(tfTipo, c);
+		tfTipo.setColumns(10);
 
-		JLabel lblNewLabel_1 = new JLabel("Ricerca per comune " + "e tipo:");
-		lblNewLabel_1.setFont(new Font("Calibri", Font.BOLD, 14));
+		JLabel lblRicercaComuneTipo = new JLabel("Ricerca per comune " + "e tipo:");
+		lblRicercaComuneTipo.setFont(new Font("Calibri", Font.BOLD, 14));
 		c.anchor=GridBagConstraints.WEST;
 		c.weighty=0.1;
 		c.gridx=1;
 		c.gridy=4;
 		//c.gridwidth=2;
-		add(lblNewLabel_1, c);
+		add(lblRicercaComuneTipo, c);
 		
 		c.anchor=GridBagConstraints.CENTER;
 
-		JButton btnNewButton_2 = new JButton("Cerca");
-		btnNewButton_2.addActionListener(new ActionListener() {
+		JButton btnCercaComuneTipo = new JButton("Cerca");
+		btnCercaComuneTipo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
-					risultatiCVcomtip = stub.ricercaCVcomtip((String) textField_1.getText(), (String) textField_2.getText());
+					risultatiCVcomtip = stub.ricercaCVcomtip((String) txfComune.getText(), (String) tfTipo.getText());
 					CardLayout cardLayout = (CardLayout) contentPane.getLayout();
 					cardLayout.show(contentPane,"risultatiCV");
 				} catch (RemoteException e1) {
@@ -149,6 +146,6 @@ public class RicercaCVPage extends JPanel {
 		c.gridx=3;
 		c.gridy=8;
 		c.gridwidth=2;
-		add(btnNewButton_2,c);
+		add(btnCercaComuneTipo,c);
 	}
 }

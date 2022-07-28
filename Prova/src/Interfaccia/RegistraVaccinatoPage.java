@@ -50,99 +50,119 @@ public class RegistraVaccinatoPage extends JPanel {
 		c.insets= new Insets(5,5,5,5);
 		add(btnBack, c);
 		
-		JLabel lblNewLabel = new JLabel("Inserisci i dati richiesti:");
-		lblNewLabel.setFont(new Font("Calibri", Font.BOLD, 16));
+		JLabel lblInserisciDati = new JLabel("Inserisci i dati richiesti:");
+		lblInserisciDati.setFont(new Font("Calibri", Font.BOLD, 16));
 		c.gridx=1;
 		c.gridy=1;
 		c.gridwidth=3;
-		add(lblNewLabel,c);
+		add(lblInserisciDati,c);
 		c.gridwidth=1;
 
-		JLabel lblNewLabel_1 = new JLabel("Nome CV");
+		JLabel lblNomeCV = new JLabel("Nome CV");
 		c.gridx=1;
 		c.gridy=2;
-		add(lblNewLabel_1, c);
+		add(lblNomeCV, c);
 		
-		JTextField textField1 = new JTextField();
-		textField1.setColumns(15);
+		JTextField tfNomeCV = new JTextField();
+		tfNomeCV.setColumns(15);
 		c.gridx=2;
 		c.gridy=2;		
-		add(textField1,c);		
+		add(tfNomeCV,c);		
 		
-		JLabel lblNewLabel_2 = new JLabel("Nome Cittadino");
+		JLabel lblNomeCitt = new JLabel("Nome Cittadino");
 		c.gridx=1;
 		c.gridy=3;		
-		add(lblNewLabel_2,c);
+		add(lblNomeCitt,c);
 		
-		JTextField textField_2 = new JTextField();
-		textField_2.setColumns(15);
+		JTextField tfNomeCitt = new JTextField();
+		tfNomeCitt.setColumns(15);
 		c.gridx=2;
 		c.gridy=3;	
-		add(textField_2,c);
+		add(tfNomeCitt,c);
 		
-		JLabel lblNewLabel_3 = new JLabel("Codice Fiscale");
+		JLabel lblCognomeCitt = new JLabel("Cognome Cittadino");
 		c.gridx=1;
-		c.gridy=4;	
-		add(lblNewLabel_3,c);
+		c.gridy=4;		
+		add(lblCognomeCitt,c);
 		
-		JTextField textField_3 = new JTextField();
-		textField_3.setColumns(15);
+		JTextField tfCognomeCitt = new JTextField();
+		tfNomeCitt.setColumns(15);
 		c.gridx=2;
 		c.gridy=4;	
-		add(textField_3,c);
+		add(tfCognomeCitt,c);
 		
-		JLabel lblNewLabel_4 = new JLabel("Nome Vaccino");
+		JLabel lblCodFisc = new JLabel("Codice Fiscale");
 		c.gridx=1;
-		c.gridy=5;		
-		add(lblNewLabel_4, c);
+		c.gridy=5;	
+		add(lblCodFisc,c);
+		
+		JTextField tfCodFisc = new JTextField();
+		tfCodFisc.setColumns(15);
+		c.gridx=2;
+		c.gridy=5;	
+		add(tfCodFisc,c);
+		
+		JLabel lblNomeVacc = new JLabel("Nome Vaccino");
+		c.gridx=1;
+		c.gridy=6;		
+		add(lblNomeVacc, c);
 		
 		JComboBox<String> cbbVaccini = new JComboBox<String>(vaccini);
 		c.gridx=2;
-		c.gridy=5;		
+		c.gridy=6;		
 		add(cbbVaccini,c);
 		
-		JLabel lblNewLabel_5 = new JLabel("Data Vaccino");
+		JLabel lblData = new JLabel("Data Vaccino");
 		c.gridx=1;
-		c.gridy=6;	
-		add(lblNewLabel_5,c);
+		c.gridy=7;	
+		add(lblData,c);
 		
-		JTextField textField_5 = new JTextField();
-		textField_5.setColumns(15);
-		c.gridx=2;
-		c.gridy=6;	
-		add(textField_5,c);
-		
-		JLabel lblNewLabel_6 = new JLabel("ID");
-		c.gridx=1;
-		c.gridy=7;		
-		add(lblNewLabel_6,c);
-
-		JTextField textField_7 = new JTextField();
-		textField_7.setColumns(15);
+		JTextField tfData = new JTextField();
+		tfData.setColumns(15);
 		c.gridx=2;
 		c.gridy=7;	
-		add(textField_7,c);
+		add(tfData,c);
 		
-		JLabel lblNewLabel_8 = new JLabel("");
+		JLabel lblID = new JLabel("ID");
+		c.gridx=1;
+		c.gridy=8;		
+		add(lblID,c);
+
+		JTextField tfID = new JTextField();
+		tfID.setColumns(15);
+		c.gridx=2;
+		c.gridy=8;	
+		add(tfID,c);
+		
+		JLabel lblErrore = new JLabel("Nessun Errore");
 		c.gridx=1;
 		c.gridy=9; 
-		c.gridwidth=3;
+		c.gridwidth=2;
+		add(lblErrore,c);
 		c.gridwidth=1;
-		add(lblNewLabel_8,c);
-		
 
-		JButton btnReg = new JButton("Registra");
-		btnReg.addActionListener(new ActionListener() {
+
+		JButton btnRegistra = new JButton("Registra");
+		btnRegistra.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				    try {
-						if(stub.codFiscTaken(textField_3.getText()) || !stub.nomeCVTaken(textField1.getText())) {
-							if(textField1.getText() != null || textField_2.getText() != null || textField_3.getText() != null || textField_5.getText() != null || textField_7.getText() != null) {
-							stub.inserisciVacc((String) textField_3.getText(), textField1.getText(), new SimpleDateFormat("dd/MM/yy", Locale.ENGLISH).parse(textField_5.toString()), (String) cbbVaccini.getSelectedItem(), (int) Integer.parseInt(textField_7.getText()));
-							CardLayout cardLayout = (CardLayout) contentPane.getLayout();
-					        cardLayout.show(contentPane,"finalPage");	
+						if(stub.codFiscTaken(tfCodFisc.getText()) || !stub.nomeCVTaken(tfNomeCV.getText())) {
+							if(tfNomeCV.getText() != null || tfNomeCitt.getText() != null || tfCodFisc.getText() != null || tfData.getText() != null || tfID.getText() != null) {
+								if(stub.inserisciVacc(tfNomeCitt.getText(), tfCognomeCitt.getText(), (String) tfCodFisc.getText(), tfNomeCV.getText(), new SimpleDateFormat("dd/MM/yy", Locale.ENGLISH).parse(tfData.toString()), (String) cbbVaccini.getSelectedItem(), (int) Integer.parseInt(tfID.getText()))) {
+									tfCodFisc.setText("");
+									tfNomeCV.setText("");
+									tfData.setText("");
+									cbbVaccini.setSelectedIndex(0);
+									tfID.setText("");
+									
+									CardLayout cardLayout = (CardLayout) contentPane.getLayout();
+									cardLayout.show(contentPane,"finalPage");	
+								}else {
+									lblErrore.setText("Errore di registrazione");
+								}
 					        }
 						} else {
-							lblNewLabel_8.setText("Hai inserito dei dati sbagliati o alcuni campi sono vuoti, riprova.");
+							lblErrore.setText("Hai inserito dei dati sbagliati o alcuni campi sono vuoti, riprova.");
 						}	
 					} catch (NumberFormatException | RemoteException | SQLException | ParseException e1) {
 						e1.printStackTrace();
@@ -150,12 +170,12 @@ public class RegistraVaccinatoPage extends JPanel {
 					
 			}}
 		);
-		btnReg.setFont(new Font("Tahoma", Font.BOLD, 12));
-		btnReg.setBackground(new Color(51, 153, 204));
-		btnReg.setPreferredSize(new Dimension(150,30));
+		btnRegistra.setFont(new Font("Tahoma", Font.BOLD, 12));
+		btnRegistra.setBackground(new Color(51, 153, 204));
+		btnRegistra.setPreferredSize(new Dimension(150,30));
 		c.gridx=2;
-		c.gridy=8;		
-		add(btnReg,c);
+		c.gridy=10;		
+		add(btnRegistra,c);
 	}
 
 }

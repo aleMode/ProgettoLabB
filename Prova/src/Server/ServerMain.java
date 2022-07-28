@@ -201,11 +201,11 @@ public class ServerMain extends UnicastRemoteObject implements ServerMainInterfa
 	}
 
 	@Override
-	public boolean inserisciVacc(String codFisc, String nomeCV, Date dataVaccino, String nomeVaccino, int IDvaccino) throws RemoteException, SQLException {
+	public boolean inserisciVacc(String nomeCitt, String cognomeCitt, String codFisc, String nomeCV, Date dataVaccino, String nomeVaccino, int IDvaccino) throws RemoteException, SQLException {
 		Statement statement = ServerMain.getStatement();
 		
 		try{
-			ResultSet rs = statement.executeQuery("INSERT INTO Cittadini_Vaccinati (ID_vaccino, NomeVaccino, DataVaccino, NomeCV, CodiceFiscale) VALUES (" + IDvaccino + "," + nomeVaccino + "," + dataVaccino + "," + nomeCV + "," + codFisc + ");");
+			ResultSet rs = statement.executeQuery("INSERT INTO Cittadini_Vaccinati (Nome, Cognome, ID_vaccino, NomeVaccino, DataVaccino, NomeCV, CodiceFiscale) VALUES (" + nomeCitt + "," + cognomeCitt + "," + IDvaccino + "," + nomeVaccino + "," + dataVaccino + "," + nomeCV + "," + codFisc + ");");
 		} catch(Exception e) {
 			return false;
 		}
