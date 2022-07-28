@@ -28,8 +28,8 @@ Sonia 10-12
 6 MenuOSPage
 7 OSLoginPage ok (Fare tabella con user e pwd degli op sanitari?)
 8 RegistraCVPage ok
-9
-10
+9 RegistraVaccinatoPage serve mettere nome e cognome nella tabella
+10 RicercaCVPage
 11
 12 FinalPage ok, da rivedere layout
 

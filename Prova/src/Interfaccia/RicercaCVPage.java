@@ -22,8 +22,7 @@ public class RicercaCVPage extends JPanel {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	List<CV> risultatiCVnome;
-	List<CV> risultatiCVcomtip;
+	
 
 	public RicercaCVPage(JPanel cardStack, ServerMainInterface stub) {
 		
@@ -75,7 +74,11 @@ public class RicercaCVPage extends JPanel {
 		btnCercaNome.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
-					risultatiCVnome = stub.ricercaCVnome((String) tfNome.getText());
+					RisultatiCVPage.risultatiCVnome = stub.ricercaCVnome(tfNome.getText());
+					RisultatiCVPage.model.removeAllElements();
+					for(CV c : RisultatiCVPage.risultatiCVnome)
+						RisultatiCVPage.model.addElement(c.getNome());
+					
 				    CardLayout cardLayout = (CardLayout) contentPane.getLayout();
 				    cardLayout.show(contentPane,"risultatiCV");
 				} catch (RemoteException | SQLException e1) {
@@ -91,17 +94,16 @@ public class RicercaCVPage extends JPanel {
 		
 		JLabel lblComune = new JLabel("Comune");
 		lblComune.setFont(new Font("Calibri", Font.PLAIN, 14));
-		//c.weighty=0.1;
 		c.gridx=2;
 		c.gridy=4;
 		add(lblComune, c);
 		
-		JTextField txfComune = new JTextField();
+		JTextField tfComune = new JTextField();
 	    c.weighty=0.1;
 		c.gridx=3;
 		c.gridy=4;
-		add(txfComune, c);
-		txfComune.setColumns(10);
+		add(tfComune, c);
+		tfComune.setColumns(10);
 		
 		JLabel lblTipo = new JLabel("Tipologia");
 		lblTipo.setFont(new Font("Calibri", Font.PLAIN, 14));
@@ -123,7 +125,6 @@ public class RicercaCVPage extends JPanel {
 		c.weighty=0.1;
 		c.gridx=1;
 		c.gridy=4;
-		//c.gridwidth=2;
 		add(lblRicercaComuneTipo, c);
 		
 		c.anchor=GridBagConstraints.CENTER;
@@ -132,14 +133,14 @@ public class RicercaCVPage extends JPanel {
 		btnCercaComuneTipo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
-					risultatiCVcomtip = stub.ricercaCVcomtip((String) txfComune.getText(), (String) tfTipo.getText());
+					RisultatiCVPage.risultatiCVcomtip = stub.ricercaCVcomtip(tfComune.getText(), tfTipo.getText());
+					RisultatiCVPage.model.removeAllElements();
+					for(CV c : RisultatiCVPage.risultatiCVcomtip)
+						RisultatiCVPage.model.addElement(c.getNome());
+					
 					CardLayout cardLayout = (CardLayout) contentPane.getLayout();
-					cardLayout.show(contentPane,"risultatiCV");
-				} catch (RemoteException e1) {
-					e1.printStackTrace();
-				} catch (SQLException e1) {
-					e1.printStackTrace();
-				}				
+					cardLayout.show(contentPane,"risultatiCV");					
+				} catch (Exception e1) {}				
 			}
 		});
 		c.weighty=0.2;

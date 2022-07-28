@@ -133,7 +133,7 @@ public class RegistraCVPage extends JPanel {
 		c.gridy=7;
 		add(lblTipo, c);
 		
-		JList lstTipo = new JList(tipi);
+		JList<String> lstTipo = new JList<String>(tipi);
 		c.gridx=2;
 		c.gridy=7;
 		add(lstTipo,c);

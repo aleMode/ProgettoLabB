@@ -7,17 +7,34 @@ import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.FocusEvent;
+import java.awt.event.FocusListener;
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.swing.JPanel;
+import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
+import javax.swing.JList;
 import javax.swing.JTextPane;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
+
+import Server.CV;
 import Server.ServerMainInterface;
 
 public class RisultatiCVPage extends JPanel {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
+	
+	static DefaultListModel<String> model = new DefaultListModel<>();
+	static JList<String> lstCVTrovati = new JList<String>(model);
+	
+	static List<CV> risultatiCVnome = new ArrayList<CV>();
+	static List<CV> risultatiCVcomtip = new ArrayList<CV>();
 	
 	public RisultatiCVPage(JPanel cardStack, ServerMainInterface stub ) {
 		
@@ -46,10 +63,16 @@ public class RisultatiCVPage extends JPanel {
 		c.gridwidth=3;
 		add(lblNewLabel);
 
-		JComboBox<String> cbbCentriVaccinaliTrovati = new JComboBox<String>();
+		
+		lstCVTrovati.addListSelectionListener(new ListSelectionListener() {
+			public void valueChanged(ListSelectionEvent e) {
+				String nome = lstCVTrovati.getSelectedValue();
+				
+			}
+		});
 		c.gridx=1;
 		c.gridy=2;
-		add(cbbCentriVaccinaliTrovati, c);
+		add(lstCVTrovati, c);
 
 		JLabel lblNewLabel_1 = new JLabel("Prospetto riassuntivo sintomi");
 		c.gridx=1;

@@ -19,31 +19,31 @@ public class CV {
 		tipo = t;		
 	}
 	
-	String getNome() {
+	public String getNome() {
 		return this.nome;
 	}
 	
-	String getIndirizzo() {
+	public String getIndirizzo() {
 		return this.indirizzoLoc;
 	}
 	
-	int getCap() {
+	public int getCap() {
 		return this.cap;
 	}
 	
-	String getComune() {
+	public String getComune() {
 		return this.tipo;
 	}
 	
-	String getProvincia() {
+	public String getProvincia() {
 		return this.tipo;
 	}
 	
-	String getRegione() {
+	public String getRegione() {
 		return this.regione;
 	}
 	
-	String getTipo() {
+	public String getTipo() {
 		return this.tipo;
 	}
 }
