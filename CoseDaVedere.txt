@@ -29,8 +29,8 @@ Sonia 10-12
 7 OSLoginPage ok (Fare tabella con user e pwd degli op sanitari?)
 8 RegistraCVPage ok
 9 RegistraVaccinatoPage serve mettere nome e cognome nella tabella
-10 RicercaCVPage
-11
+10 RicercaCVPage fatta, controllare bottoni
+11 RisultatiCVPage fare query per ottenere le medie dei valori 
 12 FinalPage ok, da rivedere layout
 
 Controllare che il back resetti le textboxes
