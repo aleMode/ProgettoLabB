@@ -36,19 +36,6 @@ public class EventiAvvPage extends JPanel {
 		setLayout(new GridBagLayout());
 		GridBagConstraints c = new GridBagConstraints();
 		
-		JButton btnBack = new JButton("Indietro");
-		btnBack.setBackground(new Color(255, 255, 204));
-		btnBack.setFont(new Font("Calibri", Font.PLAIN, 11));
-		btnBack.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				CardLayout cardLayout = (CardLayout) contentPane.getLayout();
-				cardLayout.show(contentPane,"loginEventiAvv");
-			}
-		});
-		c.gridx=0;
-		c.gridy=0;
-		add(btnBack, c);
-		
 		JLabel lblInserisciDati = new JLabel();
 		lblInserisciDati.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		lblInserisciDati.setBackground(new Color(51, 153, 204));
@@ -212,6 +199,24 @@ public class EventiAvvPage extends JPanel {
 		c.gridy=8;
 		c.insets = new Insets(0,5,0,5);
 		add(btnRipristina, c);
+		
+		JButton btnBack = new JButton("Indietro");
+		btnBack.setBackground(new Color(255, 255, 204));
+		btnBack.setFont(new Font("Calibri", Font.PLAIN, 11));
+		btnBack.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				cbbSintomi.setSelectedIndex(0);
+				lblIntValue.setText("0");
+				pnlNote.setText("");
+				lblError.setText("Nessun errore");
+				
+				CardLayout cardLayout = (CardLayout) contentPane.getLayout();
+				cardLayout.show(contentPane,"loginEventiAvv");
+			}
+		});
+		c.gridx=0;
+		c.gridy=0;
+		add(btnBack, c);
 					
 	}
 }
