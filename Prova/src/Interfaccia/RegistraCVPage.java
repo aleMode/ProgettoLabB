@@ -36,22 +36,6 @@ public class RegistraCVPage extends JPanel {
 		setLayout(new GridBagLayout());
 		GridBagConstraints c = new GridBagConstraints();
 		
-		
-		JButton btnBack = new JButton("Indietro");
-		btnBack.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-					CardLayout cardLayout = (CardLayout) contentPane.getLayout();
-					cardLayout.show(contentPane,"menuOS");					
-				}
-			}
-		);
-		btnBack.setBackground(new Color(255, 255, 204));
-		btnBack.setFont(new Font("Calibri", Font.PLAIN, 11));
-		c.gridx=0;
-		c.gridy=0;
-		c.weightx=1;
-		add(btnBack, c);
-		
 		JLabel lblInserisciDati = new JLabel("Inserisci i dati richiesti");
 		c.gridx=1;
 		c.gridy=0;
@@ -176,6 +160,28 @@ public class RegistraCVPage extends JPanel {
 		c.gridy=9;		
 		add(btnRegistra,c);
 		
-		
+		JButton btnBack = new JButton("Indietro");
+		btnBack.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+					txfNome.setText("");
+					txfIndirizzo.setText("");
+					txfCAP.setText("");
+					txfComune.setText("");
+					txfProv.setText("");
+					txfRegione.setText("");
+					lstTipo.setSelectedIndex(0);
+					lblErrori.setText("Nessun errore");
+				
+					CardLayout cardLayout = (CardLayout) contentPane.getLayout();
+					cardLayout.show(contentPane,"menuOS");					
+				}
+			}
+		);
+		btnBack.setBackground(new Color(255, 255, 204));
+		btnBack.setFont(new Font("Calibri", Font.PLAIN, 11));
+		c.gridx=0;
+		c.gridy=0;
+		c.weightx=1;
+		add(btnBack, c);
 	}
 }
