@@ -22,15 +22,15 @@ Sonia 10-12
 
 1 EventiAvvPage ok, rendere idsegnalazione finale con file locale
 2 StartPage ok, da rivedere layout
-3 IscrizioneCittCVPage ok,controllare query IDinvalid
+3 IscrizioneCittCVPage ok, controllare query IDinvalid
 4 LoginEventiAvvPage ok, controllare il nome delle colonne
 5 MenuCittPage
 6 MenuOSPage
-7 OSLoginPage ok (Fare tabella con user e pwd degli op sanitari?)
+7 OSLoginPage ok (Fare tabella con user e pwd degli op sanitari con un valore a caso tipo admin admin)
 8 RegistraCVPage ok
 9 RegistraVaccinatoPage serve mettere nome e cognome nella tabella
-10 RicercaCVPage fatta, controllare bottoni
-11 RisultatiCVPage fare query per ottenere le medie dei valori 
+10 RicercaCVPage fatta, controllare query
+11 RisultatiCVPage ok, ricontrollare query
 12 FinalPage ok, da rivedere layout
 
 Controllare che il back resetti le textboxes
