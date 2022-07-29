@@ -16,8 +16,8 @@ public interface ServerMainInterface extends Remote{
 	boolean IDvaccinato(String codFisc, int ID) throws RemoteException, SQLException;
 	//boolean nomeCVReg(String nomeCV) throws RemoteException;
 	boolean userPassLogin(String user, String pwd) throws RemoteException, SQLException;
-	List<CV> ricercaCVnome(String nome) throws RemoteException, SQLException;
-	List<CV> ricercaCVcomtip(String comune, String tipo) throws RemoteException, SQLException;
+	HashMap<String, CV> ricercaCVnome(String nome) throws RemoteException, SQLException;
+	HashMap<String, CV> ricercaCVcomtip(String comune, String tipo) throws RemoteException, SQLException;
 	
 	//EventoAvverso getEA
 	boolean inserisciEA(String nomeCV, String nomeEvento, int valoreEvento, String note, int idSegnalazione) throws RemoteException, SQLException;
@@ -25,6 +25,7 @@ public interface ServerMainInterface extends Remote{
 	boolean inserisciVacc(String nomeCitt, String cognomeCitt, String codFisc, String nomeCV, Date dataVaccino, String nomeVaccino, int IDvaccino) throws RemoteException, SQLException;
 	boolean registraVacc(int IDvaccino, String email, String username, String password) throws RemoteException, SQLException;
 	
+	int[] getNumeroSegnalazioni(String nomeCV, String evento) throws RemoteException, SQLException;
 	int getIDSegnalazione() throws RemoteException;
 	String getCVfromUser(String user) throws RemoteException, SQLException;
 }

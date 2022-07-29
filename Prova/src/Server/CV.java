@@ -32,11 +32,11 @@ public class CV {
 	}
 	
 	public String getComune() {
-		return this.tipo;
+		return this.comune;
 	}
 	
 	public String getProvincia() {
-		return this.tipo;
+		return this.provincia;
 	}
 	
 	public String getRegione() {

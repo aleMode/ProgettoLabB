@@ -11,6 +11,7 @@ import java.awt.event.ActionListener;
 import java.rmi.RemoteException;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Map;
 import java.awt.event.ActionEvent;
 import javax.swing.JTextField;
 
@@ -76,9 +77,10 @@ public class RicercaCVPage extends JPanel {
 				try {
 					RisultatiCVPage.risultatiCVnome = stub.ricercaCVnome(tfNome.getText());
 					RisultatiCVPage.model.removeAllElements();
-					for(CV c : RisultatiCVPage.risultatiCVnome)
-						RisultatiCVPage.model.addElement(c.getNome());
+					for(Map.Entry<String, CV> s : RisultatiCVPage.risultatiCVnome.entrySet())
+						RisultatiCVPage.model.addElement(s.getKey());
 					
+					RisultatiCVPage.usedName = true;
 				    CardLayout cardLayout = (CardLayout) contentPane.getLayout();
 				    cardLayout.show(contentPane,"risultatiCV");
 				} catch (RemoteException | SQLException e1) {
@@ -135,9 +137,10 @@ public class RicercaCVPage extends JPanel {
 				try {
 					RisultatiCVPage.risultatiCVcomtip = stub.ricercaCVcomtip(tfComune.getText(), tfTipo.getText());
 					RisultatiCVPage.model.removeAllElements();
-					for(CV c : RisultatiCVPage.risultatiCVcomtip)
-						RisultatiCVPage.model.addElement(c.getNome());
+					for(Map.Entry<String, CV> s : RisultatiCVPage.risultatiCVcomtip.entrySet())
+						RisultatiCVPage.model.addElement(s.getKey());
 					
+					RisultatiCVPage.usedName = false;
 					CardLayout cardLayout = (CardLayout) contentPane.getLayout();
 					cardLayout.show(contentPane,"risultatiCV");					
 				} catch (Exception e1) {}				

@@ -26,7 +26,7 @@ public class EventiAvvPage extends JPanel {
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	static String nomeCV = "";
-	private String[] sintomi = {"Mal di testa","Febbre","Dolori muscolari e articolari", "Linfoadenopatia", "Tachicardia", "Crisi ipertensiva"};
+	static String[] sintomi = {"Mal di testa","Febbre","Dolori muscolari e articolari", "Linfoadenopatia", "Tachicardia", "Crisi ipertensiva"};
 
 	public EventiAvvPage(JPanel cardStack, ServerMainInterface stub) {
 		

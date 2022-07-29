@@ -11,6 +11,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 
 public class ServerMain extends UnicastRemoteObject implements ServerMainInterface{
@@ -147,28 +148,28 @@ public class ServerMain extends UnicastRemoteObject implements ServerMainInterfa
 	}
 
 	@Override
-	public List<CV> ricercaCVnome(String nome) throws RemoteException, SQLException {
-		List<CV> results = new ArrayList<CV>();		
+	public HashMap<String, CV> ricercaCVnome(String nome) throws RemoteException, SQLException {
+		HashMap<String, CV> results = new HashMap<String, CV>();
 		Statement statement = ServerMain.getStatement();
 		
 		ResultSet rs = statement.executeQuery("SELECT * FROM Centri_Vaccinali WHERE Nome LIKE '%"+nome+"%'");
 		
 		while(rs.next()) {
-			results.add(new CV(rs.getString("Nome"), rs.getString("Indirizzo"), rs.getInt("CAP"), rs.getString("Comune"), rs.getString("Provincia"), rs.getString("Regione"), rs.getString("Tipo")));
+			results.put(rs.getString("Nome"), new CV(rs.getString("Nome"), rs.getString("Indirizzo"), rs.getInt("CAP"), rs.getString("Comune"), rs.getString("Provincia"), rs.getString("Regione"), rs.getString("Tipo")));
 		}
 		
 		return results;
 	}
 
 	@Override
-	public List<CV> ricercaCVcomtip(String comune, String tipo) throws RemoteException, SQLException {
-		List<CV> results = new ArrayList<CV>();		
+	public HashMap<String, CV> ricercaCVcomtip(String comune, String tipo) throws RemoteException, SQLException {
+		HashMap<String, CV> results = new HashMap<String, CV>();		
 		Statement statement = ServerMain.getStatement();
 		
 		ResultSet rs = statement.executeQuery("SELECT * FROM Centri_Vaccinali WHERE Comune LIKE '%"+comune+"%' AND Tipo = " + tipo);
 		
 		while(rs.next()) {
-			results.add(new CV(rs.getString("Nome"), rs.getString("Indirizzo"), rs.getInt("CAP"), rs.getString("Comune"), rs.getString("Provincia"), rs.getString("Regione"), rs.getString("Tipo")));
+			results.put(rs.getString("Nome"), new CV(rs.getString("Nome"), rs.getString("Indirizzo"), rs.getInt("CAP"), rs.getString("Comune"), rs.getString("Provincia"), rs.getString("Regione"), rs.getString("Tipo")));
 		}
 		
 		return results;
@@ -242,6 +243,23 @@ public class ServerMain extends UnicastRemoteObject implements ServerMainInterfa
 		if(rs.next()) CV = rs.getString("NomeCV");
 				
 		return CV;
+	}
+
+	@Override
+	public int[] getNumeroSegnalazioni(String nomeCV, String evento) throws RemoteException, SQLException {
+		int[] val = new int[2];
+		
+		Statement statement = ServerMain.getStatement();
+		
+		ResultSet rs = statement.executeQuery("SELECT SUM(ValoreEvento) FROM Eventi_Avversi WHERE NomeCV = " + nomeCV + " AND NomeEvento = " + evento);
+		
+		if(rs.next()) val[0] = rs.getInt(1);
+		
+		rs = statement.executeQuery("SELECT COUNT(ValoreEvento) FROM Eventi_Avversi WHERE NomeCV = " + nomeCV + " AND NomeEvento = " + evento);
+		
+		if(rs.next()) val[1] = rs.getInt(1);
+		
+		return val;
 	}
 
 }
