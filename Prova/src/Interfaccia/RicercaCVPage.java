@@ -33,21 +33,6 @@ public class RicercaCVPage extends JPanel {
 		setLayout(new GridBagLayout());
 		GridBagConstraints c = new GridBagConstraints();
 		 
-		JButton BtnBack = new JButton("Indietro");
-		BtnBack.setBackground(new Color(255, 255, 204));
-		BtnBack.setFont(new Font("Calibri", Font.PLAIN, 11));
-		BtnBack.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				CardLayout cardLayout = (CardLayout) contentPane.getLayout();
-				cardLayout.show(contentPane,"menuCitt");
-			}
-		});
-		c.gridx=0;
-		c.gridy=0;
-		c.weightx=1;
-		add(BtnBack, c);
-
-		
 		JLabel lblRicNome = new JLabel("Ricerca per nome:");
 		lblRicNome.setFont(new Font("Calibri", Font.BOLD, 14));
 		c.anchor=GridBagConstraints.WEST;
@@ -71,28 +56,6 @@ public class RicercaCVPage extends JPanel {
 		add(tfNome, c);
 		tfNome.setColumns(10);
 
-		JButton btnCercaNome = new JButton("Cerca");
-		btnCercaNome.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				try {
-					RisultatiCVPage.risultatiCVnome = stub.ricercaCVnome(tfNome.getText());
-					RisultatiCVPage.model.removeAllElements();
-					for(Map.Entry<String, CV> s : RisultatiCVPage.risultatiCVnome.entrySet())
-						RisultatiCVPage.model.addElement(s.getKey());
-					
-					RisultatiCVPage.usedName = true;
-				    CardLayout cardLayout = (CardLayout) contentPane.getLayout();
-				    cardLayout.show(contentPane,"risultatiCV");
-				} catch (RemoteException | SQLException e1) {
-					e1.printStackTrace();
-				}	
-			}
-		});
-		c.weighty=0.1;
-		c.gridx=3;
-		c.gridy=2;
-		c.gridwidth=2;
-		add(btnCercaNome,c);
 		
 		JLabel lblComune = new JLabel("Comune");
 		lblComune.setFont(new Font("Calibri", Font.PLAIN, 14));
@@ -129,18 +92,62 @@ public class RicercaCVPage extends JPanel {
 		c.gridy=4;
 		add(lblRicercaComuneTipo, c);
 		
+		JLabel lblErrore = new JLabel("Nessun errore");
+		lblRicercaComuneTipo.setFont(new Font("Calibri", Font.BOLD, 14));
+		c.gridx=1;
+		c.gridy=9;
+		c.gridwidth = 3;
+		add(lblErrore, c);
+		c.gridwidth = 1;
+		
 		c.anchor=GridBagConstraints.CENTER;
+		JButton btnCercaNome = new JButton("Cerca");
+		btnCercaNome.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				try {
+					RisultatiCVPage.risultatiCVnome = stub.ricercaCVnome(tfNome.getText());
+					if(RisultatiCVPage.risultatiCVnome.isEmpty()) {
+						lblErrore.setText("Nessun risultato");
+					}
+					RisultatiCVPage.model.removeAllElements();
+					for(Map.Entry<String, CV> s : RisultatiCVPage.risultatiCVnome.entrySet())
+						RisultatiCVPage.model.addElement(s.getKey());
+					
+					RisultatiCVPage.usedName = true;
+					tfNome.setText("");
+					tfComune.setText("");
+					tfTipo.setText("");
+					lblErrore.setText("Nessun Errore");
+				    CardLayout cardLayout = (CardLayout) contentPane.getLayout();
+				    cardLayout.show(contentPane,"risultatiCV");
+				} catch (RemoteException | SQLException e1) {
+					e1.printStackTrace();
+				}	
+			}
+		});
+		c.weighty=0.1;
+		c.gridx=3;
+		c.gridy=2;
+		c.gridwidth=2;
+		add(btnCercaNome,c);
 
 		JButton btnCercaComuneTipo = new JButton("Cerca");
 		btnCercaComuneTipo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
 					RisultatiCVPage.risultatiCVcomtip = stub.ricercaCVcomtip(tfComune.getText(), tfTipo.getText());
+					if(RisultatiCVPage.risultatiCVnome.isEmpty()) {
+						lblErrore.setText("Nessun risultato");
+					}
 					RisultatiCVPage.model.removeAllElements();
 					for(Map.Entry<String, CV> s : RisultatiCVPage.risultatiCVcomtip.entrySet())
 						RisultatiCVPage.model.addElement(s.getKey());
 					
 					RisultatiCVPage.usedName = false;
+					tfNome.setText("");
+					tfComune.setText("");
+					tfTipo.setText("");
+					lblErrore.setText("Nessun Errore");
 					CardLayout cardLayout = (CardLayout) contentPane.getLayout();
 					cardLayout.show(contentPane,"risultatiCV");					
 				} catch (Exception e1) {}				
@@ -151,5 +158,24 @@ public class RicercaCVPage extends JPanel {
 		c.gridy=8;
 		c.gridwidth=2;
 		add(btnCercaComuneTipo,c);
+		
+		JButton BtnBack = new JButton("Indietro");
+		BtnBack.setBackground(new Color(255, 255, 204));
+		BtnBack.setFont(new Font("Calibri", Font.PLAIN, 11));
+		BtnBack.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				tfNome.setText("");
+				tfComune.setText("");
+				tfTipo.setText("");
+				lblErrore.setText("Nessun Errore");
+				
+				CardLayout cardLayout = (CardLayout) contentPane.getLayout();
+				cardLayout.show(contentPane,"menuCitt");
+			}
+		});
+		c.gridx=0;
+		c.gridy=0;
+		c.weightx=1;
+		add(BtnBack, c);
 	}
 }
