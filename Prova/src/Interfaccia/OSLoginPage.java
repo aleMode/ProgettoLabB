@@ -28,20 +28,6 @@ public class OSLoginPage extends JPanel {
 		setLayout(new GridBagLayout());
 		GridBagConstraints c = new GridBagConstraints();
 		
-		JButton btnBack = new JButton("Indietro");
-		btnBack.setBackground(new Color(255, 255, 204));
-		btnBack.setFont(new Font("Calibri", Font.PLAIN, 11));
-		btnBack.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				CardLayout cardLayout = (CardLayout) contentPane.getLayout();
-				cardLayout.show(contentPane,"startPage");
-			}
-		});
-		c.gridx=0;
-		c.gridy=0;
-		c.weightx=1;
-		add(btnBack, c);
-		
 		JLabel lblID = new JLabel();
 		lblID.setBackground(new Color(153, 255, 255));
 		lblID.setFont(new Font("Calibri", Font.BOLD, 16));
@@ -128,5 +114,24 @@ public class OSLoginPage extends JPanel {
 		c.gridy=4;
 		c.weightx=1;
 		add(btnLogin, c);
+		
+		JButton btnBack = new JButton("Indietro");
+		btnBack.setBackground(new Color(255, 255, 204));
+		btnBack.setFont(new Font("Calibri", Font.PLAIN, 11));
+		btnBack.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				lblError.setText("Nessun Errore");
+				tfUser.setText("");
+				pwdField.setText("");
+				
+				CardLayout cardLayout = (CardLayout) contentPane.getLayout();
+				cardLayout.show(contentPane,"startPage");
+			}
+		});
+		c.gridx=0;
+		c.gridy=0;
+		c.weightx=1;
+		add(btnBack, c);
+		
 	}
 }

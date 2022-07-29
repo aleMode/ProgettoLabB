@@ -33,4 +33,4 @@ Sonia 10-12
 11 RisultatiCVPage ok, ricontrollare query
 12 FinalPage ok, da rivedere layout
 
-Controllare che il back resetti le textboxes
+Controllare che il back resetti le textboxes fatto

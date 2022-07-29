@@ -43,20 +43,6 @@ public class LoginEventiAvvPage extends JPanel {
 		setLayout(new GridBagLayout());
 		GridBagConstraints c = new GridBagConstraints();
 		
-		JButton btnBack = new JButton("Indietro");
-		btnBack.setBackground(new Color(255, 255, 204));
-		btnBack.setFont(new Font("Calibri", Font.PLAIN, 11));
-		btnBack.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				CardLayout cardLayout = (CardLayout) contentPane.getLayout();
-				cardLayout.show(contentPane,"menuCitt");
-			}
-		});
-		btnBack.setPreferredSize(new Dimension(90,25));
-		c.gridx= 0;
-		c.gridy= 0;	
-		add(btnBack, c);
-		
 		JLabel lblInserisciDati = new JLabel("Inserisci i dati richiesti");
 		lblInserisciDati.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		c.gridx = 1;
@@ -130,5 +116,23 @@ public class LoginEventiAvvPage extends JPanel {
 		c.gridx= 2;
 		c.gridy= 5;			
 		add(btnLogin,c);
+
+		JButton btnBack = new JButton("Indietro");
+		btnBack.setBackground(new Color(255, 255, 204));
+		btnBack.setFont(new Font("Calibri", Font.PLAIN, 11));
+		btnBack.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				lblError.setText("Nessun Errore");
+				tfUser.setText("");
+				pwdField.setText("");
+				
+				CardLayout cardLayout = (CardLayout) contentPane.getLayout();
+				cardLayout.show(contentPane,"menuCitt");
+			}
+		});
+		btnBack.setPreferredSize(new Dimension(90,25));
+		c.gridx= 0;
+		c.gridy= 0;	
+		add(btnBack, c);
 	}
 }

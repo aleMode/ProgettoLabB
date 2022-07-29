@@ -33,20 +33,6 @@ public class IscrizioneCittCVPage extends JPanel {
 		setBackground(new Color(153, 255, 255)); 
 		setLayout(new GridBagLayout());
 		GridBagConstraints c = new GridBagConstraints();
-		
-		JButton btnNewButton = new JButton("Indietro");
-		btnNewButton.setBackground(new Color(255, 255, 204));
-		btnNewButton.setFont(new Font("Calibri", Font.PLAIN, 11));
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				CardLayout cardLayout = (CardLayout) contentPane.getLayout();
-				cardLayout.show(contentPane,"menuCitt");
-			}
-		});
-		c.gridx=0;
-		c.gridy=0;
-		c.weightx=1;
-		add(btnNewButton,c);
 
 		JLabel lblInserireDati = new JLabel();
 		lblInserireDati.setBackground(new Color(153, 255, 255));
@@ -322,5 +308,28 @@ public class IscrizioneCittCVPage extends JPanel {
 		c.gridy=11;
 		add(btnRipristina, c);
 
+		JButton btnBack = new JButton("Indietro");
+		btnBack.setBackground(new Color(255, 255, 204));
+		btnBack.setFont(new Font("Calibri", Font.PLAIN, 11));
+		btnBack.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				txfNome.setText("");
+				txfCognome.setText("");
+				txfCodiceFiscale.setText("");
+				txfEmail.setText("");
+				txfIDvaccino.setText("");
+				txfUsername.setText("");
+				pswField.setText("");
+				pswField2.setText("");
+				lblError.setText("Nessun Errore");
+				
+				CardLayout cardLayout = (CardLayout) contentPane.getLayout();
+				cardLayout.show(contentPane,"menuCitt");
+			}
+		});
+		c.gridx=0;
+		c.gridy=0;
+		c.weightx=1;
+		add(btnBack,c);
 	}
 }
