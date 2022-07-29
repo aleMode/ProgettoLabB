@@ -33,22 +33,6 @@ public class RegistraVaccinatoPage extends JPanel {
 		setBackground(new Color(153, 255, 255));
 		setLayout(new GridBagLayout());
 		GridBagConstraints c = new GridBagConstraints();
-	
-		JButton btnBack = new JButton("Indietro");
-		btnBack.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				if (e.getSource() == btnBack) { 
-					CardLayout cardLayout = (CardLayout) contentPane.getLayout();
-					cardLayout.show(contentPane,"menuOS");					
-				}}
-			}
-		);
-		btnBack.setBackground(new Color(255, 255, 204));
-		btnBack.setFont(new Font("Calibri", Font.PLAIN, 11));
-		c.gridx=0;
-		c.gridy=0;
-		c.insets= new Insets(5,5,5,5);
-		add(btnBack, c);
 		
 		JLabel lblInserisciDati = new JLabel("Inserisci i dati richiesti:");
 		lblInserisciDati.setFont(new Font("Calibri", Font.BOLD, 16));
@@ -176,6 +160,28 @@ public class RegistraVaccinatoPage extends JPanel {
 		c.gridx=2;
 		c.gridy=10;		
 		add(btnRegistra,c);
+		
+		JButton btnBack = new JButton("Indietro");
+		btnBack.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if (e.getSource() == btnBack) { 
+					tfCodFisc.setText("");
+					tfNomeCV.setText("");
+					tfData.setText("");
+					cbbVaccini.setSelectedIndex(0);
+					tfID.setText("");
+					
+					CardLayout cardLayout = (CardLayout) contentPane.getLayout();
+					cardLayout.show(contentPane,"menuOS");					
+				}}
+			}
+		);
+		btnBack.setBackground(new Color(255, 255, 204));
+		btnBack.setFont(new Font("Calibri", Font.PLAIN, 11));
+		c.gridx=0;
+		c.gridy=0;
+		c.insets= new Insets(5,5,5,5);
+		add(btnBack, c);
 	}
 
 }
