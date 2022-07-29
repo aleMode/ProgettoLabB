@@ -48,19 +48,6 @@ public class RisultatiCVPage extends JPanel {
 		setLayout(new GridBagLayout());
 		GridBagConstraints c = new GridBagConstraints();
 		
-		JButton btnBack = new JButton("Indietro");
-		btnBack.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				CardLayout cardLayout = (CardLayout) contentPane.getLayout();
-				cardLayout.show(contentPane,"ricercaCV");
-			}
-		});
-		btnBack.setBackground(new Color(255, 255, 204));
-		btnBack.setFont(new Font("Calibri", Font.PLAIN, 11));
-		c.gridx=0;
-		c.gridy=0;
-		add(btnBack, c);
-
 		JLabel lblNewLabel = new JLabel("Centri vaccinali disponibili");
 		c.gridx=1;
 		c.gridy=1;		
@@ -120,5 +107,20 @@ public class RisultatiCVPage extends JPanel {
 		c.gridy=5;		
 		c.gridwidth=1;
 		add(btnFine, c);
+		
+		JButton btnBack = new JButton("Indietro");
+		btnBack.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				tpProspetto.setText("");
+				CardLayout cardLayout = (CardLayout) contentPane.getLayout();
+				cardLayout.show(contentPane,"ricercaCV");
+			}
+		});
+		btnBack.setBackground(new Color(255, 255, 204));
+		btnBack.setFont(new Font("Calibri", Font.PLAIN, 11));
+		c.gridx=0;
+		c.gridy=0;
+		add(btnBack, c);
+
 	}
 }
